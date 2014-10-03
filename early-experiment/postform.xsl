@@ -14,15 +14,17 @@
   "form_action":"<xsl:value-of select="@action"/>",
   "fields": [
     <xsl:for-each select=".//*">
+      
       <xsl:choose>
         <xsl:when test="local-name(.)='fieldset'">
-          <xsl:call-template name="tpl_fieldset" />,
+          <xsl:call-template name="tpl_fieldset" />
         </xsl:when>
         <xsl:when test="(local-name(.)='label' or local-name(.)='input') and local-name(ancestor::fieldset)!='fieldset'">
-          <xsl:call-template name="tpl_label_or_input" />,
+          <xsl:call-template name="tpl_label_or_input" />
         </xsl:when>
       </xsl:choose>
     </xsl:for-each>
+    null
   ]
 </xsl:template>
 
@@ -34,18 +36,22 @@
       <xsl:for-each select=".//label | .//input">
         <xsl:call-template name="tpl_label_or_input" />
       </xsl:for-each>
+      null
     ]
-  }
+  },
 </xsl:template>
 
 <xsl:template name="tpl_label_or_input">
   <xsl:choose>
     <xsl:when test="local-name(.)='label'">
       {
-        "display_name":"<xsl:value-of select="normalize-space(.)"/>",
+        "display_name":"<xsl:value-of select="str:replace(normalize-space(.),'&quot;','\&quot;')"/>",
         <xsl:choose>
           <xsl:when test="input">
             <xsl:apply-templates select="input" />
+          </xsl:when>
+          <xsl:when test="textarea">
+            <xsl:apply-templates select="textarea" />
           </xsl:when>
           <xsl:otherwise>
         "type":"label",
@@ -69,7 +75,15 @@
         "name":"<xsl:value-of select="@name"/>",
         "value":"<xsl:value-of select="@value"/>",
         "is_required":<xsl:value-of select="contains(@class,'req')"/>,
-        "is_error":<xsl:value-of select="contains(@class,'err')"/>,
+        "is_error":<xsl:value-of select="contains(@class,'err')"/>
+</xsl:template>
+
+<xsl:template match="textarea">
+        "type":"textarea",
+        "name":"<xsl:value-of select="@name"/>",
+        "value":"<xsl:value-of select="@value"/>",
+        "is_required":<xsl:value-of select="contains(@class,'req')"/>,
+        "is_error":<xsl:value-of select="contains(@class,'err')"/>
 </xsl:template>
 
 </xsl:stylesheet>
