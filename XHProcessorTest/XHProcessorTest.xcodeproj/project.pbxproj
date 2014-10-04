@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		44EBAA0B19DEFF2B00F8404C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA0A19DEFF2B00F8404C /* main.m */; };
 		44EBAA0E19DEFF2B00F8404C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA0D19DEFF2B00F8404C /* AppDelegate.m */; };
-		44EBAA1119DEFF2B00F8404C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA1019DEFF2B00F8404C /* ViewController.m */; };
 		44EBAA1419DEFF2B00F8404C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EBAA1219DEFF2B00F8404C /* Main.storyboard */; };
 		44EBAA1619DEFF2B00F8404C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EBAA1519DEFF2B00F8404C /* Images.xcassets */; };
 		44EBAA1919DEFF2B00F8404C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EBAA1719DEFF2B00F8404C /* LaunchScreen.xib */; };
 		44EBAA2519DEFF2B00F8404C /* XHProcessorTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA2419DEFF2B00F8404C /* XHProcessorTestTests.m */; };
-		44EBAA3119DF021A00F8404C /* XHProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA3019DF021A00F8404C /* XHProcessor.m */; };
 		44EBAA3319DF033D00F8404C /* libexslt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EBAA3219DF033D00F8404C /* libexslt.dylib */; };
 		44EBAA5019DF218E00F8404C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EBAA4F19DF218E00F8404C /* libxml2.dylib */; };
 		44EBAA5219DF21A000F8404C /* libxslt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EBAA5119DF21A000F8404C /* libxslt.dylib */; };
@@ -24,6 +22,11 @@
 		44EBAA5A19DF25BD00F8404C /* sss.html in Resources */ = {isa = PBXBuildFile; fileRef = 44EBAA5619DF25BD00F8404C /* sss.html */; };
 		44EBAA5D19DF2F9C00F8404C /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA5C19DF2F9C00F8404C /* AdData.m */; };
 		44EBAA6019DF2FAE00F8404C /* AdDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA5F19DF2FAE00F8404C /* AdDataContainer.m */; };
+		44EBAA6319DF3BA700F8404C /* URLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA6219DF3BA700F8404C /* URLTransformer.m */; };
+		44EBAA6619DF44DD00F8404C /* AdsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA6519DF44DD00F8404C /* AdsTableViewController.m */; };
+		44EBAA6919DF4E7F00F8404C /* AdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA6819DF4E7F00F8404C /* AdTableViewCell.m */; };
+		44EBAA8D19E0A2B200F8404C /* XHTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBAA7219E0A2B200F8404C /* XHTransformation.m */; };
+		F764FCB57E6BEBB870D260B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2658A3EBC32BF11E4C8F3664 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,46 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2658A3EBC32BF11E4C8F3664 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EBAA0519DEFF2B00F8404C /* XHProcessorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHProcessorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EBAA0919DEFF2B00F8404C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EBAA0A19DEFF2B00F8404C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		44EBAA0C19DEFF2B00F8404C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44EBAA0D19DEFF2B00F8404C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		44EBAA0F19DEFF2B00F8404C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		44EBAA1019DEFF2B00F8404C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		44EBAA1319DEFF2B00F8404C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44EBAA1519DEFF2B00F8404C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		44EBAA1819DEFF2B00F8404C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		44EBAA1E19DEFF2B00F8404C /* XHProcessorTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHProcessorTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EBAA2319DEFF2B00F8404C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EBAA2419DEFF2B00F8404C /* XHProcessorTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHProcessorTestTests.m; sourceTree = "<group>"; };
-		44EBAA2F19DF021A00F8404C /* XHProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHProcessor.h; sourceTree = "<group>"; };
-		44EBAA3019DF021A00F8404C /* XHProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHProcessor.m; sourceTree = "<group>"; };
 		44EBAA3219DF033D00F8404C /* libexslt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libexslt.dylib; path = usr/lib/libexslt.dylib; sourceTree = SDKROOT; };
-		44EBAA3619DF116300F8404C /* exslt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exslt.h; sourceTree = "<group>"; };
-		44EBAA3719DF116300F8404C /* exsltconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exsltconfig.h; sourceTree = "<group>"; };
-		44EBAA3819DF116300F8404C /* exsltexports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exsltexports.h; sourceTree = "<group>"; };
-		44EBAA3A19DF116300F8404C /* attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attributes.h; sourceTree = "<group>"; };
-		44EBAA3B19DF116300F8404C /* documents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = documents.h; sourceTree = "<group>"; };
-		44EBAA3C19DF116300F8404C /* extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extensions.h; sourceTree = "<group>"; };
-		44EBAA3D19DF116300F8404C /* extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extra.h; sourceTree = "<group>"; };
-		44EBAA3E19DF116300F8404C /* functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
-		44EBAA3F19DF116300F8404C /* imports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imports.h; sourceTree = "<group>"; };
-		44EBAA4019DF116300F8404C /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
-		44EBAA4119DF116300F8404C /* namespaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = namespaces.h; sourceTree = "<group>"; };
-		44EBAA4219DF116300F8404C /* numbersInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numbersInternals.h; sourceTree = "<group>"; };
-		44EBAA4319DF116300F8404C /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pattern.h; sourceTree = "<group>"; };
-		44EBAA4419DF116300F8404C /* preproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preproc.h; sourceTree = "<group>"; };
-		44EBAA4519DF116300F8404C /* security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = security.h; sourceTree = "<group>"; };
-		44EBAA4619DF116300F8404C /* templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = templates.h; sourceTree = "<group>"; };
-		44EBAA4719DF116300F8404C /* transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
-		44EBAA4819DF116300F8404C /* variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = variables.h; sourceTree = "<group>"; };
-		44EBAA4919DF116300F8404C /* xslt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xslt.h; sourceTree = "<group>"; };
-		44EBAA4A19DF116300F8404C /* xsltInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltInternals.h; sourceTree = "<group>"; };
-		44EBAA4B19DF116300F8404C /* xsltconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltconfig.h; sourceTree = "<group>"; };
-		44EBAA4C19DF116300F8404C /* xsltexports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltexports.h; sourceTree = "<group>"; };
-		44EBAA4D19DF116300F8404C /* xsltlocale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltlocale.h; sourceTree = "<group>"; };
-		44EBAA4E19DF116300F8404C /* xsltutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltutils.h; sourceTree = "<group>"; };
 		44EBAA4F19DF218E00F8404C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		44EBAA5119DF21A000F8404C /* libxslt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.dylib; path = usr/lib/libxslt.dylib; sourceTree = SDKROOT; };
 		44EBAA5319DF25BD00F8404C /* adsearch.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = adsearch.xsl; path = "../../early-experiment/adsearch.xsl"; sourceTree = "<group>"; };
@@ -87,6 +63,41 @@
 		44EBAA5C19DF2F9C00F8404C /* AdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdData.m; sourceTree = "<group>"; };
 		44EBAA5E19DF2FAE00F8404C /* AdDataContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDataContainer.h; sourceTree = "<group>"; };
 		44EBAA5F19DF2FAE00F8404C /* AdDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDataContainer.m; sourceTree = "<group>"; };
+		44EBAA6119DF3BA700F8404C /* URLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLTransformer.h; sourceTree = "<group>"; };
+		44EBAA6219DF3BA700F8404C /* URLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLTransformer.m; sourceTree = "<group>"; };
+		44EBAA6419DF44DD00F8404C /* AdsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdsTableViewController.h; sourceTree = "<group>"; };
+		44EBAA6519DF44DD00F8404C /* AdsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdsTableViewController.m; sourceTree = "<group>"; };
+		44EBAA6719DF4E7F00F8404C /* AdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdTableViewCell.h; sourceTree = "<group>"; };
+		44EBAA6819DF4E7F00F8404C /* AdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdTableViewCell.m; sourceTree = "<group>"; };
+		44EBAA7019E0A2B200F8404C /* XH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XH.h; sourceTree = "<group>"; };
+		44EBAA7119E0A2B200F8404C /* XHTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHTransformation.h; sourceTree = "<group>"; };
+		44EBAA7219E0A2B200F8404C /* XHTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTransformation.m; sourceTree = "<group>"; };
+		44EBAA7419E0A2B200F8404C /* exslt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exslt.h; sourceTree = "<group>"; };
+		44EBAA7519E0A2B200F8404C /* exsltconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exsltconfig.h; sourceTree = "<group>"; };
+		44EBAA7619E0A2B200F8404C /* exsltexports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exsltexports.h; sourceTree = "<group>"; };
+		44EBAA7819E0A2B200F8404C /* attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attributes.h; sourceTree = "<group>"; };
+		44EBAA7919E0A2B200F8404C /* documents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = documents.h; sourceTree = "<group>"; };
+		44EBAA7A19E0A2B200F8404C /* extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extensions.h; sourceTree = "<group>"; };
+		44EBAA7B19E0A2B200F8404C /* extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extra.h; sourceTree = "<group>"; };
+		44EBAA7C19E0A2B200F8404C /* functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
+		44EBAA7D19E0A2B200F8404C /* imports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imports.h; sourceTree = "<group>"; };
+		44EBAA7E19E0A2B200F8404C /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
+		44EBAA7F19E0A2B200F8404C /* namespaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = namespaces.h; sourceTree = "<group>"; };
+		44EBAA8019E0A2B200F8404C /* numbersInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numbersInternals.h; sourceTree = "<group>"; };
+		44EBAA8119E0A2B200F8404C /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pattern.h; sourceTree = "<group>"; };
+		44EBAA8219E0A2B200F8404C /* preproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preproc.h; sourceTree = "<group>"; };
+		44EBAA8319E0A2B200F8404C /* security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = security.h; sourceTree = "<group>"; };
+		44EBAA8419E0A2B200F8404C /* templates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = templates.h; sourceTree = "<group>"; };
+		44EBAA8519E0A2B200F8404C /* transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
+		44EBAA8619E0A2B200F8404C /* variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = variables.h; sourceTree = "<group>"; };
+		44EBAA8719E0A2B200F8404C /* xslt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xslt.h; sourceTree = "<group>"; };
+		44EBAA8819E0A2B200F8404C /* xsltInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltInternals.h; sourceTree = "<group>"; };
+		44EBAA8919E0A2B200F8404C /* xsltconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltconfig.h; sourceTree = "<group>"; };
+		44EBAA8A19E0A2B200F8404C /* xsltexports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltexports.h; sourceTree = "<group>"; };
+		44EBAA8B19E0A2B200F8404C /* xsltlocale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltlocale.h; sourceTree = "<group>"; };
+		44EBAA8C19E0A2B200F8404C /* xsltutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltutils.h; sourceTree = "<group>"; };
+		55EC2D032474454903ECA634 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C0F12CA4F50DAC0B8CBE9445 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +108,7 @@
 				44EBAA5019DF218E00F8404C /* libxml2.dylib in Frameworks */,
 				44EBAA5219DF21A000F8404C /* libxslt.dylib in Frameworks */,
 				44EBAA3319DF033D00F8404C /* libexslt.dylib in Frameworks */,
+				F764FCB57E6BEBB870D260B0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,16 +122,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1446F667013D612904537521 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2658A3EBC32BF11E4C8F3664 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		44EBA9FC19DEFF2B00F8404C = {
 			isa = PBXGroup;
 			children = (
+				44EBAA6F19E0A2B200F8404C /* XH */,
 				44EBAA5119DF21A000F8404C /* libxslt.dylib */,
 				44EBAA4F19DF218E00F8404C /* libxml2.dylib */,
 				44EBAA3219DF033D00F8404C /* libexslt.dylib */,
-				44EBAA2E19DEFF3800F8404C /* XHProcessor */,
 				44EBAA0719DEFF2B00F8404C /* XHProcessorTest */,
 				44EBAA2119DEFF2B00F8404C /* XHProcessorTestTests */,
 				44EBAA0619DEFF2B00F8404C /* Products */,
+				6F2B98CA02ED9F7D840B584D /* Pods */,
+				1446F667013D612904537521 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,8 +163,6 @@
 				44EBAA5619DF25BD00F8404C /* sss.html */,
 				44EBAA0C19DEFF2B00F8404C /* AppDelegate.h */,
 				44EBAA0D19DEFF2B00F8404C /* AppDelegate.m */,
-				44EBAA0F19DEFF2B00F8404C /* ViewController.h */,
-				44EBAA1019DEFF2B00F8404C /* ViewController.m */,
 				44EBAA1219DEFF2B00F8404C /* Main.storyboard */,
 				44EBAA1519DEFF2B00F8404C /* Images.xcassets */,
 				44EBAA1719DEFF2B00F8404C /* LaunchScreen.xib */,
@@ -151,6 +171,12 @@
 				44EBAA5C19DF2F9C00F8404C /* AdData.m */,
 				44EBAA5E19DF2FAE00F8404C /* AdDataContainer.h */,
 				44EBAA5F19DF2FAE00F8404C /* AdDataContainer.m */,
+				44EBAA6119DF3BA700F8404C /* URLTransformer.h */,
+				44EBAA6219DF3BA700F8404C /* URLTransformer.m */,
+				44EBAA6419DF44DD00F8404C /* AdsTableViewController.h */,
+				44EBAA6519DF44DD00F8404C /* AdsTableViewController.m */,
+				44EBAA6719DF4E7F00F8404C /* AdTableViewCell.h */,
+				44EBAA6819DF4E7F00F8404C /* AdTableViewCell.m */,
 			);
 			path = XHProcessorTest;
 			sourceTree = "<group>";
@@ -181,53 +207,64 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		44EBAA2E19DEFF3800F8404C /* XHProcessor */ = {
+		44EBAA6F19E0A2B200F8404C /* XH */ = {
 			isa = PBXGroup;
 			children = (
-				44EBAA3519DF116300F8404C /* libexslt */,
-				44EBAA3919DF116300F8404C /* libxslt */,
-				44EBAA2F19DF021A00F8404C /* XHProcessor.h */,
-				44EBAA3019DF021A00F8404C /* XHProcessor.m */,
+				44EBAA7019E0A2B200F8404C /* XH.h */,
+				44EBAA7119E0A2B200F8404C /* XHTransformation.h */,
+				44EBAA7219E0A2B200F8404C /* XHTransformation.m */,
+				44EBAA7319E0A2B200F8404C /* libexslt */,
+				44EBAA7719E0A2B200F8404C /* libxslt */,
 			);
-			path = XHProcessor;
+			name = XH;
+			path = ../XH;
 			sourceTree = "<group>";
 		};
-		44EBAA3519DF116300F8404C /* libexslt */ = {
+		44EBAA7319E0A2B200F8404C /* libexslt */ = {
 			isa = PBXGroup;
 			children = (
-				44EBAA3619DF116300F8404C /* exslt.h */,
-				44EBAA3719DF116300F8404C /* exsltconfig.h */,
-				44EBAA3819DF116300F8404C /* exsltexports.h */,
+				44EBAA7419E0A2B200F8404C /* exslt.h */,
+				44EBAA7519E0A2B200F8404C /* exsltconfig.h */,
+				44EBAA7619E0A2B200F8404C /* exsltexports.h */,
 			);
 			path = libexslt;
 			sourceTree = "<group>";
 		};
-		44EBAA3919DF116300F8404C /* libxslt */ = {
+		44EBAA7719E0A2B200F8404C /* libxslt */ = {
 			isa = PBXGroup;
 			children = (
-				44EBAA3A19DF116300F8404C /* attributes.h */,
-				44EBAA3B19DF116300F8404C /* documents.h */,
-				44EBAA3C19DF116300F8404C /* extensions.h */,
-				44EBAA3D19DF116300F8404C /* extra.h */,
-				44EBAA3E19DF116300F8404C /* functions.h */,
-				44EBAA3F19DF116300F8404C /* imports.h */,
-				44EBAA4019DF116300F8404C /* keys.h */,
-				44EBAA4119DF116300F8404C /* namespaces.h */,
-				44EBAA4219DF116300F8404C /* numbersInternals.h */,
-				44EBAA4319DF116300F8404C /* pattern.h */,
-				44EBAA4419DF116300F8404C /* preproc.h */,
-				44EBAA4519DF116300F8404C /* security.h */,
-				44EBAA4619DF116300F8404C /* templates.h */,
-				44EBAA4719DF116300F8404C /* transform.h */,
-				44EBAA4819DF116300F8404C /* variables.h */,
-				44EBAA4919DF116300F8404C /* xslt.h */,
-				44EBAA4A19DF116300F8404C /* xsltInternals.h */,
-				44EBAA4B19DF116300F8404C /* xsltconfig.h */,
-				44EBAA4C19DF116300F8404C /* xsltexports.h */,
-				44EBAA4D19DF116300F8404C /* xsltlocale.h */,
-				44EBAA4E19DF116300F8404C /* xsltutils.h */,
+				44EBAA7819E0A2B200F8404C /* attributes.h */,
+				44EBAA7919E0A2B200F8404C /* documents.h */,
+				44EBAA7A19E0A2B200F8404C /* extensions.h */,
+				44EBAA7B19E0A2B200F8404C /* extra.h */,
+				44EBAA7C19E0A2B200F8404C /* functions.h */,
+				44EBAA7D19E0A2B200F8404C /* imports.h */,
+				44EBAA7E19E0A2B200F8404C /* keys.h */,
+				44EBAA7F19E0A2B200F8404C /* namespaces.h */,
+				44EBAA8019E0A2B200F8404C /* numbersInternals.h */,
+				44EBAA8119E0A2B200F8404C /* pattern.h */,
+				44EBAA8219E0A2B200F8404C /* preproc.h */,
+				44EBAA8319E0A2B200F8404C /* security.h */,
+				44EBAA8419E0A2B200F8404C /* templates.h */,
+				44EBAA8519E0A2B200F8404C /* transform.h */,
+				44EBAA8619E0A2B200F8404C /* variables.h */,
+				44EBAA8719E0A2B200F8404C /* xslt.h */,
+				44EBAA8819E0A2B200F8404C /* xsltInternals.h */,
+				44EBAA8919E0A2B200F8404C /* xsltconfig.h */,
+				44EBAA8A19E0A2B200F8404C /* xsltexports.h */,
+				44EBAA8B19E0A2B200F8404C /* xsltlocale.h */,
+				44EBAA8C19E0A2B200F8404C /* xsltutils.h */,
 			);
 			path = libxslt;
+			sourceTree = "<group>";
+		};
+		6F2B98CA02ED9F7D840B584D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55EC2D032474454903ECA634 /* Pods.debug.xcconfig */,
+				C0F12CA4F50DAC0B8CBE9445 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,9 +274,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44EBAA2819DEFF2B00F8404C /* Build configuration list for PBXNativeTarget "XHProcessorTest" */;
 			buildPhases = (
+				44AB911374CADC4139E72D8F /* Check Pods Manifest.lock */,
 				44EBAA0119DEFF2B00F8404C /* Sources */,
 				44EBAA0219DEFF2B00F8404C /* Frameworks */,
 				44EBAA0319DEFF2B00F8404C /* Resources */,
+				06CAD66131269BF03C6C92AB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,14 +369,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06CAD66131269BF03C6C92AB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44AB911374CADC4139E72D8F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		44EBAA0119DEFF2B00F8404C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44EBAA3119DF021A00F8404C /* XHProcessor.m in Sources */,
-				44EBAA1119DEFF2B00F8404C /* ViewController.m in Sources */,
+				44EBAA6619DF44DD00F8404C /* AdsTableViewController.m in Sources */,
 				44EBAA6019DF2FAE00F8404C /* AdDataContainer.m in Sources */,
+				44EBAA6319DF3BA700F8404C /* URLTransformer.m in Sources */,
+				44EBAA6919DF4E7F00F8404C /* AdTableViewCell.m in Sources */,
+				44EBAA8D19E0A2B200F8404C /* XHTransformation.m in Sources */,
 				44EBAA0E19DEFF2B00F8404C /* AppDelegate.m in Sources */,
 				44EBAA5D19DF2F9C00F8404C /* AdData.m in Sources */,
 				44EBAA0B19DEFF2B00F8404C /* main.m in Sources */,
@@ -460,6 +534,7 @@
 		};
 		44EBAA2919DEFF2B00F8404C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55EC2D032474454903ECA634 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -480,6 +555,7 @@
 		};
 		44EBAA2A19DEFF2B00F8404C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F12CA4F50DAC0B8CBE9445 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -551,6 +627,7 @@
 				44EBAA2A19DEFF2B00F8404C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44EBAA2B19DEFF2B00F8404C /* Build configuration list for PBXNativeTarget "XHProcessorTestTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +636,7 @@
 				44EBAA2D19DEFF2B00F8404C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

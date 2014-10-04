@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "XHProcessor.h"
 
 @interface AppDelegate ()
 
@@ -17,19 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString *adsearchXSLTPath = [[NSBundle mainBundle] pathForResource:@"adsearch" ofType:@"xsl"];
-    NSString *adsearchHTMLPath = [[NSBundle mainBundle] pathForResource:@"sss" ofType:@"html"];
-    
-    NSError *error = nil;
-    NSString *adsearchXSLT = [NSString stringWithContentsOfFile:adsearchXSLTPath encoding:NSUTF8StringEncoding error:&error];
-    NSString *adsearchHTML = [NSString stringWithContentsOfFile:adsearchHTMLPath encoding:NSUTF8StringEncoding error:&error];
-    
-    XHProcessor *processor = [[XHProcessor alloc] initWithXSLT:adsearchXSLT];
-    processor.params = @{@"CLURL":@"'http://losangeles.craigslist.org/sss'"};
-
-    NSString *processed = [processor processHTML:adsearchHTML];
-
-    NSLog(@"processed html: %@",processed);
     return YES;
 }
 

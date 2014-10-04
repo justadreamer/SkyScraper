@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
+#import "AdData.h"
 
-@interface AdDataContainer : NSObject
+@interface AdDataContainer : MTLModel<MTLJSONSerializing>
 @property (nonatomic,strong) NSString *title;
-@property (nonatomic,strong) NSURL *URLnext;
+@property (nonatomic,strong) NSURL *URLNext;
 @property (nonatomic,strong) NSArray *ads;
 @end

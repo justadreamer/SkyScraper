@@ -7,7 +7,23 @@
 //
 
 #import "AdDataContainer.h"
+#import "AdData.h"
+#import "URLTransformer.h"
 
 @implementation AdDataContainer
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"title" : @"title",
+             @"URLNext" : @"linkNext",
+             @"ads" : @"ads"
+             };
+}
 
++ (NSValueTransformer *)adsJSONTransformer {
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:AdData.class];
+}
+
++ (NSValueTransformer *)URLNextJSONTransformer {
+    return [URLTransformer transformer];
+}
 @end
