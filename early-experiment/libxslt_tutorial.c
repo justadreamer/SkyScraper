@@ -25,6 +25,8 @@ static void usage(const char *name) {
 
 int
 main(int argc, char **argv) {
+
+  printf ("has xml include: %d",xmlHasFeature(XML_WITH_XINCLUDE));
   int i;
   const char *params[16 + 1];
   int nbparams = 0;
@@ -60,7 +62,12 @@ main(int argc, char **argv) {
   params[nbparams] = NULL;
   xmlSubstituteEntitiesDefault(1);
   xmlLoadExtDtdDefaultValue = 1;
-  cur = xsltParseStylesheetFile((const xmlChar *)argv[i]);
+
+  xmlDocPtr stylesheetDoc = xmlReadFile(argv[i], NULL, XML_PARSE_RECOVER | XML_PARSE_NOENT | XML_PARSE_XINCLUDE);
+  xmlXIncludeProcess(stylesheetDoc);
+  cur = xsltParseStylesheetDoc(stylesheetDoc);
+
+  //cur = xsltParseStylesheetFile((const xmlChar *)argv[i]);
   i++;
   doc = htmlParseFile(argv[i],NULL);
   res = xsltApplyStylesheet(cur, doc, params);

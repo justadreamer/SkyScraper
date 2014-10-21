@@ -1,0 +1,14 @@
+PODS:
+  - XHTransformation (0.1)
+
+DEPENDENCIES:
+  - XHTransformation (from `../`)
+
+EXTERNAL SOURCES:
+  XHTransformation:
+    :path: ../
+
+SPEC CHECKSUMS:
+  XHTransformation: b0d8fe82c762a4656d51aa9fe63b35f6dd4fc2e9
+
+COCOAPODS: 0.34.4
