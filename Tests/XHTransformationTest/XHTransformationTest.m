@@ -18,8 +18,8 @@
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     NSString *adsearchHTMLPath = [bundle pathForResource:@"adsearch" ofType:@"html"];
     NSError *error = nil;
-    NSString *html = [NSString stringWithContentsOfFile:adsearchHTMLPath encoding:NSUTF8StringEncoding error:&error];
-    NSDictionary *dict = [transformation JSONObjectFromHTML:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
+    NSData *html = [NSData dataWithContentsOfFile:adsearchHTMLPath];
+    NSDictionary *dict = [transformation JSONObjectFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
     XCTAssertNotNil(dict);
     if (dict) {
         NSArray *ads = dict[@"ads"];
@@ -84,8 +84,8 @@
     XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:[NSURL fileURLWithPath:postformXSLPath]];
     
     NSString *postformHTMLPath = [bundle pathForResource:@"postform" ofType:@"html"];
-    NSString *html = [NSString stringWithContentsOfFile:postformHTMLPath encoding:NSUTF8StringEncoding error:&error];
-    NSDictionary *form = [transformation JSONObjectFromHTML:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
+    NSData *html = [NSData dataWithContentsOfFile:postformHTMLPath];
+    NSDictionary *form = [transformation JSONObjectFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
     NSLog(@"%@",form);
     XCTAssertNotNil(form);
     XCTAssertEqualObjects(form[@"form_action"],@"https://post.craigslist.org/k/5PggyFxH5BGkB8vLjhH61A/h0SwJ");

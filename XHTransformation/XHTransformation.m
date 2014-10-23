@@ -1,11 +1,3 @@
-//
-//  XHProcessor.m
-//  XHProcessorTest
-//
-//  Created by Eugene Dorfman on 10/3/14.
-//  Copyright (c) 2014 justadreamer. All rights reserved.
-//
-
 #include <string.h>
 #include <libxml/xmlmemory.h>
 #include <libxml/debugXML.h>
@@ -64,7 +56,7 @@ extern int xmlLoadExtDtdDefaultValue;
     self.stylesheet = xsltParseStylesheetDoc(styleSheetDoc);
 }
 
-- (NSData *) transformedDataFromHTML:(NSString *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
+- (NSData *) transformedDataFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
         *error = [NSError errorWithDomain:XHErrorDomain code:1 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"Either no stylesheet provided, or failed to parse the one provided"}];
@@ -97,7 +89,7 @@ extern int xmlLoadExtDtdDefaultValue;
     
 
     /* actual applying stylesheet */
-    htmlDocPtr doc = htmlParseDoc((xmlChar *)[html cStringUsingEncoding:NSUTF8StringEncoding], NULL);
+    htmlDocPtr doc = htmlParseDoc((xmlChar *)[html bytes], NULL);
     htmlDocPtr res = xsltApplyStylesheet(self.stylesheet, doc, (const char **)paramsBuf);
     
     /* dumping bytes of the result */
@@ -129,8 +121,8 @@ extern int xmlLoadExtDtdDefaultValue;
     return result;
 }
 
-- (NSString *) stringFromHTML:(NSString *)html withParams:(NSDictionary *)params error:(NSError *__autoreleasing *)error {
-    NSData *data = [self transformedDataFromHTML:html withParams:params error:error];
+- (NSString *) stringFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError *__autoreleasing *)error {
+    NSData *data = [self transformedDataFromHTMLData:html withParams:params error:error];
     NSString *result = nil;
     if (data) {
         result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -138,8 +130,8 @@ extern int xmlLoadExtDtdDefaultValue;
     return result;
 }
 
-- (id) JSONObjectFromHTML:(NSString *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
-    NSData *data = [self transformedDataFromHTML:html withParams:params error:error];
+- (id) JSONObjectFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
+    NSData *data = [self transformedDataFromHTMLData:html withParams:params error:error];
     id JSONObject = nil;
     if (data) {
         JSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];

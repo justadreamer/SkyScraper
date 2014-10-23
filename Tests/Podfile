@@ -3,4 +3,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 
-pod 'XHTransformation', :path => '../'
+pod 'XHTransformation/Base', :path => '../'
+
+target 'XHCLScraping' do
+    pod 'XHTransformation'
+end

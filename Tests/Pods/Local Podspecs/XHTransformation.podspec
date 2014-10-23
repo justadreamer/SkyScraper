@@ -9,10 +9,29 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.8'
   s.requires_arc = true
-  s.source_files = 'XHTransformation/*.{h,m}'
-  s.private_header_files = ['XHTransformation/libxslt/*.h','XHTransformation/libexslt/*.h']
-  s.preserve_paths = 'XHTransformation/{libxslt,libexslt}'
   s.homepage = 'https://github.com/justadreamer/iOS-XSLT-HTMLScraper'
-  s.libraries = 'xslt', 'exslt', 'xml2'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+
+  s.dependency 'XHTransformation/Base'
+  s.dependency 'XHTransformation/AFNetworking'
+  s.dependency 'XHTransformation/Mantle'
+
+  s.subspec 'Base' do |ss|
+    ss.source_files = ['XHTransformation/XHTransformation.{h,m}', 'XHTransformation/XHModelAdapter.h']
+    ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+    ss.libraries = 'xslt', 'exslt', 'xml2'
+    ss.preserve_paths = 'XHTransformation/{libxslt,libexslt}'
+    ss.private_header_files = ['XHTransformation/libxslt/XHTransformation.h','XHTransformation/libexslt/*.h']
+  end
+
+  s.subspec 'AFNetworking' do |ss|
+    ss.dependency 'XHTransformation/Base'
+    ss.dependency 'AFNetworking'
+    ss.source_files = 'XHTransformation/XHTransformationHTMLResponseSerializer.{h,m}'
+  end
+
+  s.subspec 'Mantle' do |ss|
+    ss.dependency 'XHTransformation/Base'
+    ss.dependency 'Mantle'
+    ss.source_files = 'XHTransformation/XHMantleModelAdapter.{h,m}'
+  end
 end
