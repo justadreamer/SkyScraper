@@ -23,6 +23,7 @@ PODS:
   - Mantle (1.5.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.5.1)
+  - SVProgressHUD (1.0)
   - XHTransformation (0.1):
     - XHTransformation/AFNetworking
     - XHTransformation/AFNetworking
@@ -46,6 +47,7 @@ PODS:
     - XHTransformation/Mantle
 
 DEPENDENCIES:
+  - SVProgressHUD
   - XHTransformation
   - XHTransformation/Base (from `../`)
 
@@ -56,6 +58,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
   XHTransformation: 4d6425deedaf118fd7cb92702b66cfd12b7d1a7f
 
 COCOAPODS: 0.34.4

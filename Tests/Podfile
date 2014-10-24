@@ -7,4 +7,5 @@ pod 'XHTransformation/Base', :path => '../'
 
 target 'XHCLScraping' do
     pod 'XHTransformation'
+    pod 'SVProgressHUD'
 end
