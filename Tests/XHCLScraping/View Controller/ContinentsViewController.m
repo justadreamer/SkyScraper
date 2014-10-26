@@ -6,8 +6,6 @@
 //
 //
 
-#import "Macros.h"
-
 #import <AFNetworking/AFNetworking.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <XHTransformation/XHTransformation.h>
@@ -27,15 +25,19 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)];
+    [self loadData];
+}
 
+- (void) loadData {
     NSURL *URLlocationsXSL = [[NSBundle mainBundle] URLForResource:@"locations" withExtension:@"xsl"];
     XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:URLlocationsXSL];
-    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(CLURLAboutSites)} modelAdapter:nil];
+    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:nil];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:CLURLAboutSites]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;
-
+    
     __typeof(self) __weak weakSelf = self;
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         [SVProgressHUD dismiss];
@@ -45,8 +47,8 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
         [SVProgressHUD dismiss];
         NSLog(@"%@",error);
     }];
-
-    [SVProgressHUD showWithStatus:@"Loading..."];
+    
+    [SVProgressHUD showWithStatus:@"Loading locations..."];
     [operation start];
 }
 
@@ -67,7 +69,6 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"StateCell"];
     cell.textLabel.text = self.locationsTree[@"continents"][indexPath.row][@"name"];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "SitesViewController.h"
-#import "AdsViewController.h"
+#import "CategoriesViewController.h"
 
 @interface SitesViewController ()
 
@@ -35,7 +35,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AdsViewController *adsVC = segue.destinationViewController;
+    CategoriesViewController *adsVC = segue.destinationViewController;
     NSDictionary *site = self.sites[[self.tableView indexPathForSelectedRow].row];
     adsVC.site = site;
 }

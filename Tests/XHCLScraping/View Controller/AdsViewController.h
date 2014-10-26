@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AdsViewController : UITableViewController
-@property (nonatomic,strong) NSDictionary *site;
+@property (nonatomic,strong) NSDictionary *subcategory;
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		444CADBB19FD89D5009FCCBA /* tpl_sanitize.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 444CADB919FD89D5009FCCBA /* tpl_sanitize.xsl */; };
+		444CADBC19FD89D5009FCCBA /* tpl_prepend_url.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 444CADBA19FD89D5009FCCBA /* tpl_prepend_url.xsl */; };
 		447F7A0919F6E66D0089D036 /* XHTransformationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 447F7A0819F6E66D0089D036 /* XHTransformationTest.m */; };
 		447F7A0E19F6E6850089D036 /* testinclude.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A0B19F6E6850089D036 /* testinclude.xsl */; };
 		447F7A0F19F6E6850089D036 /* included.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A0C19F6E6850089D036 /* included.xsl */; };
@@ -27,6 +29,10 @@
 		44C5140619FAEBF1003F5456 /* StatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5140519FAEBF1003F5456 /* StatesViewController.m */; };
 		44C5140919FAF19F003F5456 /* SitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5140819FAF19F003F5456 /* SitesViewController.m */; };
 		44C5140C19FAFB95003F5456 /* AdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5140B19FAFB95003F5456 /* AdsViewController.m */; };
+		44C5140F19FB0332003F5456 /* adsearch.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44C5140E19FB0332003F5456 /* adsearch.xsl */; };
+		44C5141219FB037B003F5456 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5141119FB037B003F5456 /* CategoriesViewController.m */; };
+		44C5141419FC182E003F5456 /* categories.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44C5141319FC182E003F5456 /* categories.xsl */; };
+		44C5141719FD42BB003F5456 /* SubcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5141619FD42BB003F5456 /* SubcategoriesViewController.m */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
 		D628BE6A0683480ECC46F504 /* libPods-XHCLScraping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */; };
 /* End PBXBuildFile section */
@@ -34,6 +40,8 @@
 /* Begin PBXFileReference section */
 		25F9D2E0D60E5A6093853BB9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6F7503C45E2C7234F4219B /* Pods-XHCLScraping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.debug.xcconfig"; sourceTree = "<group>"; };
+		444CADB919FD89D5009FCCBA /* tpl_sanitize.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tpl_sanitize.xsl; path = XSLT/tpl_sanitize.xsl; sourceTree = "<group>"; };
+		444CADBA19FD89D5009FCCBA /* tpl_prepend_url.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tpl_prepend_url.xsl; path = XSLT/tpl_prepend_url.xsl; sourceTree = "<group>"; };
 		447F79FE19F6E6500089D036 /* XHTransformationTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHTransformationTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447F7A0219F6E6500089D036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447F7A0819F6E66D0089D036 /* XHTransformationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTransformationTest.m; sourceTree = "<group>"; };
@@ -67,6 +75,12 @@
 		44C5140A19FAFB95003F5456 /* AdsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdsViewController.h; sourceTree = "<group>"; };
 		44C5140B19FAFB95003F5456 /* AdsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdsViewController.m; sourceTree = "<group>"; };
 		44C5140D19FAFD0C003F5456 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		44C5140E19FB0332003F5456 /* adsearch.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = adsearch.xsl; path = XSLT/adsearch.xsl; sourceTree = "<group>"; };
+		44C5141019FB037B003F5456 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		44C5141119FB037B003F5456 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		44C5141319FC182E003F5456 /* categories.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = categories.xsl; path = XSLT/categories.xsl; sourceTree = "<group>"; };
+		44C5141519FD42BB003F5456 /* SubcategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoriesViewController.h; sourceTree = "<group>"; };
+		44C5141619FD42BB003F5456 /* SubcategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewController.m; sourceTree = "<group>"; };
 		549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.release.xcconfig"; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF807E82B0AEDFC20765EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +187,11 @@
 		44C513F019FAD3B3003F5456 /* XSLT */ = {
 			isa = PBXGroup;
 			children = (
+				444CADB919FD89D5009FCCBA /* tpl_sanitize.xsl */,
+				444CADBA19FD89D5009FCCBA /* tpl_prepend_url.xsl */,
+				44C5140E19FB0332003F5456 /* adsearch.xsl */,
 				44C513F119FAD3CF003F5456 /* locations.xsl */,
+				44C5141319FC182E003F5456 /* categories.xsl */,
 			);
 			name = XSLT;
 			sourceTree = "<group>";
@@ -187,6 +205,10 @@
 				44C5140519FAEBF1003F5456 /* StatesViewController.m */,
 				44C5140719FAF19F003F5456 /* SitesViewController.h */,
 				44C5140819FAF19F003F5456 /* SitesViewController.m */,
+				44C5141019FB037B003F5456 /* CategoriesViewController.h */,
+				44C5141119FB037B003F5456 /* CategoriesViewController.m */,
+				44C5141519FD42BB003F5456 /* SubcategoriesViewController.h */,
+				44C5141619FD42BB003F5456 /* SubcategoriesViewController.m */,
 				44C5140A19FAFB95003F5456 /* AdsViewController.h */,
 				44C5140B19FAFB95003F5456 /* AdsViewController.m */,
 			);
@@ -320,10 +342,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444CADBB19FD89D5009FCCBA /* tpl_sanitize.xsl in Resources */,
 				447F7A2919F6EF1B0089D036 /* Main.storyboard in Resources */,
+				44C5141419FC182E003F5456 /* categories.xsl in Resources */,
+				44C5140F19FB0332003F5456 /* adsearch.xsl in Resources */,
 				447F7A2E19F6EF1B0089D036 /* LaunchScreen.xib in Resources */,
 				44C513F219FAD3CF003F5456 /* locations.xsl in Resources */,
 				447F7A2B19F6EF1B0089D036 /* Images.xcassets in Resources */,
+				444CADBC19FD89D5009FCCBA /* tpl_prepend_url.xsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,9 +436,11 @@
 				447F7A2019F6EF1B0089D036 /* main.m in Sources */,
 				44C5140219FAD410003F5456 /* AdDataContainer.m in Sources */,
 				44C5140319FAD410003F5456 /* URLTransformer.m in Sources */,
+				44C5141719FD42BB003F5456 /* SubcategoriesViewController.m in Sources */,
 				44C5140619FAEBF1003F5456 /* StatesViewController.m in Sources */,
 				44C5140119FAD410003F5456 /* AdData.m in Sources */,
 				44C513FF19FAD410003F5456 /* ContinentsViewController.m in Sources */,
+				44C5141219FB037B003F5456 /* CategoriesViewController.m in Sources */,
 				44C5140919FAF19F003F5456 /* SitesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

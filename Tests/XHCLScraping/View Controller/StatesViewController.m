@@ -24,11 +24,9 @@
     return self.states.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StateCell"  forIndexPath:indexPath];
     cell.textLabel.text = self.states[indexPath.row][@"name"];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
