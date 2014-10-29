@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44426CB71A0168EC000DB4B7 /* entities.html in Resources */ = {isa = PBXBuildFile; fileRef = 44426CB51A0168EC000DB4B7 /* entities.html */; };
+		44426CB81A0168EC000DB4B7 /* entities.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44426CB61A0168EC000DB4B7 /* entities.xsl */; };
 		444CADBB19FD89D5009FCCBA /* tpl_sanitize.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 444CADB919FD89D5009FCCBA /* tpl_sanitize.xsl */; };
 		444CADBC19FD89D5009FCCBA /* tpl_prepend_url.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 444CADBA19FD89D5009FCCBA /* tpl_prepend_url.xsl */; };
 		447F7A0919F6E66D0089D036 /* XHTransformationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 447F7A0819F6E66D0089D036 /* XHTransformationTest.m */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		25F9D2E0D60E5A6093853BB9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6F7503C45E2C7234F4219B /* Pods-XHCLScraping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.debug.xcconfig"; sourceTree = "<group>"; };
+		44426CB51A0168EC000DB4B7 /* entities.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = entities.html; sourceTree = "<group>"; };
+		44426CB61A0168EC000DB4B7 /* entities.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entities.xsl; sourceTree = "<group>"; };
 		444CADB919FD89D5009FCCBA /* tpl_sanitize.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tpl_sanitize.xsl; path = XSLT/tpl_sanitize.xsl; sourceTree = "<group>"; };
 		444CADBA19FD89D5009FCCBA /* tpl_prepend_url.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tpl_prepend_url.xsl; path = XSLT/tpl_prepend_url.xsl; sourceTree = "<group>"; };
 		447F79FE19F6E6500089D036 /* XHTransformationTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHTransformationTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44426CB41A0168EC000DB4B7 /* XSLT */ = {
+			isa = PBXGroup;
+			children = (
+				44426CB51A0168EC000DB4B7 /* entities.html */,
+				44426CB61A0168EC000DB4B7 /* entities.xsl */,
+			);
+			path = XSLT;
+			sourceTree = "<group>";
+		};
 		447F79F319F6E63C0089D036 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +161,7 @@
 		447F7A0A19F6E6740089D036 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44426CB41A0168EC000DB4B7 /* XSLT */,
 				447F7A1119F6E6910089D036 /* postform.xsl */,
 				447F7A1219F6E6910089D036 /* adsearch.html */,
 				447F7A1319F6E6910089D036 /* postform.html */,
@@ -331,10 +345,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				447F7A1519F6E6910089D036 /* adsearch.html in Resources */,
+				44426CB71A0168EC000DB4B7 /* entities.html in Resources */,
 				447F7A0E19F6E6850089D036 /* testinclude.xsl in Resources */,
 				447F7A1619F6E6910089D036 /* postform.html in Resources */,
 				447F7A1019F6E6850089D036 /* adsearch.xsl in Resources */,
 				447F7A0F19F6E6850089D036 /* included.xsl in Resources */,
+				44426CB81A0168EC000DB4B7 /* entities.xsl in Resources */,
 				447F7A1419F6E6910089D036 /* postform.xsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -45,7 +45,7 @@ extern int xmlLoadExtDtdDefaultValue;
 
 - (instancetype) initWithXSLTURL:(NSURL *)URL {
     if (self = [super init]) {
-        xmlDocPtr stylesheetDoc = xmlReadFile([[URL absoluteString] cStringUsingEncoding:NSUTF8StringEncoding], NULL, XML_PARSE_RECOVER | XML_PARSE_NOENT | XML_PARSE_XINCLUDE);
+        xmlDocPtr stylesheetDoc = xmlReadFile([[URL absoluteString] cStringUsingEncoding:NSUTF8StringEncoding], NULL, XSLT_PARSE_OPTIONS | XML_PARSE_XINCLUDE);
         [self setupStyleSheetFromXMLDoc:stylesheetDoc];
     }
     return self;
@@ -86,18 +86,29 @@ extern int xmlLoadExtDtdDefaultValue;
         }
     }];
     paramsBuf[i]=NULL;
-    
+
+    htmlDocPtr doc = htmlReadDoc((xmlChar *)[html bytes], NULL, NULL, XSLT_PARSE_OPTIONS);
+
+    xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
+    if (ctxt == NULL) {
+        *error = [NSError errorWithDomain:XHErrorDomain code:3 userInfo:
+                  @{NSLocalizedFailureReasonErrorKey : @"Unable to create transform context"}];
+        return nil;
+    }
+
+    xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    ctxt->xinclude = 1;
 
     /* actual applying stylesheet */
-    htmlDocPtr doc = htmlParseDoc((xmlChar *)[html bytes], NULL);
-    htmlDocPtr res = xsltApplyStylesheet(self.stylesheet, doc, (const char **)paramsBuf);
-    
+    xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)paramsBuf, NULL, NULL, ctxt);
+
+    xsltFreeTransformContext(ctxt);
     /* dumping bytes of the result */
     xmlChar *buf;
     int size;
-    
-    htmlDocDumpMemory(res, &buf, &size);
-    
+
+    xsltSaveResultToString(&buf, &size, res, self.stylesheet);
+
     /* freeing parameters */
     for (int i=0;i<nParams;++i) {
         if (paramsBuf[i]) {

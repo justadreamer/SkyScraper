@@ -24,7 +24,7 @@
     if (dict) {
         NSArray *ads = dict[@"ads"];
         XCTAssertEqual(ads.count, 100);
-        XCTAssertEqualObjects(dict[@"linkNext"], @"http://losangeles.craigslist.org/search/sss?s=100&amp;");
+        XCTAssertEqualObjects(dict[@"linkNext"], @"http://losangeles.craigslist.org/search/sss?s=100&");
         
         NSDictionary *ad = ads[0];
         /*
@@ -50,8 +50,8 @@
 
 - (void)testInitWithURL {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    NSString *adsearchXSLPath = [bundle pathForResource:@"adsearch" ofType:@"xsl"];
-    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:[NSURL fileURLWithPath:adsearchXSLPath]];
+    NSURL *adsearchXSLURL = [bundle URLForResource:@"adsearch" withExtension:@"xsl"];
+    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:adsearchXSLURL];
     [self processAdSearchHTMLWithTransformation:transformation];
 }
 
@@ -110,4 +110,20 @@
     XCTAssertEqualObjects(field1[@"is_required"], @1);
 }
 
+
+- (void) testReplacingEntities {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *entitiesXSLURL = [bundle URLForResource:@"entities" withExtension:@"xsl"];
+    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:entitiesXSLURL];
+    
+    NSString *entitiexHTMLPath = [bundle pathForResource:@"entities" ofType:@"html"];
+    NSData *html = [NSData dataWithContentsOfFile:entitiexHTMLPath];
+    NSError *error = nil;
+    NSDictionary *result = [transformation JSONObjectFromHTMLData:html withParams:nil error:&error];
+    
+    XCTAssertNotNil(result);
+    
+    XCTAssertEqualObjects(result[@"link"], @"http://losangeles.craigslist.org/?param=1&param=2");
+    XCTAssertEqualObjects(result[@"text"], @"test1 & test2");
+}
 @end
