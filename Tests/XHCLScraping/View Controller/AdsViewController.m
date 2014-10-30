@@ -17,6 +17,7 @@
 
 #import "AdDataContainer.h"
 #import "AdData.h"
+#import "AdCell.h"
 
 @interface AdsViewController ()
 @property (nonatomic,strong) AdDataContainer *container;
@@ -26,8 +27,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*debug:     */
+    self.subcategory = @{
+     @"link" : @"http://bakersfield.craigslist.org/search/ata",
+     @"name" : @"antiques"
+    };
+
     self.title = self.subcategory[@"name"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 82.0;
     [self loadData];
 }
 
@@ -43,7 +52,7 @@
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;
-    
+
     __typeof(self) __weak weakSelf = self;
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         [SVProgressHUD dismiss];
@@ -74,10 +83,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AdCell" forIndexPath:indexPath];
+    AdCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AdCell" forIndexPath:indexPath];
     AdData *adData = self.container.ads[indexPath.row];
-    cell.textLabel.text = adData.title;
-    cell.textLabel.numberOfLines = 0;
+    cell.adData = adData;
+
+    cell.frame = CGRectMake(0, 0, tableView.frame.size.width, 0);
+    [cell layoutIfNeeded];
+
     return cell;
 }
 

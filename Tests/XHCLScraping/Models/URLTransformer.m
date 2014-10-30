@@ -11,7 +11,7 @@
 @implementation URLTransformer
 + (instancetype) transformer {
     return [self reversibleTransformerWithForwardBlock:^NSURL *(NSString *link) {
-        return [NSURL URLWithString:link];
+        return [link length] ? [NSURL URLWithString:link] : nil;
     } reverseBlock:^NSString *(NSURL *URL) {
         return [URL absoluteString];
     }];
