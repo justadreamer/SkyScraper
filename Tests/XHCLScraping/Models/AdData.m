@@ -18,7 +18,13 @@
              @"thumbnailURL":@"thumbnail",
              @"date":@"date",
              @"price":@"price",
-             @"location":@"location"
+             @"location":@"location",
+             
+             @"htmlBody":@"html_body",
+             @"textBody":@"text_body",
+             @"posted":@"posted",
+             @"updated":@"updated",
+             @"imageURLs":@"image_urls"
              };
 }
 
@@ -28,6 +34,16 @@
 
 + (NSValueTransformer *) thumbnailURLJSONTransformer {
     return [URLTransformer transformer];
+}
+
++ (NSValueTransformer *) imageURLsJSONTransformer {
+    return [MTLValueTransformer transformerWithBlock:^NSArray *(NSArray *imageURLStrings) {
+        NSMutableArray *imageURLs = [NSMutableArray array];
+        for (NSString *s in imageURLStrings) {
+            [imageURLs addObject:[NSURL URLWithString:s]];
+        }
+        return imageURLs;
+    }];
 }
 
 @end

@@ -15,6 +15,13 @@
 @property (nonatomic,strong) NSURL *URL;
 @property (nonatomic,strong) NSURL *thumbnailURL;
 @property (nonatomic,strong) NSString *date;
+
+@property (nonatomic,strong) NSString *posted;
+@property (nonatomic,strong) NSString *updated;
+@property (nonatomic,strong) NSString *htmlBody;
+@property (nonatomic,strong) NSString *textBody;
+@property (nonatomic,strong) NSArray *imageURLs;
+
 @property (nonatomic,strong) NSString *price;
 @property (nonatomic,strong) NSString *location;
 @end

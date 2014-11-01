@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AdDetailViewController : UIViewController
-
+@property (nonatomic,strong) NSURL *adURL;
 @end

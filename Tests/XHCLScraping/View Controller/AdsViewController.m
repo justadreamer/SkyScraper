@@ -18,6 +18,7 @@
 #import "AdDataContainer.h"
 #import "AdData.h"
 #import "AdCell.h"
+#import "AdDetailViewController.h"
 
 @interface AdsViewController ()
 @property (nonatomic,strong) AdDataContainer *container;
@@ -97,7 +98,9 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    AdDetailViewController *detailViewController = (AdDetailViewController *)segue.destinationViewController;
+    AdData *adData = self.container.ads[[self.tableView indexPathForSelectedRow].row];
+    detailViewController.adURL = adData.URL;
 }
 
 @end

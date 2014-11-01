@@ -24,6 +24,7 @@
 		447F7A2919F6EF1B0089D036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A2719F6EF1B0089D036 /* Main.storyboard */; };
 		447F7A2B19F6EF1B0089D036 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A2A19F6EF1B0089D036 /* Images.xcassets */; };
 		447F7A2E19F6EF1B0089D036 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A2C19F6EF1B0089D036 /* LaunchScreen.xib */; };
+		44900B481A0574E400B5113F /* xml-to-string.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44900B471A0574E400B5113F /* xml-to-string.xsl */; };
 		44C513F219FAD3CF003F5456 /* locations.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44C513F119FAD3CF003F5456 /* locations.xsl */; };
 		44C513FF19FAD410003F5456 /* ContinentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C513F519FAD410003F5456 /* ContinentsViewController.m */; };
 		44C5140119FAD410003F5456 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C513FA19FAD410003F5456 /* AdData.m */; };
@@ -68,6 +69,7 @@
 		447F7A2819F6EF1B0089D036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		447F7A2A19F6EF1B0089D036 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		447F7A2D19F6EF1B0089D036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		44900B471A0574E400B5113F /* xml-to-string.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "xml-to-string.xsl"; path = "XSLT/xml-to-string.xsl"; sourceTree = "<group>"; };
 		44C513F119FAD3CF003F5456 /* locations.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = locations.xsl; path = XSLT/locations.xsl; sourceTree = "<group>"; };
 		44C513F419FAD410003F5456 /* ContinentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentsViewController.h; sourceTree = "<group>"; };
 		44C513F519FAD410003F5456 /* ContinentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinentsViewController.m; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		44C513F019FAD3B3003F5456 /* XSLT */ = {
 			isa = PBXGroup;
 			children = (
+				44900B471A0574E400B5113F /* xml-to-string.xsl */,
 				444CADB919FD89D5009FCCBA /* tpl_sanitize.xsl */,
 				444CADBA19FD89D5009FCCBA /* tpl_prepend_url.xsl */,
 				44C5140E19FB0332003F5456 /* adsearch.xsl */,
@@ -389,6 +392,7 @@
 				44CF8B931A02CAEC001593AB /* addetail.xsl in Resources */,
 				447F7A2B19F6EF1B0089D036 /* Images.xcassets in Resources */,
 				444CADBC19FD89D5009FCCBA /* tpl_prepend_url.xsl in Resources */,
+				44900B481A0574E400B5113F /* xml-to-string.xsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
