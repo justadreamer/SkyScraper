@@ -22,6 +22,10 @@
 @property (nonatomic,strong) IBOutlet UILabel *descrLabel;
 @property (nonatomic,strong) IBOutlet UIScrollView *imagesScrollView;
 @property (nonatomic,strong) IBOutlet NSLayoutConstraint *imagesScrollViewHeight;
+@property (nonatomic,strong) IBOutlet UILabel *postingIDLabel;
+@property (nonatomic,strong) IBOutlet UILabel *postedLabel;
+@property (nonatomic,strong) IBOutlet UILabel *updatedLabel;
+@property (nonatomic,strong) IBOutlet UIButton *openInSafariButton;
 @end
 
 @implementation AdDetailViewController
@@ -59,6 +63,10 @@
 - (void) redisplayData {
     self.titleLabel.text = self.adData.title;
     self.descrLabel.text = self.adData.textBody;
+    self.postingIDLabel.text = [NSString stringWithFormat:@"post id: %@",self.adData.postingID];
+    self.postedLabel.text = [NSString stringWithFormat:@"posted: %@",self.adData.posted];
+    self.updatedLabel.text = [NSString stringWithFormat:@"updated: %@", self.adData.updated];
+    self.openInSafariButton.hidden = NO;
     [self addImages];
 }
 
@@ -88,6 +96,10 @@
         [self.view addConstraints:horConstraints];
         [self.view addConstraints:verConstraints];
     }
+}
+
+- (IBAction) openInSafari:(id)sender {
+    [[UIApplication sharedApplication] openURL:self.adURL];
 }
 
 @end

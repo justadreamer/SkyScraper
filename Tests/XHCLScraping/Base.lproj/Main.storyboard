@@ -285,18 +285,67 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cQ-Uh-70u">
+                                        <rect key="frame" x="10" y="384" width="580" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oub-be-Imk">
+                                        <rect key="frame" x="10" y="412" width="580" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z4-s9-swk">
+                                        <rect key="frame" x="251" y="440" width="98" height="30"/>
+                                        <state key="normal" title="Open in Safari">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openInSafari:" destination="96q-XC-wNE" eventType="touchUpInside" id="yrZ-V5-ipQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72L-Bb-NNO">
+                                        <rect key="frame" x="10" y="358" width="580" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ORM-8U-mUC" secondAttribute="trailing" constant="10" id="0Ee-dP-MXr"/>
+                                    <constraint firstAttribute="centerX" secondItem="0Z4-s9-swk" secondAttribute="centerX" id="1Tf-Hh-dyy"/>
                                     <constraint firstItem="ORM-8U-mUC" firstAttribute="leading" secondItem="6df-q0-Se7" secondAttribute="leading" constant="10" id="Iij-pt-ieM"/>
                                     <constraint firstAttribute="bottom" secondItem="yQr-V3-b8O" secondAttribute="bottom" constant="10" id="MMw-ez-Fae"/>
+                                    <constraint firstItem="72L-Bb-NNO" firstAttribute="width" secondItem="yQr-V3-b8O" secondAttribute="width" id="N4E-aA-nnE"/>
+                                    <constraint firstItem="72L-Bb-NNO" firstAttribute="top" secondItem="yQr-V3-b8O" secondAttribute="bottom" constant="10" id="VD7-mJ-FeF"/>
+                                    <constraint firstItem="Oub-be-Imk" firstAttribute="leading" secondItem="5cQ-Uh-70u" secondAttribute="leading" id="VKF-OP-l6u"/>
                                     <constraint firstItem="YO6-cq-TXM" firstAttribute="leading" secondItem="6df-q0-Se7" secondAttribute="leading" id="W55-FQ-s8s"/>
+                                    <constraint firstItem="0Z4-s9-swk" firstAttribute="top" secondItem="Oub-be-Imk" secondAttribute="bottom" constant="10" id="XaE-EU-wnK"/>
+                                    <constraint firstItem="Oub-be-Imk" firstAttribute="leading" secondItem="5cQ-Uh-70u" secondAttribute="leading" id="XfT-sn-Y78"/>
+                                    <constraint firstItem="Oub-be-Imk" firstAttribute="width" secondItem="5cQ-Uh-70u" secondAttribute="width" id="Z3e-mF-5CN"/>
                                     <constraint firstItem="ORM-8U-mUC" firstAttribute="top" secondItem="6df-q0-Se7" secondAttribute="top" constant="10" id="cgd-n1-42m"/>
+                                    <constraint firstItem="72L-Bb-NNO" firstAttribute="leading" secondItem="yQr-V3-b8O" secondAttribute="leading" id="d7R-fw-Dny"/>
+                                    <constraint firstItem="5cQ-Uh-70u" firstAttribute="leading" secondItem="72L-Bb-NNO" secondAttribute="leading" id="dPO-hM-Xup"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oub-be-Imk" secondAttribute="bottom" constant="10" id="e1v-LE-gH5"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Z4-s9-swk" secondAttribute="bottom" constant="10" id="hSx-8T-37N"/>
                                     <constraint firstItem="yQr-V3-b8O" firstAttribute="top" secondItem="YO6-cq-TXM" secondAttribute="bottom" constant="8" id="i18-Xe-P5E"/>
                                     <constraint firstItem="YO6-cq-TXM" firstAttribute="top" secondItem="ORM-8U-mUC" secondAttribute="bottom" constant="8" id="jzj-mn-LhV"/>
+                                    <constraint firstItem="5cQ-Uh-70u" firstAttribute="width" secondItem="72L-Bb-NNO" secondAttribute="width" id="nDZ-JJ-qCz"/>
                                     <constraint firstItem="yQr-V3-b8O" firstAttribute="leading" secondItem="6df-q0-Se7" secondAttribute="leading" constant="10" id="oJu-qk-VJm"/>
+                                    <constraint firstItem="5cQ-Uh-70u" firstAttribute="leading" secondItem="72L-Bb-NNO" secondAttribute="leading" id="qqP-BE-TNT"/>
+                                    <constraint firstItem="Oub-be-Imk" firstAttribute="top" secondItem="5cQ-Uh-70u" secondAttribute="bottom" constant="10" id="wDC-5G-wEe"/>
+                                    <constraint firstItem="5cQ-Uh-70u" firstAttribute="top" secondItem="72L-Bb-NNO" secondAttribute="bottom" constant="10" id="wkq-OR-mGb"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MMw-ez-Fae"/>
+                                        <exclude reference="VKF-OP-l6u"/>
+                                        <exclude reference="e1v-LE-gH5"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,7 +380,11 @@
                         <outlet property="descrLabel" destination="yQr-V3-b8O" id="chG-vL-As8"/>
                         <outlet property="imagesScrollView" destination="YO6-cq-TXM" id="TGM-xq-e0J"/>
                         <outlet property="imagesScrollViewHeight" destination="OdB-vN-eih" id="VVb-81-ZfK"/>
+                        <outlet property="openInSafariButton" destination="0Z4-s9-swk" id="ntd-9S-LQ0"/>
+                        <outlet property="postedLabel" destination="5cQ-Uh-70u" id="EaI-N3-2gJ"/>
+                        <outlet property="postingIDLabel" destination="72L-Bb-NNO" id="pTc-SR-8gs"/>
                         <outlet property="titleLabel" destination="ORM-8U-mUC" id="Fv3-gh-IaU"/>
+                        <outlet property="updatedLabel" destination="Oub-be-Imk" id="RZb-he-ppQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZh-Sc-Pvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
