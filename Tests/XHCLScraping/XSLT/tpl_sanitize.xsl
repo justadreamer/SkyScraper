@@ -9,5 +9,9 @@
   <!--escape all quote with backslashes-->
   <xsl:param name="text2" select="str:replace($text1,'&quot;','\&quot;')"/>
 
-  <xsl:value-of select="$text2"/>
+  <!--finally normalize space-->
+  <xsl:param name="text3" select="normalize-space($text2)"/>
+
+  <!--output-->
+  <xsl:copy-of select="$text3"/>
 </xsl:template>

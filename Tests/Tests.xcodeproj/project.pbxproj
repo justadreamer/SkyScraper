@@ -37,6 +37,7 @@
 		44C5141419FC182E003F5456 /* categories.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44C5141319FC182E003F5456 /* categories.xsl */; };
 		44C5141719FD42BB003F5456 /* SubcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5141619FD42BB003F5456 /* SubcategoriesViewController.m */; };
 		44CF8B8B1A019D34001593AB /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF8B8A1A019D34001593AB /* AdDetailViewController.m */; };
+		44CF8B931A02CAEC001593AB /* addetail.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44CF8B921A02CAEC001593AB /* addetail.xsl */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
 		D628BE6A0683480ECC46F504 /* libPods-XHCLScraping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		44C5141619FD42BB003F5456 /* SubcategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewController.m; sourceTree = "<group>"; };
 		44CF8B891A019D34001593AB /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
 		44CF8B8A1A019D34001593AB /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDetailViewController.m; sourceTree = "<group>"; };
+		44CF8B921A02CAEC001593AB /* addetail.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = addetail.xsl; path = XSLT/addetail.xsl; sourceTree = "<group>"; };
 		549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.release.xcconfig"; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF807E82B0AEDFC20765EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				44C5140E19FB0332003F5456 /* adsearch.xsl */,
 				44C513F119FAD3CF003F5456 /* locations.xsl */,
 				44C5141319FC182E003F5456 /* categories.xsl */,
+				44CF8B921A02CAEC001593AB /* addetail.xsl */,
 			);
 			name = XSLT;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				44C5140F19FB0332003F5456 /* adsearch.xsl in Resources */,
 				447F7A2E19F6EF1B0089D036 /* LaunchScreen.xib in Resources */,
 				44C513F219FAD3CF003F5456 /* locations.xsl in Resources */,
+				44CF8B931A02CAEC001593AB /* addetail.xsl in Resources */,
 				447F7A2B19F6EF1B0089D036 /* Images.xcassets in Resources */,
 				444CADBC19FD89D5009FCCBA /* tpl_prepend_url.xsl in Resources */,
 			);
