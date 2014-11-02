@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+  
+  regexp: no+ (case)          string: n result: 
+  regexp: no+ (nocase)        string: n result: 
+  regexp: no+ (case,global)   string: n result: 
+  regexp: no+ (nocase,global) string: n result: 
+  
+  regexp: no+ (case)          string: no spot no result: 1 = no, 
+  regexp: no+ (nocase)        string: no spot no result: 1 = no, 
+  regexp: no+ (case,global)   string: no spot no result: 1 = no, 2 = no, 
+  regexp: no+ (nocase,global) string: no spot no result: 1 = no, 2 = no, 
+  
+  regexp: no+ (case)          string: nO result: 
+  regexp: no+ (nocase)        string: nO result: 1 = nO, 
+  regexp: no+ (case,global)   string: nO result: 
+  regexp: no+ (nocase,global) string: nO result: 1 = nO, 
+  
+  regexp: no+ (case)          string: noOo spot stop result: 1 = no, 
+  regexp: no+ (nocase)        string: noOo spot stop result: 1 = noOo, 
+  regexp: no+ (case,global)   string: noOo spot stop result: 1 = no, 
+  regexp: no+ (nocase,global) string: noOo spot stop result: 1 = noOo, 
+  
+  regexp: no+ (case)          string: stop nooo result: 1 = nooo, 
+  regexp: no+ (nocase)        string: stop nooo result: 1 = nooo, 
+  regexp: no+ (case,global)   string: stop nooo result: 1 = nooo, 
+  regexp: no+ (nocase,global) string: stop nooo result: 1 = nooo, 
+  
+  regexp: no+ (case)          string: xnoOox result: 1 = no, 
+  regexp: no+ (nocase)        string: xnoOox result: 1 = noOo, 
+  regexp: no+ (case,global)   string: xnoOox result: 1 = no, 
+  regexp: no+ (nocase,global) string: xnoOox result: 1 = noOo, 
+  
+  regexp: no+ (case)          string: non no n result: 1 = no, 
+  regexp: no+ (nocase)        string: non no n result: 1 = no, 
+  regexp: no+ (case,global)   string: non no n result: 1 = no, 2 = no, 
+  regexp: no+ (nocase,global) string: non no n result: 1 = no, 2 = no, 
+  
+  regexp: no+ (case)          string: none result: 1 = no, 
+  regexp: no+ (nocase)        string: none result: 1 = no, 
+  regexp: no+ (case,global)   string: none result: 1 = no, 
+  regexp: no+ (nocase,global) string: none result: 1 = no, 
+
+

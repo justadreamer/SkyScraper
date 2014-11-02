@@ -23,6 +23,8 @@ extern int xmlLoadExtDtdDefaultValue;
 @property (nonatomic,assign) xsltStylesheetPtr stylesheet;
 @end
 
+void exslt_org_regular_expressions_init();
+
 @implementation XHTransformation
 - (void) dealloc {
     xsltFreeStylesheet(self.stylesheet);
@@ -31,6 +33,7 @@ extern int xmlLoadExtDtdDefaultValue;
 + (void)initialize {
     /* initializing libxslt global stuff */
     exsltRegisterAll();
+    exslt_org_regular_expressions_init();
     xmlSubstituteEntitiesDefault(1);
     xmlLoadExtDtdDefaultValue = 1;
 }

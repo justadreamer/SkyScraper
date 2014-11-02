@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+  
+  regexp: no+ (case)          string: n result: n
+  regexp: no+ (nocase)        string: n result: n
+  regexp: no+ (case,global)   string: n result: n
+  regexp: no+ (nocase,global) string: n result: n
+  
+  regexp: no+ (case)          string: no spot no result: yes spot no
+  regexp: no+ (nocase)        string: no spot no result: yEs spot no
+  regexp: no+ (case,global)   string: no spot no result: yes spot yes
+  regexp: no+ (nocase,global) string: no spot no result: yEs spot yEs
+  
+  regexp: no+ (case)          string: nO result: nO
+  regexp: no+ (nocase)        string: nO result: yEs
+  regexp: no+ (case,global)   string: nO result: nO
+  regexp: no+ (nocase,global) string: nO result: yEs
+  
+  regexp: no+ (case)          string: noOo spot stop result: yesOo spot stop
+  regexp: no+ (nocase)        string: noOo spot stop result: yEs spot stop
+  regexp: no+ (case,global)   string: noOo spot stop result: yesOo spot stop
+  regexp: no+ (nocase,global) string: noOo spot stop result: yEs spot stop
+  
+  regexp: no+ (case)          string: stop nooo result: stop yes
+  regexp: no+ (nocase)        string: stop nooo result: stop yEs
+  regexp: no+ (case,global)   string: stop nooo result: stop yes
+  regexp: no+ (nocase,global) string: stop nooo result: stop yEs
+  
+  regexp: no+ (case)          string: xnoOox result: xyesOox
+  regexp: no+ (nocase)        string: xnoOox result: xyEsx
+  regexp: no+ (case,global)   string: xnoOox result: xyesOox
+  regexp: no+ (nocase,global) string: xnoOox result: xyEsx
+  
+  regexp: no+ (case)          string: non no n result: yesn no n
+  regexp: no+ (nocase)        string: non no n result: yEsn no n
+  regexp: no+ (case,global)   string: non no n result: yesn yes n
+  regexp: no+ (nocase,global) string: non no n result: yEsn yEs n
+  
+  regexp: no+ (case)          string: none result: yesne
+  regexp: no+ (nocase)        string: none result: yEsne
+  regexp: no+ (case,global)   string: none result: yesne
+  regexp: no+ (nocase,global) string: none result: yEsne
+
+

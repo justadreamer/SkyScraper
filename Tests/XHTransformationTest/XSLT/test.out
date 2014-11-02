@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+  
+         regexp: no* (case)   string: n result: true
+         regexp: no* (nocase) string: n result: true
+  
+         regexp: no* (case)   string: no result: true
+         regexp: no* (nocase) string: no result: true
+  
+         regexp: no* (case)   string: nO result: false
+         regexp: no* (nocase) string: nO result: true
+  
+         regexp: no* (case)   string: noOo result: false
+         regexp: no* (nocase) string: noOo result: true
+  
+         regexp: no* (case)   string: nooo result: true
+         regexp: no* (nocase) string: nooo result: true
+  
+         regexp: no* (case)   string: noOo result: false
+         regexp: no* (nocase) string: noOo result: true
+  
+         regexp: no* (case)   string: non result: false
+         regexp: no* (nocase) string: non result: false
+  
+         regexp: no* (case)   string: none result: false
+         regexp: no* (nocase) string: none result: false
+
+

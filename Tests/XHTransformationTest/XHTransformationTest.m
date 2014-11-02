@@ -126,4 +126,28 @@
     XCTAssertEqualObjects(result[@"link"], @"http://losangeles.craigslist.org/?param=1&param=2");
     XCTAssertEqualObjects(result[@"text"], @"test1 & test2");
 }
+
+- (void) runRegexpFunctionTest:(NSString *)functionName {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *xslURL = [bundle URLForResource:functionName withExtension:@"xsl"];
+    NSString *htmlPath = [bundle pathForResource:functionName ofType:@"xml"];
+    
+    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:xslURL];
+    
+    
+    NSData *html = [NSData dataWithContentsOfFile:htmlPath];
+    
+    NSString *actual = [transformation stringFromHTMLData:html withParams:nil error:nil];
+    
+    NSString *outPath = [bundle pathForResource:functionName ofType:@"out"];
+    NSString *expected = [NSString stringWithContentsOfFile:outPath encoding:NSUTF8StringEncoding error:nil];
+    
+    XCTAssertEqualObjects(actual, expected);
+}
+
+- (void) testRegexp {
+    [self runRegexpFunctionTest:@"test"];
+    [self runRegexpFunctionTest:@"match"];
+    [self runRegexpFunctionTest:@"replace"];
+}
 @end
