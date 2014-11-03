@@ -10,6 +10,8 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'
   s.requires_arc = true
   s.homepage = 'https://github.com/justadreamer/iOS-XSLT-HTMLScraper'
+  
+  s.source_files = ['XHTransformation/XHAll.h']
 
   s.dependency 'XHTransformation/Base'
   s.dependency 'XHTransformation/AFNetworking'
