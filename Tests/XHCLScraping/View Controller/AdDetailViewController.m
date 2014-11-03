@@ -38,7 +38,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:self.adURL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"addetail" withExtension:@"xsl"];
     XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:adsearchXSLURL];
-    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initAdapterWithModelClass:[AdData class]];
+    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initWithModelClass:[AdData class]];
     XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:modelAdapter];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

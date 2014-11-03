@@ -28,12 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /*debug:     */
+    /*debug:
     self.subcategory = @{
      @"link" : @"http://bakersfield.craigslist.org/search/ata",
      @"name" : @"antiques"
     };
-
+ */
     self.title = self.subcategory[@"name"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -48,7 +48,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"adsearch" withExtension:@"xsl"];
     XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:adsearchXSLURL];
-    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initAdapterWithModelClass:[AdDataContainer class]];
+    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initWithModelClass:[AdDataContainer class]];
     XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.subcategory[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:modelAdapter];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

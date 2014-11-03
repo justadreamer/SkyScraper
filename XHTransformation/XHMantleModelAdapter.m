@@ -4,7 +4,7 @@
 
 @implementation XHMantleModelAdapter
 
-- (instancetype) initAdapterWithModelClass:(Class)modelClass {
+- (instancetype) initWithModelClass:(Class)modelClass {
     if (self = [super init]) {
         self.modelClass = modelClass;
     }

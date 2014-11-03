@@ -14,6 +14,6 @@
  *
  *  @return instance of XHMantleModelAdapter
  */
-- (instancetype) initAdapterWithModelClass:(Class)modelClass NS_DESIGNATED_INITIALIZER;
+- (instancetype) initWithModelClass:(Class)modelClass NS_DESIGNATED_INITIALIZER;
 
 @end
