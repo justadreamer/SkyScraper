@@ -59,6 +59,6 @@ SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
-  XHTransformation: c6d84767ae9ffecb3d514eebc71aa5378da8e1af
+  XHTransformation: 51dfd0713dbcae95ded2e519332998011a162431
 
 COCOAPODS: 0.34.4
