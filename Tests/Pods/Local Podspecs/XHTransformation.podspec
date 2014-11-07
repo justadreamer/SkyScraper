@@ -18,12 +18,18 @@ Pod::Spec.new do |s|
   s.dependency 'XHTransformation/Mantle'
 
   s.subspec 'Base' do |ss|
-    ss.source_files = ['XHTransformation/XHTransformation.{h,m}','XHTransformation/XHModelAdapter.h','XHTransformation/regexp.c','XHTransformation/pcre.h']
-    ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
-    ss.libraries = 'xslt', 'exslt', 'xml2'
-    ss.preserve_paths = 'XHTransformation/{libxslt,libexslt}'
-    ss.private_header_files = ['XHTransformation/libxslt/XHTransformation.h','XHTransformation/libexslt/*.h']
-    ss.vendored_library = 'XHTransformation/libpcre.a'
+    ss.source_files = [
+        'XHTransformation/XHTransformation.{h,m}',
+        'XHTransformation/XHModelAdapter.h',        
+        ]
+    ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2 ' }
+    ss.libraries = 'xml2'
+    ss.dependency 'XHTransformation/libxslt-with-plugins'
+  end
+
+  s.subspec 'libxslt-with-plugins' do |ss|
+    ss.vendored_library = 'libxslt-with-plugins/libxslt-with-plugins.a'
+    ss.public_header_files = ['libxslt/*.h','libexslt/*.h']
   end
 
   s.subspec 'AFNetworking' do |ss|

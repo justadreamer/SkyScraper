@@ -90,3 +90,9 @@
 #define COCOAPODS_VERSION_MINOR_XHTransformation_Mantle 1
 #define COCOAPODS_VERSION_PATCH_XHTransformation_Mantle 0
 
+// XHTransformation/libxslt-with-plugins
+#define COCOAPODS_POD_AVAILABLE_XHTransformation_libxslt_with_plugins
+#define COCOAPODS_VERSION_MAJOR_XHTransformation_libxslt_with_plugins 0
+#define COCOAPODS_VERSION_MINOR_XHTransformation_libxslt_with_plugins 1
+#define COCOAPODS_VERSION_PATCH_XHTransformation_libxslt_with_plugins 0
+

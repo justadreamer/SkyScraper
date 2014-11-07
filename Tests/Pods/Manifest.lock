@@ -29,6 +29,7 @@ PODS:
     - XHTransformation/AFNetworking
     - XHTransformation/Base
     - XHTransformation/Base
+    - XHTransformation/libxslt-with-plugins
     - XHTransformation/Mantle
     - XHTransformation/Mantle
   - XHTransformation/AFNetworking (0.1):
@@ -37,6 +38,11 @@ PODS:
     - XHTransformation/Base
     - XHTransformation/Mantle
   - XHTransformation/Base (0.1):
+    - XHTransformation/AFNetworking
+    - XHTransformation/Base
+    - XHTransformation/libxslt-with-plugins
+    - XHTransformation/Mantle
+  - XHTransformation/libxslt-with-plugins (0.1):
     - XHTransformation/AFNetworking
     - XHTransformation/Base
     - XHTransformation/Mantle
@@ -59,6 +65,6 @@ SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
-  XHTransformation: 51dfd0713dbcae95ded2e519332998011a162431
+  XHTransformation: 54ce5bbdef2f5502f9bde11fd8b7cac0fe6a4d67
 
 COCOAPODS: 0.34.4

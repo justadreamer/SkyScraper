@@ -7,11 +7,11 @@
 #include <libxml/DOCBparser.h>
 #include <libxml/xinclude.h>
 #include <libxml/catalog.h>
-#include "libxslt/xslt.h"
-#include "libxslt/xsltInternals.h"
-#include "libxslt/transform.h"
-#include "libxslt/xsltutils.h"
-#include "libexslt/exslt.h"
+#include "xslt.h"
+#include "xsltInternals.h"
+#include "transform.h"
+#include "xsltutils.h"
+#include "exslt.h"
 
 #import "XHTransformation.h"
 
