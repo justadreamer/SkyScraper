@@ -90,7 +90,8 @@ void exslt_org_regular_expressions_init();
     }];
     paramsBuf[i]=NULL;
 
-    htmlDocPtr doc = htmlReadDoc((xmlChar *)[html bytes], NULL, NULL, XSLT_PARSE_OPTIONS);
+    
+    htmlDocPtr doc = htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS);
 
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
