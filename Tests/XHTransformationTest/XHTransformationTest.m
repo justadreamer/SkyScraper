@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "XHTransformation.h"
+#import "XHMantleModelAdapter.h"
+#import "AdData.h"
 
 @interface XHTransformationTest : XCTestCase
 @end
@@ -110,6 +112,27 @@
     XCTAssertEqualObjects(field1[@"is_required"], @1);
 }
 
+- (void) testArrayOfModels {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSString *postformXSLPath = [bundle pathForResource:@"adsarray" ofType:@"xsl"];
+    NSError *error = nil;
+    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:[NSURL fileURLWithPath:postformXSLPath]];
+    
+    NSString *postformHTMLPath = [bundle pathForResource:@"adsearch" ofType:@"html"];
+    NSData *html = [NSData dataWithContentsOfFile:postformHTMLPath];
+    NSArray *ads = [transformation JSONObjectFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
+    
+    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initWithModelClass:[AdData class]];
+
+    NSArray *models = [modelAdapter modelFromJSONObject:ads error:&error];
+    XCTAssertNotNil(models);
+    XCTAssertEqual([models count], [ads count]);
+    AdData *adData = models[0];
+    XCTAssertNotNil(adData.title);
+    XCTAssertNotNil(adData.postingID);
+    XCTAssertEqualObjects(adData.title, ads[0][@"title"]);
+    XCTAssertEqualObjects(adData.postingID, ads[0][@"postingID"]);
+}
 
 - (void) testReplacingEntities {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];

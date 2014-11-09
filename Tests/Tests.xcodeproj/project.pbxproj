@@ -34,6 +34,9 @@
 		447F7A2B19F6EF1B0089D036 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A2A19F6EF1B0089D036 /* Images.xcassets */; };
 		447F7A2E19F6EF1B0089D036 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A2C19F6EF1B0089D036 /* LaunchScreen.xib */; };
 		44900B481A0574E400B5113F /* xml-to-string.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44900B471A0574E400B5113F /* xml-to-string.xsl */; };
+		44B2EE9B1A0F9D3D000AFC00 /* adsarray.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44B2EE9A1A0F9D3D000AFC00 /* adsarray.xsl */; };
+		44B2EE9C1A0F9D53000AFC00 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C513FA19FAD410003F5456 /* AdData.m */; };
+		44B2EE9D1A0F9D63000AFC00 /* URLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C513FE19FAD410003F5456 /* URLTransformer.m */; };
 		44C513F219FAD3CF003F5456 /* locations.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44C513F119FAD3CF003F5456 /* locations.xsl */; };
 		44C513FF19FAD410003F5456 /* ContinentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C513F519FAD410003F5456 /* ContinentsViewController.m */; };
 		44C5140119FAD410003F5456 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C513FA19FAD410003F5456 /* AdData.m */; };
@@ -88,6 +91,7 @@
 		447F7A2A19F6EF1B0089D036 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		447F7A2D19F6EF1B0089D036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		44900B471A0574E400B5113F /* xml-to-string.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "xml-to-string.xsl"; path = "XSLT/xml-to-string.xsl"; sourceTree = "<group>"; };
+		44B2EE9A1A0F9D3D000AFC00 /* adsarray.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = adsarray.xsl; sourceTree = "<group>"; };
 		44C513F119FAD3CF003F5456 /* locations.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = locations.xsl; path = XSLT/locations.xsl; sourceTree = "<group>"; };
 		44C513F419FAD410003F5456 /* ContinentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentsViewController.h; sourceTree = "<group>"; };
 		44C513F519FAD410003F5456 /* ContinentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinentsViewController.m; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		44426CB41A0168EC000DB4B7 /* XSLT */ = {
 			isa = PBXGroup;
 			children = (
+				44B2EE9A1A0F9D3D000AFC00 /* adsarray.xsl */,
 				445B7B131A06AD5D00E89691 /* test.out */,
 				445B7B141A06AD5D00E89691 /* match.out */,
 				445B7B151A06AD5D00E89691 /* replace.out */,
@@ -399,6 +404,7 @@
 				445B7B1C1A06AD5D00E89691 /* test.out in Resources */,
 				447F7A1519F6E6910089D036 /* adsearch.html in Resources */,
 				445B7B1F1A06AD5D00E89691 /* match.xsl in Resources */,
+				44B2EE9B1A0F9D3D000AFC00 /* adsarray.xsl in Resources */,
 				44426CB71A0168EC000DB4B7 /* entities.html in Resources */,
 				447F7A0E19F6E6850089D036 /* testinclude.xsl in Resources */,
 				447F7A1619F6E6910089D036 /* postform.html in Resources */,
@@ -502,6 +508,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B2EE9C1A0F9D53000AFC00 /* AdData.m in Sources */,
+				44B2EE9D1A0F9D63000AFC00 /* URLTransformer.m in Sources */,
 				447F7A0919F6E66D0089D036 /* XHTransformationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
