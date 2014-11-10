@@ -39,17 +39,15 @@
 		44B2EE671A0D7FE5000AFC00 /* regexp.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE491A0D7FE5000AFC00 /* regexp.c */; };
 		44B2EE691A0D7FF9000AFC00 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B2EE681A0D7FF9000AFC00 /* libxml2.dylib */; };
 		44B2EE6C1A0D8078000AFC00 /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B2EE6A1A0D8078000AFC00 /* libpcre.a */; };
-		44B2EE6D1A0D8176000AFC00 /* libxslt-with-plugins.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44B2EDF31A0D7FC8000AFC00 /* libxslt-with-plugins.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		44B2EDF11A0D7FC8000AFC00 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "~/bin";
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
-				44B2EE6D1A0D8176000AFC00 /* libxslt-with-plugins.a in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +347,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -390,6 +389,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -449,6 +449,7 @@
 				44B2EE091A0D7FC8000AFC00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

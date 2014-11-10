@@ -80,17 +80,15 @@
 		44B2EDE61A0D7D70000AFC00 /* pcregrep.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2ED9A1A0D7D70000AFC00 /* pcregrep.c */; };
 		44B2EDE71A0D7D70000AFC00 /* pcreposix.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2ED9B1A0D7D70000AFC00 /* pcreposix.c */; };
 		44B2EDE81A0D7D70000AFC00 /* pcretest.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2ED9D1A0D7D70000AFC00 /* pcretest.c */; };
-		44B2EDE91A0D7DFD000AFC00 /* libpcre.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 44B2ED301A0D7D4E000AFC00 /* libpcre.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		44B2ED2E1A0D7D4E000AFC00 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "~/bin";
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
-				44B2EDE91A0D7DFD000AFC00 /* libpcre.a in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +547,7 @@
 				44B2ED461A0D7D4E000AFC00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
