@@ -39,7 +39,7 @@
         }
     }
 
-    NSDictionary *JSONObject = [self.transformation JSONObjectFromHTMLData:data withParams:self.params error:error];
+    id JSONObject = [self.transformation JSONObjectFromHTMLData:data withParams:self.params error:error];
     id responseObject = JSONObject;
     if (JSONObject && self.modelAdapter) {
         responseObject = [self.modelAdapter modelFromJSONObject:JSONObject error:error];
