@@ -10,7 +10,7 @@
 #import "AdData.h"
 #import "UIKit+AFNetworking.h"
 
-#import <XHTransformation/XHAll.h>
+#import <SkyScraper/SkyScraper.h>
 #import "AFHTTPRequestOperation.h"
 
 @interface AdCell ()
@@ -70,7 +70,7 @@
 - (void) loadDetailsForAdData {
     [self.operation cancel];
 
-    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:[self.class detailTransformation] params:nil modelAdapter:nil];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:[self.class detailTransformation] params:nil modelAdapter:nil];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.adData.URL];
     self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -86,11 +86,11 @@
 
 }
 
-+ (XHTransformation *) detailTransformation {
-    static XHTransformation *transformation = nil;
++ (SkyXSLTransformation *) detailTransformation {
+    static SkyXSLTransformation *transformation = nil;
     if (!transformation) {
         NSURL *xslURL = [[NSBundle mainBundle] URLForResource:@"addetail" withExtension:@"xsl"];
-        transformation = [[XHTransformation alloc] initWithXSLTURL:xslURL];
+        transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
     }
     return transformation;
 }

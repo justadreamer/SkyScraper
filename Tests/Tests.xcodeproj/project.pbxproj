@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2B8A32A431B9C8281881FA /* libPods-CLSkyScraper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E56B11C9EE0F1808E03539CB /* libPods-CLSkyScraper.a */; };
 		440814631A16156900DEE820 /* adsearch.html in Resources */ = {isa = PBXBuildFile; fileRef = 4408145C1A16156900DEE820 /* adsearch.html */; };
 		440814641A16156900DEE820 /* adsearch.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 4408145D1A16156900DEE820 /* adsearch.xsl */; };
 		440814651A16156900DEE820 /* included.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 4408145E1A16156900DEE820 /* included.xsl */; };
@@ -27,7 +28,7 @@
 		445B7B221A06AD5D00E89691 /* replace.xml in Resources */ = {isa = PBXBuildFile; fileRef = 445B7B191A06AD5D00E89691 /* replace.xml */; };
 		445B7B231A06AD5D00E89691 /* test.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 445B7B1A1A06AD5D00E89691 /* test.xsl */; };
 		445B7B241A06AD5D00E89691 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 445B7B1B1A06AD5D00E89691 /* test.xml */; };
-		447F7A0919F6E66D0089D036 /* XHTransformationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 447F7A0819F6E66D0089D036 /* XHTransformationTest.m */; };
+		447F7A0919F6E66D0089D036 /* SkyScraperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 447F7A0819F6E66D0089D036 /* SkyScraperTest.m */; };
 		447F7A2019F6EF1B0089D036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 447F7A1F19F6EF1B0089D036 /* main.m */; };
 		447F7A2319F6EF1B0089D036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 447F7A2219F6EF1B0089D036 /* AppDelegate.m */; };
 		447F7A2919F6EF1B0089D036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447F7A2719F6EF1B0089D036 /* Main.storyboard */; };
@@ -52,7 +53,6 @@
 		44CF8B8B1A019D34001593AB /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF8B8A1A019D34001593AB /* AdDetailViewController.m */; };
 		44CF8B931A02CAEC001593AB /* addetail.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44CF8B921A02CAEC001593AB /* addetail.xsl */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
-		D628BE6A0683480ECC46F504 /* libPods-XHCLScraping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,10 +79,10 @@
 		445B7B191A06AD5D00E89691 /* replace.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; path = replace.xml; sourceTree = "<group>"; };
 		445B7B1A1A06AD5D00E89691 /* test.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; path = test.xsl; sourceTree = "<group>"; };
 		445B7B1B1A06AD5D00E89691 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; path = test.xml; sourceTree = "<group>"; };
-		447F79FE19F6E6500089D036 /* XHTransformationTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHTransformationTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyScraperTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447F7A0219F6E6500089D036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		447F7A0819F6E66D0089D036 /* XHTransformationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTransformationTest.m; sourceTree = "<group>"; };
-		447F7A1B19F6EF1B0089D036 /* XHCLScraping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHCLScraping.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		447F7A0819F6E66D0089D036 /* SkyScraperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyScraperTest.m; sourceTree = "<group>"; };
+		447F7A1B19F6EF1B0089D036 /* CLSkyScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLSkyScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		447F7A1E19F6EF1B0089D036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447F7A1F19F6EF1B0089D036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		447F7A2119F6EF1B0089D036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +121,9 @@
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF807E82B0AEDFC20765EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3FC0B9215CA291F37F6A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C643A812DC6DE31B08DFEF00 /* Pods-CLSkyScraper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLSkyScraper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper.release.xcconfig"; sourceTree = "<group>"; };
+		E351210A3510602BA80A1359 /* Pods-CLSkyScraper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLSkyScraper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper.debug.xcconfig"; sourceTree = "<group>"; };
+		E56B11C9EE0F1808E03539CB /* libPods-CLSkyScraper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLSkyScraper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D628BE6A0683480ECC46F504 /* libPods-XHCLScraping.a in Frameworks */,
+				3F2B8A32A431B9C8281881FA /* libPods-CLSkyScraper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,8 +194,8 @@
 		447F79FF19F6E6500089D036 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				447F79FE19F6E6500089D036 /* XHTransformationTest.xctest */,
-				447F7A1B19F6EF1B0089D036 /* XHCLScraping.app */,
+				447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */,
+				447F7A1B19F6EF1B0089D036 /* CLSkyScraper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				447F7A0A19F6E6740089D036 /* Resources */,
-				447F7A0819F6E66D0089D036 /* XHTransformationTest.m */,
+				447F7A0819F6E66D0089D036 /* SkyScraperTest.m */,
 				447F7A0119F6E6500089D036 /* Supporting Files */,
 			);
 			path = XHTransformationTest;
@@ -305,6 +308,8 @@
 				BDE3FC0B9215CA291F37F6A2 /* Pods.release.xcconfig */,
 				2D6F7503C45E2C7234F4219B /* Pods-XHCLScraping.debug.xcconfig */,
 				549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */,
+				E351210A3510602BA80A1359 /* Pods-CLSkyScraper.debug.xcconfig */,
+				C643A812DC6DE31B08DFEF00 /* Pods-CLSkyScraper.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			children = (
 				25F9D2E0D60E5A6093853BB9 /* libPods.a */,
 				936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */,
+				E56B11C9EE0F1808E03539CB /* libPods-CLSkyScraper.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,9 +327,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		447F79FD19F6E6500089D036 /* XHTransformationTest */ = {
+		447F79FD19F6E6500089D036 /* SkyScraperTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 447F7A0519F6E6500089D036 /* Build configuration list for PBXNativeTarget "XHTransformationTest" */;
+			buildConfigurationList = 447F7A0519F6E6500089D036 /* Build configuration list for PBXNativeTarget "SkyScraperTest" */;
 			buildPhases = (
 				730B5947AD9C4668B7355F30 /* Check Pods Manifest.lock */,
 				447F79FA19F6E6500089D036 /* Sources */,
@@ -335,14 +341,14 @@
 			);
 			dependencies = (
 			);
-			name = XHTransformationTest;
+			name = SkyScraperTest;
 			productName = XHTransformationTest;
-			productReference = 447F79FE19F6E6500089D036 /* XHTransformationTest.xctest */;
+			productReference = 447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		447F7A1A19F6EF1B0089D036 /* XHCLScraping */ = {
+		447F7A1A19F6EF1B0089D036 /* CLSkyScraper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 447F7A3F19F6EF1B0089D036 /* Build configuration list for PBXNativeTarget "XHCLScraping" */;
+			buildConfigurationList = 447F7A3F19F6EF1B0089D036 /* Build configuration list for PBXNativeTarget "CLSkyScraper" */;
 			buildPhases = (
 				012F7E78014A9CC003F0D24C /* Check Pods Manifest.lock */,
 				447F7A1719F6EF1B0089D036 /* Sources */,
@@ -354,9 +360,9 @@
 			);
 			dependencies = (
 			);
-			name = XHCLScraping;
+			name = CLSkyScraper;
 			productName = XHCLScraping;
-			productReference = 447F7A1B19F6EF1B0089D036 /* XHCLScraping.app */;
+			productReference = 447F7A1B19F6EF1B0089D036 /* CLSkyScraper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -389,8 +395,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				447F79FD19F6E6500089D036 /* XHTransformationTest */,
-				447F7A1A19F6EF1B0089D036 /* XHCLScraping */,
+				447F79FD19F6E6500089D036 /* SkyScraperTest */,
+				447F7A1A19F6EF1B0089D036 /* CLSkyScraper */,
 			);
 		};
 /* End PBXProject section */
@@ -498,7 +504,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -510,7 +516,7 @@
 			files = (
 				44B2EE9C1A0F9D53000AFC00 /* AdData.m in Sources */,
 				44B2EE9D1A0F9D63000AFC00 /* URLTransformer.m in Sources */,
-				447F7A0919F6E66D0089D036 /* XHTransformationTest.m in Sources */,
+				447F7A0919F6E66D0089D036 /* SkyScraperTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +668,7 @@
 		};
 		447F7A3B19F6EF1B0089D036 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D6F7503C45E2C7234F4219B /* Pods-XHCLScraping.debug.xcconfig */;
+			baseConfigurationReference = E351210A3510602BA80A1359 /* Pods-CLSkyScraper.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -708,7 +714,7 @@
 		};
 		447F7A3C19F6EF1B0089D036 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */;
+			baseConfigurationReference = C643A812DC6DE31B08DFEF00 /* Pods-CLSkyScraper.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -758,7 +764,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		447F7A0519F6E6500089D036 /* Build configuration list for PBXNativeTarget "XHTransformationTest" */ = {
+		447F7A0519F6E6500089D036 /* Build configuration list for PBXNativeTarget "SkyScraperTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				447F7A0619F6E6500089D036 /* Debug */,
@@ -767,7 +773,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		447F7A3F19F6EF1B0089D036 /* Build configuration list for PBXNativeTarget "XHCLScraping" */ = {
+		447F7A3F19F6EF1B0089D036 /* Build configuration list for PBXNativeTarget "CLSkyScraper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				447F7A3B19F6EF1B0089D036 /* Debug */,

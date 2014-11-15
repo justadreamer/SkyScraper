@@ -8,9 +8,8 @@
 
 #import "Macros.h"
 #import "CategoriesViewController.h"
-#import <XHTransformation/XHTransformation.h>
-#import <XHTransformation/XHTransformationHTMLResponseSerializer.h>
-#import <AFNetworking.h>
+#import <SkyScraper/SkyScraper.h>
+#import <AFNetworking/AFNetworking.h>
 #import <SVProgressHUD.h>
 #import "SubcategoriesViewController.h"
 
@@ -32,8 +31,8 @@
     NSString *baseURL = [[siteURL.scheme stringByAppendingString:@"://"] stringByAppendingString:siteURL.host];
     NSURLRequest *request = [NSURLRequest requestWithURL:siteURL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"categories" withExtension:@"xsl"];
-    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:adsearchXSLURL];
-    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.site[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:nil];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.site[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:nil];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;

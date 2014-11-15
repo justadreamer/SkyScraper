@@ -3,9 +3,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 
-pod 'XHTransformation/Base', :path => '../'
+pod 'SkyScraper/Base', :path => '../'
 
-target 'XHCLScraping' do
-    pod 'XHTransformation'
+target 'CLSkyScraper' do
+    pod 'SkyScraper'
     pod 'SVProgressHUD'
 end

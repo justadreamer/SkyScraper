@@ -8,12 +8,9 @@
 #import "Macros.h"
 
 #import "AdsViewController.h"
-#import <XHTransformation/XHTransformation.h>
-#import <XHTransformation/XHMantleModelAdapter.h>
-#import <XHTransformation/XHTransformationHTMLResponseSerializer.h>
-
-#import <AFNetworking/AFNetworking.h>
+#import <SkyScraper/SkyScraper.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <AFNetworking/AFNetworking.h>
 
 #import "AdDataContainer.h"
 #import "AdData.h"
@@ -47,9 +44,9 @@
 
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"adsearch" withExtension:@"xsl"];
-    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:adsearchXSLURL];
-    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initWithModelClass:[AdDataContainer class]];
-    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.subcategory[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:modelAdapter];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
+    SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:[AdDataContainer class]];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.subcategory[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:modelAdapter];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;

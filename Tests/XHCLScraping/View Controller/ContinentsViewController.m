@@ -6,10 +6,9 @@
 //
 //
 
-#import <AFNetworking/AFNetworking.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <XHTransformation/XHTransformation.h>
-#import <XHTransformation/XHTransformationHTMLResponseSerializer.h>
+#import <SkyScraper/SkyScraper.h>
+#import <AFNetworking/AFNetworking.h>
 
 #import "ContinentsViewController.h"
 #import "StatesViewController.h"
@@ -31,8 +30,8 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
 
 - (void) loadData {
     NSURL *URLlocationsXSL = [[NSBundle mainBundle] URLForResource:@"locations" withExtension:@"xsl"];
-    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:URLlocationsXSL];
-    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:nil];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:URLlocationsXSL];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:nil];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:CLURLAboutSites]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

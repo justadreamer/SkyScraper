@@ -7,10 +7,8 @@
 //
 
 #import "AdDetailViewController.h"
-#import "XHTransformation.h"
-#import "XHMantleModelAdapter.h"
-#import "XHTransformationHTMLResponseSerializer.h"
 #import "Macros.h"
+#import <SkyScraper/SkyScraper.h>
 #import <AFNetworking/AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
 #import "AdData.h"
@@ -37,9 +35,9 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.adURL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"addetail" withExtension:@"xsl"];
-    XHTransformation *transformation = [[XHTransformation alloc] initWithXSLTURL:adsearchXSLURL];
-    XHMantleModelAdapter *modelAdapter = [[XHMantleModelAdapter alloc] initWithModelClass:[AdData class]];
-    XHTransformationHTMLResponseSerializer *serializer = [XHTransformationHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:modelAdapter];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
+    SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:[AdData class]];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:modelAdapter];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;

@@ -60,6 +60,18 @@
 #define COCOAPODS_VERSION_MINOR_Mantle_extobjc 5
 #define COCOAPODS_VERSION_PATCH_Mantle_extobjc 1
 
+// SVProgressHUD
+#define COCOAPODS_POD_AVAILABLE_SVProgressHUD
+#define COCOAPODS_VERSION_MAJOR_SVProgressHUD 1
+#define COCOAPODS_VERSION_MINOR_SVProgressHUD 0
+#define COCOAPODS_VERSION_PATCH_SVProgressHUD 0
+
+// SkyScraper
+#define COCOAPODS_POD_AVAILABLE_SkyScraper
+#define COCOAPODS_VERSION_MAJOR_SkyScraper 0
+#define COCOAPODS_VERSION_MINOR_SkyScraper 1
+#define COCOAPODS_VERSION_PATCH_SkyScraper 0
+
 // SkyScraper/AFNetworking2
 #define COCOAPODS_POD_AVAILABLE_SkyScraper_AFNetworking2
 #define COCOAPODS_VERSION_MAJOR_SkyScraper_AFNetworking2 0
