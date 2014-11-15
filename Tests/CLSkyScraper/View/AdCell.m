@@ -39,22 +39,28 @@
 
 - (void) setAdData:(AdData *)adData {
     _adData = adData;
-    self.title.text = adData.title;
-    NSMutableString *subtitle = [NSMutableString string];
-    [subtitle appendString:[adData.location length] ? adData.location : @""];
-    if ([subtitle length]) {
-        [subtitle appendString:@", "];
-    }
     
-    [subtitle appendString:[adData.date length] ? adData.date : @""];
-    if ([subtitle length]) {
-        [subtitle appendString:@", "];
-    }
-    
-    [subtitle appendString:[adData.postingID length] ? [NSString stringWithFormat:@"pid: %@",adData.postingID] : @""];
+//this is called here just for testing multithreading - i.e. simulatenous usage of the same XHTransformation
+    [self loadDetailsForAdData];
+}
 
+- (void) showData {
+    self.title.text = self.adData.title;
+    NSMutableString *subtitle = [NSMutableString string];
+    [subtitle appendString:[self.adData.location length] ? self.adData.location : @""];
+    if ([subtitle length]) {
+        [subtitle appendString:@", "];
+    }
+    
+    [subtitle appendString:[self.adData.date length] ? self.adData.date : @""];
+    if ([subtitle length]) {
+        [subtitle appendString:@", "];
+    }
+    
+    [subtitle appendString:[self.adData.postingID length] ? [NSString stringWithFormat:@"pid: %@",self.adData.postingID] : @""];
+    
     self.subtitle.text = subtitle;
-        
+    
     self.thumbnail.image = nil;
     if (!self.adData.thumbnailURL) {
         self.imageWidthConstraint.constant = 0;
@@ -62,9 +68,6 @@
         self.imageWidthConstraint.constant = 72.0;
         [self.thumbnail setImageWithURL:self.adData.thumbnailURL placeholderImage:nil];
     }
-    
-//this is called here jsut for testing multithreading - i.e. simulatenous usage of the same XHTransformation
-    [self loadDetailsForAdData];
 }
 
 - (void) loadDetailsForAdData {
@@ -76,8 +79,14 @@
     self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     self.operation.responseSerializer = serializer;
 
+    self.title.text = nil;
+    self.subtitle.text = nil;
+    self.thumbnail.image = nil;
+
+    __typeof(self) __weak weakSelf = self;
     [self.operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"responseObject=%@",responseObject);
+        [weakSelf showData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
     }];
