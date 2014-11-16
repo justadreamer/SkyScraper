@@ -90,8 +90,9 @@ void exslt_org_regular_expressions_init();
     }];
     paramsBuf[i]=NULL;
 
+    xmlParserOption additionalOptions = HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING;
     
-    htmlDocPtr doc = htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS);
+    htmlDocPtr doc = htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
 
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
@@ -100,7 +101,7 @@ void exslt_org_regular_expressions_init();
         return nil;
     }
 
-    xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | additionalOptions);
     ctxt->xinclude = 1;
 
     /* actual applying stylesheet */
