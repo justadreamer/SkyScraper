@@ -1,3 +1,0 @@
-PODS_SKYSCRAPER_HEADER_SEARCH_PATHS = /usr/include/libxml2 
-PODS_SKYSCRAPER_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/../../libxslt-with-plugins"
-PODS_SKYSCRAPER_OTHER_LDFLAGS = -l"xml2" -l"xslt-with-plugins"

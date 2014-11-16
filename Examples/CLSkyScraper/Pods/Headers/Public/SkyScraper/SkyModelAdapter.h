@@ -1,1 +1,0 @@
-../../../../../../SkyScraper/SkyModelAdapter.h
