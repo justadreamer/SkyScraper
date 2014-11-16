@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2B8A32A431B9C8281881FA /* libPods-CLSkyScraper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E56B11C9EE0F1808E03539CB /* libPods-CLSkyScraper.a */; };
 		440814851A17AA3500DEE820 /* SkyScraperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814701A17AA3500DEE820 /* SkyScraperTest.m */; };
 		440814861A17AA3500DEE820 /* adsarray.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440814721A17AA3500DEE820 /* adsarray.xsl */; };
 		440814871A17AA3500DEE820 /* adsearch.html in Resources */ = {isa = PBXBuildFile; fileRef = 440814731A17AA3500DEE820 /* adsearch.html */; };
@@ -27,30 +26,8 @@
 		440814951A17AA3500DEE820 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 440814811A17AA3500DEE820 /* test.xml */; };
 		440814961A17AA3500DEE820 /* test.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440814821A17AA3500DEE820 /* test.xsl */; };
 		440814971A17AA3500DEE820 /* testinclude.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440814831A17AA3500DEE820 /* testinclude.xsl */; };
-		4408150B1A17AAFA00DEE820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814E01A17AAFA00DEE820 /* AppDelegate.m */; };
-		4408150C1A17AAFA00DEE820 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440814E11A17AAFA00DEE820 /* LaunchScreen.xib */; };
-		4408150D1A17AAFA00DEE820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440814E31A17AAFA00DEE820 /* Main.storyboard */; };
-		4408150E1A17AAFA00DEE820 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440814E51A17AAFA00DEE820 /* Images.xcassets */; };
-		440815101A17AAFA00DEE820 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EA1A17AAFA00DEE820 /* AdData.m */; };
-		440815111A17AAFA00DEE820 /* AdDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EC1A17AAFA00DEE820 /* AdDataContainer.m */; };
-		440815131A17AAFA00DEE820 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F11A17AAFA00DEE820 /* AdCell.m */; };
-		440815141A17AAFA00DEE820 /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F41A17AAFA00DEE820 /* AdDetailViewController.m */; };
-		440815151A17AAFA00DEE820 /* AdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F61A17AAFA00DEE820 /* AdsViewController.m */; };
-		440815161A17AAFA00DEE820 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F81A17AAFA00DEE820 /* CategoriesViewController.m */; };
-		440815171A17AAFA00DEE820 /* ContinentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814FA1A17AAFA00DEE820 /* ContinentsViewController.m */; };
-		440815181A17AAFA00DEE820 /* SitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814FC1A17AAFA00DEE820 /* SitesViewController.m */; };
-		440815191A17AAFA00DEE820 /* StatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814FE1A17AAFA00DEE820 /* StatesViewController.m */; };
-		4408151A1A17AAFA00DEE820 /* SubcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440815001A17AAFA00DEE820 /* SubcategoriesViewController.m */; };
-		4408151B1A17AAFA00DEE820 /* addetail.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815021A17AAFA00DEE820 /* addetail.xsl */; };
-		4408151C1A17AAFA00DEE820 /* adsearch.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815031A17AAFA00DEE820 /* adsearch.xsl */; };
-		4408151D1A17AAFA00DEE820 /* categories.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815041A17AAFA00DEE820 /* categories.xsl */; };
-		4408151E1A17AAFA00DEE820 /* cut_html.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815051A17AAFA00DEE820 /* cut_html.xsl */; };
-		4408151F1A17AAFA00DEE820 /* locations.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815061A17AAFA00DEE820 /* locations.xsl */; };
-		440815201A17AAFA00DEE820 /* tpl_prepend_url.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815071A17AAFA00DEE820 /* tpl_prepend_url.xsl */; };
-		440815211A17AAFA00DEE820 /* tpl_sanitize.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815081A17AAFA00DEE820 /* tpl_sanitize.xsl */; };
-		440815221A17AAFA00DEE820 /* xml-to-string.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815091A17AAFA00DEE820 /* xml-to-string.xsl */; };
-		440815231A17AAFA00DEE820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408150A1A17AAFA00DEE820 /* main.m */; };
-		440815241A18FB2700DEE820 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EA1A17AAFA00DEE820 /* AdData.m */; };
+		4408163E1A19331000DEE820 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408163B1A19331000DEE820 /* AdData.m */; };
+		4408163F1A19331000DEE820 /* AdDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408163D1A19331000DEE820 /* AdDataContainer.m */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,44 +54,11 @@
 		440814811A17AA3500DEE820 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		440814821A17AA3500DEE820 /* test.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xsl; sourceTree = "<group>"; };
 		440814831A17AA3500DEE820 /* testinclude.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testinclude.xsl; sourceTree = "<group>"; };
-		440814DF1A17AAFA00DEE820 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		440814E01A17AAFA00DEE820 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		440814E21A17AAFA00DEE820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		440814E41A17AAFA00DEE820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		440814E51A17AAFA00DEE820 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		440814E61A17AAFA00DEE820 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		440814E71A17AAFA00DEE820 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
-		440814E91A17AAFA00DEE820 /* AdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdData.h; sourceTree = "<group>"; };
-		440814EA1A17AAFA00DEE820 /* AdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdData.m; sourceTree = "<group>"; };
-		440814EB1A17AAFA00DEE820 /* AdDataContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDataContainer.h; sourceTree = "<group>"; };
-		440814EC1A17AAFA00DEE820 /* AdDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDataContainer.m; sourceTree = "<group>"; };
-		440814F01A17AAFA00DEE820 /* AdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCell.h; sourceTree = "<group>"; };
-		440814F11A17AAFA00DEE820 /* AdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCell.m; sourceTree = "<group>"; };
-		440814F31A17AAFA00DEE820 /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
-		440814F41A17AAFA00DEE820 /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDetailViewController.m; sourceTree = "<group>"; };
-		440814F51A17AAFA00DEE820 /* AdsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdsViewController.h; sourceTree = "<group>"; };
-		440814F61A17AAFA00DEE820 /* AdsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdsViewController.m; sourceTree = "<group>"; };
-		440814F71A17AAFA00DEE820 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
-		440814F81A17AAFA00DEE820 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
-		440814F91A17AAFA00DEE820 /* ContinentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentsViewController.h; sourceTree = "<group>"; };
-		440814FA1A17AAFA00DEE820 /* ContinentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinentsViewController.m; sourceTree = "<group>"; };
-		440814FB1A17AAFA00DEE820 /* SitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitesViewController.h; sourceTree = "<group>"; };
-		440814FC1A17AAFA00DEE820 /* SitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SitesViewController.m; sourceTree = "<group>"; };
-		440814FD1A17AAFA00DEE820 /* StatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatesViewController.h; sourceTree = "<group>"; };
-		440814FE1A17AAFA00DEE820 /* StatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatesViewController.m; sourceTree = "<group>"; };
-		440814FF1A17AAFA00DEE820 /* SubcategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoriesViewController.h; sourceTree = "<group>"; };
-		440815001A17AAFA00DEE820 /* SubcategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewController.m; sourceTree = "<group>"; };
-		440815021A17AAFA00DEE820 /* addetail.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = addetail.xsl; sourceTree = "<group>"; };
-		440815031A17AAFA00DEE820 /* adsearch.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = adsearch.xsl; sourceTree = "<group>"; };
-		440815041A17AAFA00DEE820 /* categories.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = categories.xsl; sourceTree = "<group>"; };
-		440815051A17AAFA00DEE820 /* cut_html.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cut_html.xsl; sourceTree = "<group>"; };
-		440815061A17AAFA00DEE820 /* locations.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = locations.xsl; sourceTree = "<group>"; };
-		440815071A17AAFA00DEE820 /* tpl_prepend_url.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tpl_prepend_url.xsl; sourceTree = "<group>"; };
-		440815081A17AAFA00DEE820 /* tpl_sanitize.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tpl_sanitize.xsl; sourceTree = "<group>"; };
-		440815091A17AAFA00DEE820 /* xml-to-string.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "xml-to-string.xsl"; sourceTree = "<group>"; };
-		4408150A1A17AAFA00DEE820 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4408163A1A19331000DEE820 /* AdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdData.h; sourceTree = "<group>"; };
+		4408163B1A19331000DEE820 /* AdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdData.m; sourceTree = "<group>"; };
+		4408163C1A19331000DEE820 /* AdDataContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDataContainer.h; sourceTree = "<group>"; };
+		4408163D1A19331000DEE820 /* AdDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDataContainer.m; sourceTree = "<group>"; };
 		447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyScraperTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		447F7A1B19F6EF1B0089D036 /* CLSkyScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLSkyScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.release.xcconfig"; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF807E82B0AEDFC20765EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,20 +77,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		447F7A1819F6EF1B0089D036 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3F2B8A32A431B9C8281881FA /* libPods-CLSkyScraper.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4408146E1A17AA3500DEE820 /* SkyScraperTest */ = {
 			isa = PBXGroup;
 			children = (
+				4408163A1A19331000DEE820 /* AdData.h */,
+				4408163B1A19331000DEE820 /* AdData.m */,
+				4408163C1A19331000DEE820 /* AdDataContainer.h */,
+				4408163D1A19331000DEE820 /* AdDataContainer.m */,
 				4408146F1A17AA3500DEE820 /* Info.plist */,
 				440814701A17AA3500DEE820 /* SkyScraperTest.m */,
 				440814711A17AA3500DEE820 /* XSLT */,
@@ -179,86 +119,10 @@
 			path = XSLT;
 			sourceTree = "<group>";
 		};
-		440814DE1A17AAFA00DEE820 /* CLSkyScraper */ = {
-			isa = PBXGroup;
-			children = (
-				440814DF1A17AAFA00DEE820 /* AppDelegate.h */,
-				440814E01A17AAFA00DEE820 /* AppDelegate.m */,
-				440814E11A17AAFA00DEE820 /* LaunchScreen.xib */,
-				440814E31A17AAFA00DEE820 /* Main.storyboard */,
-				440814E51A17AAFA00DEE820 /* Images.xcassets */,
-				440814E61A17AAFA00DEE820 /* Info.plist */,
-				440814E71A17AAFA00DEE820 /* Macros.h */,
-				440814E81A17AAFA00DEE820 /* Models */,
-				440814EF1A17AAFA00DEE820 /* View */,
-				440814F21A17AAFA00DEE820 /* View Controller */,
-				440815011A17AAFA00DEE820 /* XSLT */,
-				4408150A1A17AAFA00DEE820 /* main.m */,
-			);
-			path = CLSkyScraper;
-			sourceTree = "<group>";
-		};
-		440814E81A17AAFA00DEE820 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				440814E91A17AAFA00DEE820 /* AdData.h */,
-				440814EA1A17AAFA00DEE820 /* AdData.m */,
-				440814EB1A17AAFA00DEE820 /* AdDataContainer.h */,
-				440814EC1A17AAFA00DEE820 /* AdDataContainer.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		440814EF1A17AAFA00DEE820 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				440814F01A17AAFA00DEE820 /* AdCell.h */,
-				440814F11A17AAFA00DEE820 /* AdCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		440814F21A17AAFA00DEE820 /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				440814F31A17AAFA00DEE820 /* AdDetailViewController.h */,
-				440814F41A17AAFA00DEE820 /* AdDetailViewController.m */,
-				440814F51A17AAFA00DEE820 /* AdsViewController.h */,
-				440814F61A17AAFA00DEE820 /* AdsViewController.m */,
-				440814F71A17AAFA00DEE820 /* CategoriesViewController.h */,
-				440814F81A17AAFA00DEE820 /* CategoriesViewController.m */,
-				440814F91A17AAFA00DEE820 /* ContinentsViewController.h */,
-				440814FA1A17AAFA00DEE820 /* ContinentsViewController.m */,
-				440814FB1A17AAFA00DEE820 /* SitesViewController.h */,
-				440814FC1A17AAFA00DEE820 /* SitesViewController.m */,
-				440814FD1A17AAFA00DEE820 /* StatesViewController.h */,
-				440814FE1A17AAFA00DEE820 /* StatesViewController.m */,
-				440814FF1A17AAFA00DEE820 /* SubcategoriesViewController.h */,
-				440815001A17AAFA00DEE820 /* SubcategoriesViewController.m */,
-			);
-			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		440815011A17AAFA00DEE820 /* XSLT */ = {
-			isa = PBXGroup;
-			children = (
-				440815021A17AAFA00DEE820 /* addetail.xsl */,
-				440815031A17AAFA00DEE820 /* adsearch.xsl */,
-				440815041A17AAFA00DEE820 /* categories.xsl */,
-				440815051A17AAFA00DEE820 /* cut_html.xsl */,
-				440815061A17AAFA00DEE820 /* locations.xsl */,
-				440815071A17AAFA00DEE820 /* tpl_prepend_url.xsl */,
-				440815081A17AAFA00DEE820 /* tpl_sanitize.xsl */,
-				440815091A17AAFA00DEE820 /* xml-to-string.xsl */,
-			);
-			path = XSLT;
-			sourceTree = "<group>";
-		};
 		447F79F319F6E63C0089D036 = {
 			isa = PBXGroup;
 			children = (
 				4408146E1A17AA3500DEE820 /* SkyScraperTest */,
-				440814DE1A17AAFA00DEE820 /* CLSkyScraper */,
 				447F79FF19F6E6500089D036 /* Products */,
 				86EAE8F4DA4EA284E2A0EA96 /* Pods */,
 				87F28A58DDBEBDAE1CCED19E /* Frameworks */,
@@ -269,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */,
-				447F7A1B19F6EF1B0089D036 /* CLSkyScraper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,25 +182,6 @@
 			productReference = 447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		447F7A1A19F6EF1B0089D036 /* CLSkyScraper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 447F7A3F19F6EF1B0089D036 /* Build configuration list for PBXNativeTarget "CLSkyScraper" */;
-			buildPhases = (
-				012F7E78014A9CC003F0D24C /* Check Pods Manifest.lock */,
-				447F7A1719F6EF1B0089D036 /* Sources */,
-				447F7A1819F6EF1B0089D036 /* Frameworks */,
-				447F7A1919F6EF1B0089D036 /* Resources */,
-				BECD6C45A2F8219C3771F03D /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CLSkyScraper;
-			productName = XHCLScraping;
-			productReference = 447F7A1B19F6EF1B0089D036 /* CLSkyScraper.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -348,10 +192,6 @@
 				TargetAttributes = {
 					447F79FD19F6E6500089D036 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					447F7A1A19F6EF1B0089D036 = {
-						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = J89XB832R3;
 					};
 				};
 			};
@@ -369,7 +209,6 @@
 			projectRoot = "";
 			targets = (
 				447F79FD19F6E6500089D036 /* SkyScraperTest */,
-				447F7A1A19F6EF1B0089D036 /* CLSkyScraper */,
 			);
 		};
 /* End PBXProject section */
@@ -400,42 +239,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		447F7A1919F6EF1B0089D036 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4408151D1A17AAFA00DEE820 /* categories.xsl in Resources */,
-				4408151E1A17AAFA00DEE820 /* cut_html.xsl in Resources */,
-				4408150E1A17AAFA00DEE820 /* Images.xcassets in Resources */,
-				4408151F1A17AAFA00DEE820 /* locations.xsl in Resources */,
-				4408151B1A17AAFA00DEE820 /* addetail.xsl in Resources */,
-				440815211A17AAFA00DEE820 /* tpl_sanitize.xsl in Resources */,
-				4408150C1A17AAFA00DEE820 /* LaunchScreen.xib in Resources */,
-				440815201A17AAFA00DEE820 /* tpl_prepend_url.xsl in Resources */,
-				4408151C1A17AAFA00DEE820 /* adsearch.xsl in Resources */,
-				4408150D1A17AAFA00DEE820 /* Main.storyboard in Resources */,
-				440815221A17AAFA00DEE820 /* xml-to-string.xsl in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		012F7E78014A9CC003F0D24C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		730B5947AD9C4668B7355F30 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,21 +272,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BECD6C45A2F8219C3771F03D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -488,50 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				440815241A18FB2700DEE820 /* AdData.m in Sources */,
+				4408163E1A19331000DEE820 /* AdData.m in Sources */,
 				440814851A17AA3500DEE820 /* SkyScraperTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		447F7A1719F6EF1B0089D036 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				440815231A17AAFA00DEE820 /* main.m in Sources */,
-				440815101A17AAFA00DEE820 /* AdData.m in Sources */,
-				440815161A17AAFA00DEE820 /* CategoriesViewController.m in Sources */,
-				4408151A1A17AAFA00DEE820 /* SubcategoriesViewController.m in Sources */,
-				440815181A17AAFA00DEE820 /* SitesViewController.m in Sources */,
-				440815141A17AAFA00DEE820 /* AdDetailViewController.m in Sources */,
-				440815191A17AAFA00DEE820 /* StatesViewController.m in Sources */,
-				4408150B1A17AAFA00DEE820 /* AppDelegate.m in Sources */,
-				440815151A17AAFA00DEE820 /* AdsViewController.m in Sources */,
-				440815171A17AAFA00DEE820 /* ContinentsViewController.m in Sources */,
-				440815131A17AAFA00DEE820 /* AdCell.m in Sources */,
-				440815111A17AAFA00DEE820 /* AdDataContainer.m in Sources */,
+				4408163F1A19331000DEE820 /* AdDataContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		440814E11A17AAFA00DEE820 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				440814E21A17AAFA00DEE820 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		440814E31A17AAFA00DEE820 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				440814E41A17AAFA00DEE820 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		447F79F819F6E63C0089D036 /* Debug */ = {
@@ -638,92 +392,6 @@
 			};
 			name = Release;
 		};
-		447F7A3B19F6EF1B0089D036 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E351210A3510602BA80A1359 /* Pods-CLSkyScraper.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CLSkyScraper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		447F7A3C19F6EF1B0089D036 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C643A812DC6DE31B08DFEF00 /* Pods-CLSkyScraper.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CLSkyScraper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -741,15 +409,6 @@
 			buildConfigurations = (
 				447F7A0619F6E6500089D036 /* Debug */,
 				447F7A0719F6E6500089D036 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		447F7A3F19F6EF1B0089D036 /* Build configuration list for PBXNativeTarget "CLSkyScraper" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				447F7A3B19F6EF1B0089D036 /* Debug */,
-				447F7A3C19F6EF1B0089D036 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

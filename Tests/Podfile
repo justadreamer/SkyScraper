@@ -3,9 +3,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 
-pod 'SkyScraper/Base', :path => '../'
+pod 'SkyScraper', :path => '../'
 
-target 'CLSkyScraper' do
-    pod 'SkyScraper'
-    pod 'SVProgressHUD'
-end

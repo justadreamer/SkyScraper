@@ -1,0 +1,8 @@
+source 'git@git.postindustria.com:mobile-components.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '7.0'
+
+
+pod 'SkyScraper', :path => "../../"
+pod 'SVProgressHUD'

@@ -2,19 +2,19 @@
 Pod::Spec.new do |s|
   s.name             = "SkyScraper"
   s.version          = "0.1"
-  s.summary          = "A wrapper over XSLT with a couple useful additions to allow you easily scrape HTML into JSON object"
+  s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow an easy HTML scraping into JSON with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
-  s.source           = { :git => "git@github.com:justadreamer/iOS-XSLT-HTMLScraper.git", :commit => "HEAD" }
+  s.source           = { :git => "git@github.com:justadreamer/SkyScraper.git", :commit => "HEAD" }
   s.ios.deployment_target = '7.0'
   s.requires_arc = true
-  s.homepage = 'https://github.com/justadreamer/iOS-XSLT-HTMLScraper'
+  s.homepage = 'https://github.com/justadreamer/SkyScraper'
   
   s.source_files = ['SkyScraper/SkyScraper.h']
 
   s.dependency 'SkyScraper/Base'
-  s.dependency 'SkyScraper/AFNetworking2'
-  s.dependency 'SkyScraper/Mantle'
+  #s.dependency 'SkyScraper/AFNetworking2'
+  #s.dependency 'SkyScraper/Mantle'
 
   s.subspec 'Base' do |ss|
     ss.source_files = [
