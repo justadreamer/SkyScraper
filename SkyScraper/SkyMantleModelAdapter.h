@@ -8,11 +8,11 @@
 @property (nonatomic,weak) Class modelClass;
 
 /**
- *  A designated initializer of the XHMantleModelAdapter
+ *  Designated initializer
  *
  *  @param modelClass a subclass of MTLModel class, instance of which will be returned by modelFromJSONObject:error: method
  *
- *  @return instance of XHMantleModelAdapter
+ *  @return instance of SkyMantleModelAdapter
  */
 - (instancetype) initWithModelClass:(Class)modelClass NS_DESIGNATED_INITIALIZER;
 

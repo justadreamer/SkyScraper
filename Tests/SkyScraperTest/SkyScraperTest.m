@@ -1,6 +1,6 @@
 //
-//  XHTest.m
-//  XHTest
+//  SkyScraperTest.m
+//  SkyScraperTest
 //
 //  Created by Eugene Dorfman on 10/15/14.
 //

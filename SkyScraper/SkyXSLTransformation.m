@@ -15,7 +15,7 @@
 
 #import "SkyXSLTransformation.h"
 
-NSString  * const XHErrorDomain = @"XHTransformation Error Domain";
+NSString  * const SkyScraperErrorDomain = @"SkyScraperErrorDomain Error Domain";
 
 extern int xmlLoadExtDtdDefaultValue;
 
@@ -61,13 +61,13 @@ void exslt_org_regular_expressions_init();
 
 - (NSData *) transformedDataFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
-        *error = [NSError errorWithDomain:XHErrorDomain code:1 userInfo:
+        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:1 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"Either no stylesheet provided, or failed to parse the one provided"}];
         return nil;
     }
     
     if ([html length]==0) {
-        *error = [NSError errorWithDomain:XHErrorDomain code:2 userInfo:
+        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:2 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"No input HTML provided, or the input is empty"}];
         return nil;
     }
@@ -95,7 +95,7 @@ void exslt_org_regular_expressions_init();
 
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
-        *error = [NSError errorWithDomain:XHErrorDomain code:3 userInfo:
+        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:3 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"Unable to create transform context"}];
         return nil;
     }

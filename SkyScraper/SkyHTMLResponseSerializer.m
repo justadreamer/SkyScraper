@@ -7,7 +7,7 @@
 
 @implementation SkyHTMLResponseSerializer
 
-+ (instancetype)serializerWithXHTransformation:(SkyXSLTransformation *)transformation params:(NSDictionary *)params modelAdapter:(NSObject<SkyModelAdapter> *)modelAdapter{
++ (instancetype)serializerWithXSLTransformation:(SkyXSLTransformation *)transformation params:(NSDictionary *)params modelAdapter:(NSObject<SkyModelAdapter> *)modelAdapter{
     SkyHTMLResponseSerializer *serializer = [[self alloc] init];
     serializer.transformation = transformation;
     serializer.params = params;

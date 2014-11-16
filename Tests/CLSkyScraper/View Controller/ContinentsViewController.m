@@ -31,7 +31,7 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
 - (void) loadData {
     NSURL *URLlocationsXSL = [[NSBundle mainBundle] URLForResource:@"locations" withExtension:@"xsl"];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:URLlocationsXSL];
-    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:nil modelAdapter:nil];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:nil];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:CLURLAboutSites]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

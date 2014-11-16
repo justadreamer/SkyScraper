@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-extern NSString  * const XHErrorDomain;
+extern NSString  * const SkyScraperErrorDomain;
 
 @interface SkyXSLTransformation : NSObject
 
@@ -12,7 +12,7 @@ extern NSString  * const XHErrorDomain;
  *  @param xslt string representation of an XSLT stylesheet in UTF8 encoding
  *  @param baseURL an URL that is used primarily for resolving an XInclude pointing at relative location
  *
- *  @return instance of XHTransformation
+ *  @return instance of SkyXSLTransformation
  */
 - (instancetype) initWithXSLTString:(NSString *)xslt baseURL:(NSURL *)baseURL NS_DESIGNATED_INITIALIZER;
 
@@ -22,7 +22,7 @@ extern NSString  * const XHErrorDomain;
  *
  *  @param URL to load an XSLT stylesheet from in UTF8 encoding
  *
- *  @return instance of XHTransformation
+ *  @return instance of SkyXSLTransformation
  */
 - (instancetype) initWithXSLTURL:(NSURL *)URL NS_DESIGNATED_INITIALIZER;
 

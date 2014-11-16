@@ -31,10 +31,8 @@
 		4408150C1A17AAFA00DEE820 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440814E11A17AAFA00DEE820 /* LaunchScreen.xib */; };
 		4408150D1A17AAFA00DEE820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440814E31A17AAFA00DEE820 /* Main.storyboard */; };
 		4408150E1A17AAFA00DEE820 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440814E51A17AAFA00DEE820 /* Images.xcassets */; };
-		4408150F1A17AAFA00DEE820 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 440814E61A17AAFA00DEE820 /* Info.plist */; };
 		440815101A17AAFA00DEE820 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EA1A17AAFA00DEE820 /* AdData.m */; };
 		440815111A17AAFA00DEE820 /* AdDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EC1A17AAFA00DEE820 /* AdDataContainer.m */; };
-		440815121A17AAFA00DEE820 /* URLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EE1A17AAFA00DEE820 /* URLTransformer.m */; };
 		440815131A17AAFA00DEE820 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F11A17AAFA00DEE820 /* AdCell.m */; };
 		440815141A17AAFA00DEE820 /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F41A17AAFA00DEE820 /* AdDetailViewController.m */; };
 		440815151A17AAFA00DEE820 /* AdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814F61A17AAFA00DEE820 /* AdsViewController.m */; };
@@ -52,6 +50,7 @@
 		440815211A17AAFA00DEE820 /* tpl_sanitize.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815081A17AAFA00DEE820 /* tpl_sanitize.xsl */; };
 		440815221A17AAFA00DEE820 /* xml-to-string.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440815091A17AAFA00DEE820 /* xml-to-string.xsl */; };
 		440815231A17AAFA00DEE820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408150A1A17AAFA00DEE820 /* main.m */; };
+		440815241A18FB2700DEE820 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814EA1A17AAFA00DEE820 /* AdData.m */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -89,8 +88,6 @@
 		440814EA1A17AAFA00DEE820 /* AdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdData.m; sourceTree = "<group>"; };
 		440814EB1A17AAFA00DEE820 /* AdDataContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDataContainer.h; sourceTree = "<group>"; };
 		440814EC1A17AAFA00DEE820 /* AdDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDataContainer.m; sourceTree = "<group>"; };
-		440814ED1A17AAFA00DEE820 /* URLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLTransformer.h; sourceTree = "<group>"; };
-		440814EE1A17AAFA00DEE820 /* URLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLTransformer.m; sourceTree = "<group>"; };
 		440814F01A17AAFA00DEE820 /* AdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCell.h; sourceTree = "<group>"; };
 		440814F11A17AAFA00DEE820 /* AdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCell.m; sourceTree = "<group>"; };
 		440814F31A17AAFA00DEE820 /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
@@ -208,8 +205,6 @@
 				440814EA1A17AAFA00DEE820 /* AdData.m */,
 				440814EB1A17AAFA00DEE820 /* AdDataContainer.h */,
 				440814EC1A17AAFA00DEE820 /* AdDataContainer.m */,
-				440814ED1A17AAFA00DEE820 /* URLTransformer.h */,
-				440814EE1A17AAFA00DEE820 /* URLTransformer.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,7 +406,6 @@
 			files = (
 				4408151D1A17AAFA00DEE820 /* categories.xsl in Resources */,
 				4408151E1A17AAFA00DEE820 /* cut_html.xsl in Resources */,
-				4408150F1A17AAFA00DEE820 /* Info.plist in Resources */,
 				4408150E1A17AAFA00DEE820 /* Images.xcassets in Resources */,
 				4408151F1A17AAFA00DEE820 /* locations.xsl in Resources */,
 				4408151B1A17AAFA00DEE820 /* addetail.xsl in Resources */,
@@ -494,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440815241A18FB2700DEE820 /* AdData.m in Sources */,
 				440814851A17AA3500DEE820 /* SkyScraperTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +499,6 @@
 			files = (
 				440815231A17AAFA00DEE820 /* main.m in Sources */,
 				440815101A17AAFA00DEE820 /* AdData.m in Sources */,
-				440815121A17AAFA00DEE820 /* URLTransformer.m in Sources */,
 				440815161A17AAFA00DEE820 /* CategoriesViewController.m in Sources */,
 				4408151A1A17AAFA00DEE820 /* SubcategoriesViewController.m in Sources */,
 				440815181A17AAFA00DEE820 /* SitesViewController.m in Sources */,

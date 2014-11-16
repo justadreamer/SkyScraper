@@ -19,7 +19,7 @@
     } else if ([JSONObject isKindOfClass:[NSArray class]]) {
         model = [MTLJSONAdapter modelsOfClass:self.modelClass fromJSONArray:JSONObject error:error                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ];
     } else {
-        *error = [NSError errorWithDomain:XHErrorDomain code:101 userInfo:@{NSLocalizedDescriptionKey:@"JSONObject of the unsupported type"}];
+        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:101 userInfo:@{NSLocalizedDescriptionKey:@"JSONObject of the unsupported type"}];
     }
     return model;
 }

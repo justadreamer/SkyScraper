@@ -1,13 +1,12 @@
 //
 //  AdData.m
-//  XHProcessorTest
+//  CLSkyScraper
 //
 //  Created by Eugene Dorfman on 10/3/14.
 //  Copyright (c) 2014 justadreamer. All rights reserved.
 //
 
 #import "AdData.h"
-#import "URLTransformer.h"
 
 @implementation AdData
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
@@ -29,11 +28,11 @@
 }
 
 + (NSValueTransformer *) URLJSONTransformer {
-    return [URLTransformer transformer];
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 + (NSValueTransformer *) thumbnailURLJSONTransformer {
-    return [URLTransformer transformer];
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 + (NSValueTransformer *) imageURLsJSONTransformer {

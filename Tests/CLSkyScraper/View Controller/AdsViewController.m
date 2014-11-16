@@ -46,7 +46,7 @@
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"adsearch" withExtension:@"xsl"];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:[AdDataContainer class]];
-    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.subcategory[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:modelAdapter];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.subcategory[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:modelAdapter];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;

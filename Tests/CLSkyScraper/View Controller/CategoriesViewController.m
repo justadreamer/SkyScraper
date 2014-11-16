@@ -32,7 +32,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:siteURL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"categories" withExtension:@"xsl"];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
-    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.site[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:nil];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.site[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:nil];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = serializer;

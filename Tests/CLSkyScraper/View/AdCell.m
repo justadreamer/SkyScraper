@@ -40,7 +40,7 @@
 - (void) setAdData:(AdData *)adData {
     _adData = adData;
     
-//this is called here just for testing multithreading - i.e. simulatenous usage of the same XHTransformation
+//this is called here just for testing multithreading - i.e. simulatenous usage of the same XSLTransformation
     [self loadDetailsForAdData];
 }
 
@@ -73,7 +73,7 @@
 - (void) loadDetailsForAdData {
     [self.operation cancel];
 
-    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXHTransformation:[self.class detailTransformation] params:nil modelAdapter:nil];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:[self.class detailTransformation] params:nil modelAdapter:nil];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.adData.URL];
     self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

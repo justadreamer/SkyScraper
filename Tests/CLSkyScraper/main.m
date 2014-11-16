@@ -1,6 +1,6 @@
 //
 //  main.m
-//  XHCLScraping
+//  CLSkyScraper
 //
 //  Created by Eugene Dorfman on 10/21/14.
 //
