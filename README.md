@@ -105,7 +105,7 @@ The basic setup is all the same as in the previous example, the difference is on
 
 ##Library features
 
-###1. Extendability and 'pluggability'
+###1. Pluggability
 The library has been designed with general goals of simplicity and extensibility in mind, yet with an emphasis of its highly specialized task - limited to a niche of converting HTML -> JSON -> model objects.  
 Extensibility primarily deals with the ability to create model adapters that would work for different model frameworks - Mantle is just an example, but it is possible and easy to create adapters for Nimbus or JSONModel frameworks as well.
 Also SkyXSLTransformation class does not care about your networking stack - you are not limited to using AFNetworking - it can be any other network framework. Thus the simple SkyXSLTransformation component is designed to be easily **pluggable** into any networking and/or model framework.
