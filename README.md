@@ -71,27 +71,29 @@ NSLog(@"%@",result);
 Below is an example boilerplate code you need to download the HTML document and acquire the JSON representation of your application data models.  It is assumed that you have defined an ```NSURL *URL``` object pointing at target HTML document on the web.  It is also assumed that somewhere in the application resource bundle you have ```scraping.xsl``` file with the XSLT transformation to convert HTML into JSON.
 
 ```objective-c
-#import <SkyScraper/SkyScraper.h>
-//...
 
-NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+	#import <SkyScraper/SkyScraper.h>
+	//...
+	
+	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+	
+	NSURL *localXSLURL = [[NSBundle mainBundle] URLForResource:@"scraping" withExtension:@"xsl"];
+	
+	SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:localXSLURL];
+	
+	SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:nil];
+	
+	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+	operation.responseSerializer = serializer;
+	
+	[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+	    NSLog(@"%@",responseObject);
+	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+	    NSLog(@"%@",error);
+	}];
+	
+	[operation start];
 
-NSURL *localXSLURL = [[NSBundle mainBundle] URLForResource:@"scraping" withExtension:@"xsl"];
-
-SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:localXSLURL];
-
-SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:nil];
-
-AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-operation.responseSerializer = serializer;
-
-[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"%@",responseObject);
-} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"%@",error);
-}];
-
-[operation start];
 ```    	
     	
 Here the transformation object has been utilized within the response serializer object, used by AFHTTPRequestOperation to deserialize the response.
