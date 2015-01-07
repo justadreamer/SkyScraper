@@ -9,15 +9,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.requires_arc = true
   s.homepage = 'https://github.com/justadreamer/SkyScraper'
-  
-  s.source_files = ['SkyScraper/SkyScraper.h']
-
-  s.dependency 'SkyScraper/Base'
-  #s.dependency 'SkyScraper/AFNetworking2'
-  #s.dependency 'SkyScraper/Mantle'
 
   s.subspec 'Base' do |ss|
     ss.source_files = [
+        'SkyScraper/SkyScraper.h',
         'SkyScraper/SkyXSLTransformation.{h,m}',
         'SkyScraper/SkyModelAdapter.h',        
         ]
