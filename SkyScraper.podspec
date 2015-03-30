@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SkyScraper"
-  s.version          = "0.2"
+  s.version          = "0.4"
   s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow an easy HTML scraping into JSON with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
@@ -9,11 +9,18 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.requires_arc = true
   s.homepage = 'https://github.com/justadreamer/SkyScraper'
+  s.default_subspec = 'All'
+
+  s.subspec 'All' do |ss|
+    ss.dependency 'SkyScraper/AFNetworking2'
+    ss.dependency 'SkyScraper/Mantle'
+  end
 
   s.subspec 'Base' do |ss|
     ss.source_files = [
         'SkyScraper/SkyScraper.h',
         'SkyScraper/SkyXSLTransformation.{h,m}',
+        'SkyScraper/SkyXSLTParams.{h,m}',
         'SkyScraper/SkyModelAdapter.h',        
         ]
     ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2 ' }
@@ -30,7 +37,11 @@ Pod::Spec.new do |s|
   s.subspec 'AFNetworking2' do |ss|
     ss.dependency 'SkyScraper/Base'
     ss.dependency 'AFNetworking', '~> 2.4.1'
-    ss.source_files = 'SkyScraper/SkyHTMLResponseSerializer.{h,m}'
+    ss.source_files = [
+      'SkyScraper/SkyHTMLResponseSerializer.{h,m}',
+      'SkyScraper/SkyXMLResponseSerializer.{h,m}',
+      'SkyScraper/SkyResponseSerializer.{h,m}'
+    ]
   end
 
   s.subspec 'Mantle' do |ss|
