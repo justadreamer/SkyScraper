@@ -14,6 +14,7 @@
 #include "exslt.h"
 
 #import "SkyXSLTransformation.h"
+#import "SkyXSLTParams.h"
 
 NSString  * const SkyScraperErrorDomain = @"SkyScraperErrorDomain Error Domain";
 
@@ -72,24 +73,7 @@ void exslt_org_regular_expressions_init();
         return nil;
     }
     
-    /* parameters */
-    int nParams = 2 * (int) [params count];
-    char * *paramsBuf = calloc(nParams+1, sizeof(char *));
     
-    __block int i = 0;
-    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSString *skey = [NSString stringWithFormat:@"%@",key];
-        NSString *sval = [NSString stringWithFormat:@"%@",obj];
-        char *keybuf = calloc(2*[skey length]+1, sizeof(char));
-        char *valbuf = calloc(2*[sval length]+1, sizeof(char));
-        if ([skey getCString:keybuf maxLength:2*[skey length] encoding:NSUTF8StringEncoding] &&
-            [sval getCString:valbuf maxLength:2*[sval length] encoding:NSUTF8StringEncoding]) {
-            paramsBuf[i++]=keybuf;
-            paramsBuf[i++]=valbuf;
-        }
-    }];
-    paramsBuf[i]=NULL;
-
     xmlParserOption additionalOptions = HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING;
     
     htmlDocPtr doc = htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
@@ -104,8 +88,9 @@ void exslt_org_regular_expressions_init();
     xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | additionalOptions);
     ctxt->xinclude = 1;
 
+    SkyXSLTParams *xsltParams = [[SkyXSLTParams alloc]initWithParams:params];
     /* actual applying stylesheet */
-    xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)paramsBuf, NULL, NULL, ctxt);
+    xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)xsltParams.paramsBuf, NULL, NULL, ctxt);
 
     xsltFreeTransformContext(ctxt);
     /* dumping bytes of the result */
@@ -113,16 +98,6 @@ void exslt_org_regular_expressions_init();
     int size;
 
     xsltSaveResultToString(&buf, &size, res, self.stylesheet);
-
-    /* freeing parameters */
-    for (int i=0;i<nParams;++i) {
-        if (paramsBuf[i]) {
-            free(paramsBuf[i]);
-        }
-    }
-    if (paramsBuf) {
-        free(paramsBuf);
-    }
 
     /* freeing all other stuff */
     xmlFreeDoc(doc);
