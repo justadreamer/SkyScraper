@@ -74,11 +74,16 @@ void exslt_org_regular_expressions_init();
     }
     
     
+    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    if (!string) {
+        string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    }
+    
     xmlParserOption additionalOptions = isHTML ?
         HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
       : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
     
-    xmlDocPtr doc = isHTML ? htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
+    xmlDocPtr doc = isHTML ? htmlReadDoc((xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
     
     : xmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
     
