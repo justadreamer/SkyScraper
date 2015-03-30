@@ -60,23 +60,29 @@ void exslt_org_regular_expressions_init();
     self.stylesheet = xsltParseStylesheetDoc(styleSheetDoc);
 }
 
-- (NSData *) transformedDataFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
+- (NSData *) transformedDataFromData:(NSData *)data isHTML:(BOOL)isHTML withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
         *error = [NSError errorWithDomain:SkyScraperErrorDomain code:1 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"Either no stylesheet provided, or failed to parse the one provided"}];
         return nil;
     }
     
-    if ([html length]==0) {
+    if ([data length]==0) {
         *error = [NSError errorWithDomain:SkyScraperErrorDomain code:2 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"No input HTML provided, or the input is empty"}];
         return nil;
     }
     
     
-    xmlParserOption additionalOptions = HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING;
+    xmlParserOption additionalOptions = isHTML ?
+        HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
+      : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
     
-    htmlDocPtr doc = htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
+    xmlDocPtr doc = isHTML ? htmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
+    
+    : xmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
+    
+    ;
 
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
@@ -113,7 +119,7 @@ void exslt_org_regular_expressions_init();
 }
 
 - (NSString *) stringFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError *__autoreleasing *)error {
-    NSData *data = [self transformedDataFromHTMLData:html withParams:params error:error];
+    NSData *data = [self transformedDataFromData:html isHTML:YES withParams:params error:error];
     NSString *result = nil;
     if (data) {
         result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -122,7 +128,7 @@ void exslt_org_regular_expressions_init();
 }
 
 - (id) JSONObjectFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
-    NSData *data = [self transformedDataFromHTMLData:html withParams:params error:error];
+    NSData *data = [self transformedDataFromData:html isHTML:YES withParams:params error:error];
     id JSONObject = nil;
     if (data) {
         JSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
@@ -131,11 +137,22 @@ void exslt_org_regular_expressions_init();
 }
 
 - (NSString *) stringFromXMLData:(NSData *)xml withParams:(NSDictionary *) params error:(NSError * __autoreleasing *)error {
-    return nil;
+    NSData *data = [self transformedDataFromData:xml isHTML:NO withParams:params error:error];
+    NSString *result = nil;
+    if (data) {
+        result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    }
+    return result;
 }
 
 - (id) JSONObjectFromXMLData:(NSData *)xml withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
-    return nil;
+    NSData *data = [self transformedDataFromData:xml isHTML:NO withParams:params error:error];
+    id JSONObject = nil;
+    if (data) {
+        JSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
+    }
+    return JSONObject;
+
 }
 
 @end
