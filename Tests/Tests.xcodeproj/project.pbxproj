@@ -28,6 +28,8 @@
 		440814971A17AA3500DEE820 /* testinclude.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440814831A17AA3500DEE820 /* testinclude.xsl */; };
 		4408163E1A19331000DEE820 /* AdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408163B1A19331000DEE820 /* AdData.m */; };
 		4408163F1A19331000DEE820 /* AdDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408163D1A19331000DEE820 /* AdDataContainer.m */; };
+		441D0FD41AC95707005517E7 /* search_rss.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 441D0FD31AC95707005517E7 /* search_rss.xsl */; };
+		441D0FD61AC95717005517E7 /* hhh.xml in Resources */ = {isa = PBXBuildFile; fileRef = 441D0FD51AC95717005517E7 /* hhh.xml */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		4408163B1A19331000DEE820 /* AdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdData.m; sourceTree = "<group>"; };
 		4408163C1A19331000DEE820 /* AdDataContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDataContainer.h; sourceTree = "<group>"; };
 		4408163D1A19331000DEE820 /* AdDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDataContainer.m; sourceTree = "<group>"; };
+		441D0FD31AC95707005517E7 /* search_rss.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = search_rss.xsl; sourceTree = "<group>"; };
+		441D0FD51AC95717005517E7 /* hhh.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hhh.xml; sourceTree = "<group>"; };
 		447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyScraperTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.release.xcconfig"; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,8 @@
 		440814711A17AA3500DEE820 /* XSLT */ = {
 			isa = PBXGroup;
 			children = (
+				441D0FD51AC95717005517E7 /* hhh.xml */,
+				441D0FD31AC95707005517E7 /* search_rss.xsl */,
 				440814721A17AA3500DEE820 /* adsarray.xsl */,
 				440814731A17AA3500DEE820 /* adsearch.html */,
 				440814741A17AA3500DEE820 /* adsearch.xsl */,
@@ -229,12 +235,14 @@
 				4408148B1A17AA3500DEE820 /* included.xsl in Resources */,
 				440814961A17AA3500DEE820 /* test.xsl in Resources */,
 				4408148E1A17AA3500DEE820 /* match.xsl in Resources */,
+				441D0FD41AC95707005517E7 /* search_rss.xsl in Resources */,
 				440814871A17AA3500DEE820 /* adsearch.html in Resources */,
 				440814911A17AA3500DEE820 /* replace.out in Resources */,
 				4408148F1A17AA3500DEE820 /* postform.html in Resources */,
 				440814971A17AA3500DEE820 /* testinclude.xsl in Resources */,
 				440814941A17AA3500DEE820 /* test.out in Resources */,
 				440814901A17AA3500DEE820 /* postform.xsl in Resources */,
+				441D0FD61AC95717005517E7 /* hhh.xml in Resources */,
 				440814951A17AA3500DEE820 /* test.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

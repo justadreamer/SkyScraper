@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:enc="http://purl.oclc.org/net/rss_2.0/enc#"
+ xmlns:ev="http://purl.org/rss/1.0/modules/event/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:admin="http://webns.net/mvcb/"
+>
+
+<channel rdf:about="http://losangeles.craigslist.org/search/hhh?format=rss&#x26;amp;format=rss">
+<title>craigslist los angeles | housing search </title>
+<link>http://losangeles.craigslist.org/search/hhh?format=rss</link>
+<description></description>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:publisher>robot@craigslist.org</dc:publisher>
+<dc:creator>robot@craigslist.org</dc:creator>
+<dc:source>http://losangeles.craigslist.org/search/hhh?format=rss&#x26;amp;format=rss</dc:source>
+<dc:title>craigslist los angeles | housing search </dc:title>
+<dc:type>Collection</dc:type>
+<syn:updateBase>2015-03-30T00:11:08-07:00</syn:updateBase>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lgb/apa/4955449252.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/hou/4955465899.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/apa/4945105148.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/apa/4945113923.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/sfv/apa/4930581633.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/apa/4930597234.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lgb/off/4936675104.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/apa/4952284677.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/apa/4952275426.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/apa/4955430924.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/vac/4955433408.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/sfv/apa/4955446768.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lgb/apa/4955453702.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/roo/4955460848.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/hou/4955464599.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/off/4926486504.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/apa/4941860731.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/sgv/vac/4922290269.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/apa/4955456549.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/vac/4931561068.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/off/4955463700.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/reo/4955459537.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/roo/4955460076.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/lac/roo/4955460885.html" />
+  <rdf:li rdf:resource="http://losangeles.craigslist.org/wst/apa/4955452643.html" />
+ </rdf:Seq>
+</items>
+</channel>
+<item rdf:about="http://losangeles.craigslist.org/lgb/apa/4955449252.html">
+<title><![CDATA[WHY PAY YOUR LANDLORD'S MORTGAGE!!! BE A FIRST TIME HOME BUYER!!! 3bd 1600ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/lgb/apa/4955449252.html</link>
+<description><![CDATA[WHY RENT WHEN YOU CAN OWN!!! NO LANDLORD!!! NO PET RULES!!! First time home buyer can purchase this house with as little as $2500 down!!! Do you know there are several down payment assistance programs that help first time home buyer to own their firs [...]]]></description>
+<dc:date>2015-03-29T23:11:08-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lgb/apa/4955449252.html</dc:source>
+<dc:title><![CDATA[WHY PAY YOUR LANDLORD'S MORTGAGE!!! BE A FIRST TIME HOME BUYER!!! 3bd 1600ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00e0e_d5tsOPX6Lgf_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:11:08-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/hou/4955465899.html">
+<title><![CDATA[Looking to rent back-house or unit in duplex (Torrance)]]></title>
+<link>http://losangeles.craigslist.org/wst/hou/4955465899.html</link>
+<description><![CDATA[Married couple 
+Looking to rent 1, 2 bedroom place from owners. 
+If you have a back-house, multi-family home, or you live in duplex and want to rent a separate unit, that would be perfect. 
+Looking to rent immediately. 
+Please email with photos, pric [...]]]></description>
+<dc:date>2015-03-29T23:10:38-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/hou/4955465899.html</dc:source>
+<dc:title><![CDATA[Looking to rent back-house or unit in duplex (Torrance)]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:10:38-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/apa/4945105148.html">
+<title><![CDATA[HOLLYWOOD BLVD OPPORTUNITY &#x0024;1500 1bd]]></title>
+<link>http://losangeles.craigslist.org/lac/apa/4945105148.html</link>
+<description><![CDATA[7364 Hollywood Blvd # 106 
+Renovated apartment with Double Pane Windows, Laminate Floors, New Cabinets and Granite Counter Tops it is a sizeable space in the heart of it all. Did I mention the large patio, Come take a look at your new home! Just off  [...]]]></description>
+<dc:date>2015-03-29T23:10:34-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/apa/4945105148.html</dc:source>
+<dc:title><![CDATA[HOLLYWOOD BLVD OPPORTUNITY &#x0024;1500 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:10:34-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/apa/4945113923.html">
+<title><![CDATA[HOLLYWOOD BLVD OPPORTUNITY &#x0024;1400 1bd]]></title>
+<link>http://losangeles.craigslist.org/lac/apa/4945113923.html</link>
+<description><![CDATA[7364 Hollywood Blvd # 108 
+A sizeable space in the heart of it all. Just off the beaten path in the middle of Hollywood... without actually being in the MIDDLE of the mess that is Hollywood. A hop skip and a jump to everything in the area without the [...]]]></description>
+<dc:date>2015-03-29T23:10:25-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/apa/4945113923.html</dc:source>
+<dc:title><![CDATA[HOLLYWOOD BLVD OPPORTUNITY &#x0024;1400 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:10:25-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/sfv/apa/4930581633.html">
+<title><![CDATA[Opportunity in Glendale &#x0024;1750 2bd]]></title>
+<link>http://losangeles.craigslist.org/sfv/apa/4930581633.html</link>
+<description><![CDATA[1010 Raleigh St. # 202 
+(Do Not Disturb Residents) 
+Spacious 2 BR apartments on the second floor with Hardwood/Laminate Floors, Granite Countertops, in a centrally located building, walking distance to MAPLE PARK! A hop skip and a jump to Colorado St [...]]]></description>
+<dc:date>2015-03-29T23:10:17-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/sfv/apa/4930581633.html</dc:source>
+<dc:title><![CDATA[Opportunity in Glendale &#x0024;1750 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00R0R_6Z2vbPLlGbi_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:10:17-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/apa/4930597234.html">
+<title><![CDATA[Make Hollywood Place Your Home! &#x0024;2550 2bd]]></title>
+<link>http://losangeles.craigslist.org/lac/apa/4930597234.html</link>
+<description><![CDATA[7400 Hollywood Blvd #326 
+HOLLYWOOD PLACE CURRENTLY HAS 2BR/2BA APT! NEW LAMINATE FLOOR TROUGHOUT THE APARTMENT, GRANITE TOP COUNTERS, HIS AND HERS SINKS IN THE MASTER BATHROOM AND AN BALCONY THAT FACES SOUTH OF THE BUILDING. CALL OR EMAIL THE LEASIN [...]]]></description>
+<dc:date>2015-03-29T23:10:01-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/apa/4930597234.html</dc:source>
+<dc:title><![CDATA[Make Hollywood Place Your Home! &#x0024;2550 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00r0r_g2PTo1DeFRL_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:10:01-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lgb/off/4936675104.html">
+<title><![CDATA[Large size Medical Office or Retail space for rent (Downey) &#x0024;1800 1500ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/lgb/off/4936675104.html</link>
+<description><![CDATA[Quaint retail and medical community center in the heart of Downey on Imperial hwy. Property in great condition and curretnly consists of large corporations and boutique stores including Dominos Pizza, St. Francis Medical Center, a cosmetic and insura [...]]]></description>
+<dc:date>2015-03-29T23:09:49-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lgb/off/4936675104.html</dc:source>
+<dc:title><![CDATA[Large size Medical Office or Retail space for rent (Downey) &#x0024;1800 1500ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00G0G_j6LEeThZwcV_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:09:49-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/apa/4952284677.html">
+<title><![CDATA[Watch the Sun Set from your living room &#x0024;2000 1bd]]></title>
+<link>http://losangeles.craigslist.org/lac/apa/4952284677.html</link>
+<description><![CDATA[7400 Hollywood Blvd #704 
+HOLLYWOOD PLACE CURRENTLY HAS 1BR/1BA APT! NEW LAMINATE FLOOR TROUGHOUT THE APARTMENT, WITH A BALCONY THAT FACES WEST OF THE BUILDING. CALL OR EMAIL THE LEASING OFFICE TODAY TO SCHEDULE A TOUR! 
+Come enjoy the city life at H [...]]]></description>
+<dc:date>2015-03-29T23:09:40-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/apa/4952284677.html</dc:source>
+<dc:title><![CDATA[Watch the Sun Set from your living room &#x0024;2000 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00r0r_g2PTo1DeFRL_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:09:40-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/apa/4952275426.html">
+<title><![CDATA[Hollywood Place is the place to live!! &#x0024;1750 1bd]]></title>
+<link>http://losangeles.craigslist.org/lac/apa/4952275426.html</link>
+<description><![CDATA[7400 Hollywood Blvd #424 
+HOLLYWOOD PLACE CURRENTLY HAS 1BR/1BA APT! LAMINATE FLOORs TROUGHOUT THE APARTMENT with GRANITE TOP COUNTERS. CALL OR EMAIL THE LEASING OFFICE TODAY TO SCHEDULE A TOUR! 
+Come enjoy the city life at HP and take a look! 
+HP is [...]]]></description>
+<dc:date>2015-03-29T23:09:21-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/apa/4952275426.html</dc:source>
+<dc:title><![CDATA[Hollywood Place is the place to live!! &#x0024;1750 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00r0r_g2PTo1DeFRL_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:09:21-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/apa/4955430924.html">
+<title><![CDATA[Just Reduced home Available now! (West Hollywood Vicinity) &#x0024;3450 2bd 1250ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/wst/apa/4955430924.html</link>
+<description><![CDATA[Just Reduced & Available now! Beautifully remodeled two bedroom unit with newly updated bathrooms and kitchen. Features include wood and stone tile floors, central heat and air conditioning, new windows in many rooms and a great bonus storage area of [...]]]></description>
+<dc:date>2015-03-29T23:09:08-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/apa/4955430924.html</dc:source>
+<dc:title><![CDATA[Just Reduced home Available now! (West Hollywood Vicinity) &#x0024;3450 2bd 1250ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00w0w_g4CPkP6QmCf_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:09:08-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/vac/4955433408.html">
+<title><![CDATA[1 Bedroom House Perfect Location (West Hollywood) 1bd]]></title>
+<link>http://losangeles.craigslist.org/lac/vac/4955433408.html</link>
+<description><![CDATA["5 min walk from the cities best boutiques, grocery stores, coffee shops, and hottest restaurants, golf and tennis clubs. 
+* Luxurious suite with fully equipped kitchen 
+*600 Sq.ft * Washer/dryer in the unit 
+* Queen Size bed in the bedroom and sofa  [...]]]></description>
+<dc:date>2015-03-29T23:08:48-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/vac/4955433408.html</dc:source>
+<dc:title><![CDATA[1 Bedroom House Perfect Location (West Hollywood) 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/01010_dPzwxgtXO9v_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:08:48-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/sfv/apa/4955446768.html">
+<title><![CDATA[World Class 2 Bedroom / 2 Bath Condo Style Apartment (Chatsworth) &#x0024;1115 2bd]]></title>
+<link>http://losangeles.craigslist.org/sfv/apa/4955446768.html</link>
+<description><![CDATA[Available immiately but with flexible move in terms. Super convenient two bedroom, two bathroom apartment located on the top floor. This corner unit has elevator access. No more carrying groceries up the steps. Two spacious master suites with dual cl [...]]]></description>
+<dc:date>2015-03-29T23:08:00-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/sfv/apa/4955446768.html</dc:source>
+<dc:title><![CDATA[World Class 2 Bedroom / 2 Bath Condo Style Apartment (Chatsworth) &#x0024;1115 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00E0E_fpdYOisBdbu_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:08:00-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lgb/apa/4955453702.html">
+<title><![CDATA[Take A Gander At This Gorgeous 2 Bedroom W/ Access To Laundry!!!!! (California Heights) &#x0024;1180 2bd]]></title>
+<link>http://losangeles.craigslist.org/lgb/apa/4955453702.html</link>
+<description><![CDATA[This luxurious, spacious two bedroom apartment is ready for move in. The unit is up off the street (on the top Floor) in a classic building. You can't beat this location -- next to the best restaurants and shops in the area. Walk to public transporta [...]]]></description>
+<dc:date>2015-03-29T23:07:48-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lgb/apa/4955453702.html</dc:source>
+<dc:title><![CDATA[Take A Gander At This Gorgeous 2 Bedroom W/ Access To Laundry!!!!! (California Heights) &#x0024;1180 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00y0y_j8J7BZq3lXG_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:07:48-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/roo/4955460848.html">
+<title><![CDATA[FURNISHED Room in Carson ALL UTILITIES INCLUDED (CARSON) &#x0024;700]]></title>
+<link>http://losangeles.craigslist.org/wst/roo/4955460848.html</link>
+<description><![CDATA[FURNISHED Room in a newly renovated home. 
+HARDWOOD FLOORS. 
+Walk-In Closet 
+Full length mirrors 
+You will share a bathroom with another person 
+RENT: $700 
+DEPOSIT: $100 
+Included in rent: 
+ALL UTILITIES 
+FREE WIFI 
+LAUNDRY 
+SPACIOUS VERANDA FOR GET [...]]]></description>
+<dc:date>2015-03-29T23:07:31-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/roo/4955460848.html</dc:source>
+<dc:title><![CDATA[FURNISHED Room in Carson ALL UTILITIES INCLUDED (CARSON) &#x0024;700]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00n0n_9Pbp7wCFuHa_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:07:31-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/hou/4955464599.html">
+<title><![CDATA[Looking for 1 bedroom in Santa Monica or Mar Vista (Santa Monica)]]></title>
+<link>http://losangeles.craigslist.org/wst/hou/4955464599.html</link>
+<description><![CDATA[Want to rent from owners ONLY. 
+Back of the house, 1 bedroom + den, or a unit in your duplex, either way want to deal with owners only. 
+Looking to move in July-August. 
+2 people(engaged couple). 
+Looking for a cute place, close to our work.]]></description>
+<dc:date>2015-03-29T23:07:11-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/hou/4955464599.html</dc:source>
+<dc:title><![CDATA[Looking for 1 bedroom in Santa Monica or Mar Vista (Santa Monica)]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:07:11-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/off/4926486504.html">
+<title><![CDATA[LaSalle Retail Office (San Pedro) &#x0024;2700 1832ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/wst/off/4926486504.html</link>
+<description><![CDATA[Construction completed in 2010! Retail offices located in beautiful downtown San Pedro. These offices are located right next to the Crowne Plaza Hotel, the Port O' Call, art galleries, and other amenities. There is free public parking across the stre [...]]]></description>
+<dc:date>2015-03-29T23:06:50-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/off/4926486504.html</dc:source>
+<dc:title><![CDATA[LaSalle Retail Office (San Pedro) &#x0024;2700 1832ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00909_joinfxBiZzh_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:06:50-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/apa/4941860731.html">
+<title><![CDATA[Luxury Loft in San Pedro (San Pedro) &#x0024;1900 1300ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/wst/apa/4941860731.html</link>
+<description><![CDATA[LaSalle Loft Unit is soon available for lease. 
+Our exact location is 255 W. 7th Street, and we are located adjacent the Crowne Plaza Hotel in San Pedro. We are close by many amenities. 
+There is a barbecue area on the 4th floor and public parking ac [...]]]></description>
+<dc:date>2015-03-29T23:06:45-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/apa/4941860731.html</dc:source>
+<dc:title><![CDATA[Luxury Loft in San Pedro (San Pedro) &#x0024;1900 1300ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:06:45-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/sgv/vac/4922290269.html">
+<title><![CDATA[(sleeps 9-10) Cozy Cabin Full of Fun - Lake - Village - Marina - Slope (Big Bear Lake, CA) &#x0024;190 3bd 1800ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/sgv/vac/4922290269.html</link>
+<description><![CDATA[Family & friends, come to share all our "Fancy Bear Lodge" can offer you. Send us an email, fun is awaiting you. Our cabin will be the perfect getaway for you. 
+Nestled among big pines, our warm, quiet and spacious cabin (~1800 square feet) is only s [...]]]></description>
+<dc:date>2015-03-29T23:05:53-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/sgv/vac/4922290269.html</dc:source>
+<dc:title><![CDATA[(sleeps 9-10) Cozy Cabin Full of Fun - Lake - Village - Marina - Slope (Big Bear Lake, CA) &#x0024;190 3bd 1800ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00m0m_bmVB7DBx5s8_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:05:53-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/apa/4955456549.html">
+<title><![CDATA[Freshly painted single story home! (Santa Monica) &#x0024;7500 3bd 2000ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/wst/apa/4955456549.html</link>
+<description><![CDATA[Completely renovated 3 BR, 1 3/4 BA, single story home. Freshly painted with a new remodeled granite kitchen and bathrooms. Hardwood floors throughout. Fireplace in living room. Giant back yard. 4-car driveway/carport parking (2 in front and 2 in bac [...]]]></description>
+<dc:date>2015-03-29T23:05:17-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/apa/4955456549.html</dc:source>
+<dc:title><![CDATA[Freshly painted single story home! (Santa Monica) &#x0024;7500 3bd 2000ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00v0v_827TnKLXz3k_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:05:17-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/vac/4931561068.html">
+<title><![CDATA[Getaway to Palm Springs for a Girls Weekend (Palm Springs) 3bd]]></title>
+<link>http://losangeles.craigslist.org/wst/vac/4931561068.html</link>
+<description><![CDATA[The home brings you back in time to the carefree days of the 50's. Relax by the pool ,enjoy the mountain views and good times with friends. A true Rat Pack Original with new furnishings including custom furniture select pieces to compliment the 50's  [...]]]></description>
+<dc:date>2015-03-29T23:05:16-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/vac/4931561068.html</dc:source>
+<dc:title><![CDATA[Getaway to Palm Springs for a Girls Weekend (Palm Springs) 3bd]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/01717_20fGrw3tWBO_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:05:16-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/off/4955463700.html">
+<title><![CDATA[gorgeous cozy medical sublease in prime Santa Monica (Santa Monica) &#x0024;4000 1300ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/wst/off/4955463700.html</link>
+<description><![CDATA[Medical office in peaceful buildng with flowery courtyard, amazing manager, valet parking, wood floors, bamboo wallpaper, gorgeous bathroom, recently fixed up. Great prices for Santa Monica as well. Half furnished with shelving available as well. Ava [...]]]></description>
+<dc:date>2015-03-29T23:04:52-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/off/4955463700.html</dc:source>
+<dc:title><![CDATA[gorgeous cozy medical sublease in prime Santa Monica (Santa Monica) &#x0024;4000 1300ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:04:52-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/reo/4955459537.html">
+<title><![CDATA[Incredible Realty Investment in  Phoenix (Central Phx) &#x0024;225000]]></title>
+<link>http://losangeles.craigslist.org/wst/reo/4955459537.html</link>
+<description><![CDATA[Great Investment Opportunity. 14 Space Travel Trailer Park for Sale in Central Phoenix. 13 Spaces currently rented at an average of $310/month. Monthly expenses total approximately $1000/month. Low annual property taxes. One owner for the past 50 yea [...]]]></description>
+<dc:date>2015-03-29T23:04:16-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/reo/4955459537.html</dc:source>
+<dc:title><![CDATA[Incredible Realty Investment in  Phoenix (Central Phx) &#x0024;225000]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:04:16-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/roo/4955460076.html">
+<title><![CDATA[FURNISHED Room 14 minutes from the Beach (CARSON) &#x0024;725]]></title>
+<link>http://losangeles.craigslist.org/wst/roo/4955460076.html</link>
+<description><![CDATA[FURNISHED Room in a newly renovated home. 
+HARDWOOD FLOORS. 
+Walk-In Closet 
+Full length mirrors 
+You will share a bathroom with another person 
+RENT: $700 
+DEPOSIT: $100 
+Included in rent: 
+ALL UTILITIES 
+FREE WIFI 
+LAUNDRY 
+SPACIOUS VERANDA FOR GET [...]]]></description>
+<dc:date>2015-03-29T23:03:38-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/roo/4955460076.html</dc:source>
+<dc:title><![CDATA[FURNISHED Room 14 minutes from the Beach (CARSON) &#x0024;725]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00n0n_9Pbp7wCFuHa_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:03:38-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/lac/roo/4955460885.html">
+<title><![CDATA[ROOM FOR THE NIGHT (DOWNTOWN)]]></title>
+<link>http://losangeles.craigslist.org/lac/roo/4955460885.html</link>
+<description><![CDATA[IF YOU ARE TRAVELING AND NEED A PLACE FOR ONE OR TWO NIGHTS IN BEAUTIFUL DOWNTOWN. IF YOU ARE A BUSINESS FEMALE ONLY OR MAN , NON SMOKER 
+EXCELLENT AREA MINUTES AWAY FROM ALL THE MAIN BUSINESS DISTRICT 
+EXCELLENT PARKING. MINUTES AWAY FOM THE FREEWAY [...]]]></description>
+<dc:date>2015-03-29T23:03:35-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/lac/roo/4955460885.html</dc:source>
+<dc:title><![CDATA[ROOM FOR THE NIGHT (DOWNTOWN)]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2015-03-29T23:03:35-07:00</dcterms:issued>
+</item>
+<item rdf:about="http://losangeles.craigslist.org/wst/apa/4955452643.html">
+<title><![CDATA[Contemporary townhome for rent!!! (Venice) &#x0024;4250 2bd 1101ft<sup>2</sup>]]></title>
+<link>http://losangeles.craigslist.org/wst/apa/4955452643.html</link>
+<description><![CDATA[Venice Beach contemporary townhome available for rent! Bright, light & spacious FRONT unit with one common wall. Open floor plan with travertine floors, vaulted ceilings, skylight and fireplace. Remodeled gourmet kitchen with Caesar stone counters an [...]]]></description>
+<dc:date>2015-03-29T23:03:31-07:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://losangeles.craigslist.org/wst/apa/4955452643.html</dc:source>
+<dc:title><![CDATA[Contemporary townhome for rent!!! (Venice) &#x0024;4250 2bd 1101ft<sup>2</sup>]]></dc:title>
+<dc:type>text</dc:type>
+<enc:enclosure resource="http://images.craigslist.org/00Y0Y_i10p8nA05qi_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2015-03-29T23:03:31-07:00</dcterms:issued>
+</item>
+</rdf:RDF>

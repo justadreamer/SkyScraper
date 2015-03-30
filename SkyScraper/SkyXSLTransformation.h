@@ -51,4 +51,27 @@ extern NSString  * const SkyScraperErrorDomain;
  */
 - (id) JSONObjectFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error;
 
+/**
+ *  A convenience method that internally applies the transfomration to xml 
+ *  data
+ *
+ *  @param xml    xml NSData represenation
+ *  @param params params dictionary
+ *  @param error  an out param containing NSError object
+ *
+ *  @return returns NSString representation of transformed xml data
+ */
+- (NSString *) stringFromXMLData:(NSData *)xml withParams:(NSDictionary *) params error:(NSError * __autoreleasing *)error;
+
+/**
+ *  A convenience method that internally applies the transformation to xml 
+ *  data
+ *
+ *  @param xml    xml NSData representation
+ *  @param params params dictionary
+ *  @param error  an out param containing NSError object
+ *
+ *  @return returns NSString representation of transformed xml data
+ */
+- (id) JSONObjectFromXMLData:(NSData *)xml withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error;
 @end

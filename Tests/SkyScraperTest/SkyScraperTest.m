@@ -173,4 +173,30 @@
     [self runRegexpFunctionTest:@"match"];
     [self runRegexpFunctionTest:@"replace"];
 }
+
+- (void) testXMLTransformation {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *xslURL = [bundle URLForResource:@"search_rss" withExtension:@"xsl"];
+    
+    NSURL *xmlURL = [bundle URLForResource:@"hhh" withExtension:@"xml"];
+    
+    NSData *xml = [NSData dataWithContentsOfURL:xmlURL];
+    
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
+    
+    NSError *error = nil;
+    id json = [transformation JSONObjectFromXMLData:xml withParams:nil error:&error];
+    
+    XCTAssertNotNil(json);
+    XCTAssertTrue([json[@"title"] length]>0);
+    XCTAssertEqualObjects(json[@"title"], @"craigslist los angeles | housing search ");
+    
+    NSString *s  = [transformation stringFromXMLData:xml withParams:nil error:&error];
+    
+    XCTAssertNotNil(s);
+    XCTAssertTrue([s length]>0);
+    XCTAssertTrue([s containsString:@"craigslist los angeles | housing search"]);
+    
+}
+
 @end

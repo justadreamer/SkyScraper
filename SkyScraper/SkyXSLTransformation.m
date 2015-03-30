@@ -130,4 +130,12 @@ void exslt_org_regular_expressions_init();
     return JSONObject;
 }
 
+- (NSString *) stringFromXMLData:(NSData *)xml withParams:(NSDictionary *) params error:(NSError * __autoreleasing *)error {
+    return nil;
+}
+
+- (id) JSONObjectFromXMLData:(NSData *)xml withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
+    return nil;
+}
+
 @end
