@@ -4,6 +4,7 @@
 #import "SkyXSLTransformation.h"
 #import "SkyModelAdapter.h"
 #import "SkyHTMLResponseSerializer.h"
+#import "SkyXMLResponseSerializer.h"
 #import "SkyMantleModelAdapter.h"
 
 #endif
