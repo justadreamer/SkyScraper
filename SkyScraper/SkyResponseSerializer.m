@@ -19,17 +19,6 @@
     return serializer;
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
-    
-    self.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    
-    return self;
-}
-
 #pragma mark - AFURLResponseSerialization
 
 - (id)responseObjectForResponse:(NSURLResponse *)response

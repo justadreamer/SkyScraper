@@ -11,6 +11,18 @@
 #import "SkyXSLTransformation.h"
 
 @implementation SkyXMLResponseSerializer
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    self.acceptableContentTypes = [NSSet setWithObjects:@"text/xml", nil];
+    
+    return self;
+}
+
 - (id) applyTransformationToData:(NSData *)data withError:(NSError *__autoreleasing *)error {
     return [self.transformation JSONObjectFromXMLData:data withParams:self.params error:error];
 }
