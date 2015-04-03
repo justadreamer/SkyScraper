@@ -85,9 +85,7 @@ void exslt_org_regular_expressions_init();
     
     xmlDocPtr doc = isHTML ? htmlReadDoc((xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
     
-    : xmlReadDoc((xmlChar *)[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
-    
-    ;
+    : xmlReadDoc((xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
 
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
