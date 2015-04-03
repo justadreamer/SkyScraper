@@ -79,6 +79,9 @@ void exslt_org_regular_expressions_init();
         string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     }
     
+    // fix unicode characters, so they could be easily decoded
+    string = [string stringByReplacingOccurrencesOfString:@"&#x" withString:@"\\u"];
+    
     xmlParserOption additionalOptions = isHTML ?
         HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
       : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
