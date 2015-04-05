@@ -79,13 +79,18 @@ void exslt_org_regular_expressions_init();
         string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     }
     
+    string = [string mutableCopy];
+    // unescape all unicode characters (ie \u2605) and XML/HTML entities (ie &#x0024;)
+    CFStringTransform((__bridge CFMutableStringRef)string, NULL, kCFStringTransformToXMLHex, YES);
+    CFStringTransform((__bridge CFMutableStringRef)string, NULL, CFSTR("Any-Hex/Java"), YES);
+    xmlChar *cString = (xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding];
+    
     xmlParserOption additionalOptions = isHTML ?
         HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
       : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
     
-    xmlDocPtr doc = isHTML ? htmlReadDoc((xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
-    
-    : xmlReadDoc((xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
+    xmlDocPtr doc = isHTML ? htmlReadDoc(cString, NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
+    : xmlReadDoc(cString, NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
 
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
