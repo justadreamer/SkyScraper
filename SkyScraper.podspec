@@ -1,16 +1,16 @@
 
 Pod::Spec.new do |s|
   s.name             = "SkyScraper"
-  s.version          = "0.10"
+  s.version          = "0.11"
   s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow an easy HTML scraping into JSON with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
   s.source           = { :git => "git@github.com:justadreamer/SkyScraper.git", :commit => "HEAD" }
   s.ios.deployment_target = '7.0'
-  s.requires_arc = true
-  s.homepage = 'https://github.com/justadreamer/SkyScraper'
-  s.default_subspec = 'All'
-
+  s.requires_arc 	 = true
+  s.homepage 		 = 'https://github.com/justadreamer/SkyScraper'
+  s.default_subspec  = 'All'
+  
   s.subspec 'All' do |ss|
     ss.dependency 'SkyScraper/AFNetworking2'
     ss.dependency 'SkyScraper/Mantle'
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
         'SkyScraper/SkyModelAdapter.h',        
         ]
     ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2 ' }
-    ss.libraries = 'xml2'
+    ss.libraries = 'xml2', 'iconv'
     ss.dependency 'SkyScraper/libxslt-with-plugins'
   end
 

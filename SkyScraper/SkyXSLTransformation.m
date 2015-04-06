@@ -12,6 +12,7 @@
 #include "transform.h"
 #include "xsltutils.h"
 #include "exslt.h"
+#include "iconv.h"
 
 #import "SkyXSLTransformation.h"
 #import "SkyXSLTParams.h"
@@ -60,6 +61,30 @@ void exslt_org_regular_expressions_init();
     self.stylesheet = xsltParseStylesheetDoc(styleSheetDoc);
 }
 
+- (NSData *) cleanUTF8:(NSData *)data {
+    // this function is from
+    // http://stackoverflow.com/questions/3485190/nsstring-initwithdata-returns-null
+    //
+    //
+    iconv_t cd = iconv_open("UTF-8", "UTF-8"); // convert to UTF-8 from UTF-8
+    int one = 1;
+    iconvctl(cd, ICONV_SET_DISCARD_ILSEQ, &one); // discard invalid characters
+    size_t inbytesleft, outbytesleft;
+    inbytesleft = outbytesleft = data.length;
+    char *inbuf  = (char *)data.bytes;
+    char *outbuf = malloc(sizeof(char) * data.length);
+    char *outptr = outbuf;
+    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft)
+        == (size_t)-1) {
+        NSLog(@"this should not happen, seriously");
+        return nil;
+    }
+    NSData *result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
+    iconv_close(cd);
+    free(outbuf);
+    return result;
+}
+
 - (NSData *) transformedDataFromData:(NSData *)data isHTML:(BOOL)isHTML withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
         *error = [NSError errorWithDomain:SkyScraperErrorDomain code:1 userInfo:
@@ -74,15 +99,14 @@ void exslt_org_regular_expressions_init();
     }
     
     
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *string = [[NSString alloc] initWithData:[self cleanUTF8:data] encoding:NSUTF8StringEncoding];
     if (!string) {
         string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     }
     
     string = [string mutableCopy];
-    // unescape all unicode characters (ie \u2605) and XML/HTML entities (ie &#x0024;)
+    // unescape all XML/HTML entities (ie &#x0024;)
     CFStringTransform((__bridge CFMutableStringRef)string, NULL, kCFStringTransformToXMLHex, YES);
-    CFStringTransform((__bridge CFMutableStringRef)string, NULL, CFSTR("Any-Hex/Java"), YES);
     xmlChar *cString = (xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding];
     
     xmlParserOption additionalOptions = isHTML ?
