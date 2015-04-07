@@ -78,9 +78,7 @@ void exslt_org_regular_expressions_init();
     if (!string) {
         string = [self stringUTF8:data clean:YES];
     }
-    if (!isHTML) {
-        string = [self unescapeXMLEntities:string];
-    }
+    string = [self unescapeXMLEntities:string];
     
     xmlChar *cString = (xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding];
     
@@ -88,8 +86,12 @@ void exslt_org_regular_expressions_init();
     HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
     : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
     
-    xmlDocPtr doc = isHTML ? htmlReadDoc(cString, NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
-    : xmlReadDoc(cString, NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
+    CFStringEncoding cfenc = CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding);
+    CFStringRef cfencstr = CFStringConvertEncodingToIANACharSetName(cfenc);
+    const char *enc = CFStringGetCStringPtr(cfencstr, 0);
+    
+    xmlDocPtr doc = isHTML ? htmlReadDoc(cString, NULL, enc, XSLT_PARSE_OPTIONS | additionalOptions)
+    : xmlReadDoc(cString, NULL, enc, XSLT_PARSE_OPTIONS | additionalOptions);
     
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
