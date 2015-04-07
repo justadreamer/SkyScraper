@@ -61,30 +61,6 @@ void exslt_org_regular_expressions_init();
     self.stylesheet = xsltParseStylesheetDoc(styleSheetDoc);
 }
 
-- (NSData *) cleanUTF8:(NSData *)data {
-    // this function is from
-    // http://stackoverflow.com/questions/3485190/nsstring-initwithdata-returns-null
-    //
-    //
-    iconv_t cd = iconv_open("UTF-8", "UTF-8"); // convert to UTF-8 from UTF-8
-    int one = 1;
-    iconvctl(cd, ICONV_SET_DISCARD_ILSEQ, &one); // discard invalid characters
-    size_t inbytesleft, outbytesleft;
-    inbytesleft = outbytesleft = data.length;
-    char *inbuf  = (char *)data.bytes;
-    char *outbuf = malloc(sizeof(char) * data.length);
-    char *outptr = outbuf;
-    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft)
-        == (size_t)-1) {
-        NSLog(@"this should not happen, seriously");
-        return nil;
-    }
-    NSData *result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
-    iconv_close(cd);
-    free(outbuf);
-    return result;
-}
-
 - (NSData *) transformedDataFromData:(NSData *)data isHTML:(BOOL)isHTML withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
         *error = [NSError errorWithDomain:SkyScraperErrorDomain code:1 userInfo:
@@ -98,55 +74,54 @@ void exslt_org_regular_expressions_init();
         return nil;
     }
     
-    
-    NSString *string = [[NSString alloc] initWithData:[self cleanUTF8:data] encoding:NSUTF8StringEncoding];
+    NSString *string = [self stringUTF8:data clean:NO];
     if (!string) {
-        string = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+        string = [self stringUTF8:data clean:YES];
+    }
+    if (!isHTML) {
+        string = [self unescapeXMLEntities:string];
     }
     
-    string = [string mutableCopy];
-    // unescape all XML/HTML entities (ie &#x0024;)
-    CFStringTransform((__bridge CFMutableStringRef)string, NULL, kCFStringTransformToXMLHex, YES);
     xmlChar *cString = (xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding];
     
     xmlParserOption additionalOptions = isHTML ?
-        HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
-      : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
+    HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING
+    : XML_PARSE_RECOVER | XML_PARSE_NOERROR | XML_PARSE_NOWARNING;
     
     xmlDocPtr doc = isHTML ? htmlReadDoc(cString, NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions)
     : xmlReadDoc(cString, NULL, NULL, XSLT_PARSE_OPTIONS | additionalOptions);
-
+    
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
     if (ctxt == NULL) {
         *error = [NSError errorWithDomain:SkyScraperErrorDomain code:3 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"Unable to create transform context"}];
         return nil;
     }
-
+    
     xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | additionalOptions);
     ctxt->xinclude = 1;
-
+    
     SkyXSLTParams *xsltParams = [[SkyXSLTParams alloc]initWithParams:params];
     /* actual applying stylesheet */
     xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)xsltParams.paramsBuf, NULL, NULL, ctxt);
-
+    
     xsltFreeTransformContext(ctxt);
     /* dumping bytes of the result */
     xmlChar *buf;
     int size;
-
+    
     xsltSaveResultToString(&buf, &size, res, self.stylesheet);
-
+    
     /* freeing all other stuff */
     xmlFreeDoc(doc);
     xmlFreeDoc(res);
-
+    
     /* producing result */
     NSData *result = nil;
     if (buf) {
         result = [NSData dataWithBytesNoCopy:buf length:size freeWhenDone:YES];
     }
-
+    
     return result;
 }
 
@@ -184,7 +159,64 @@ void exslt_org_regular_expressions_init();
         JSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
     }
     return JSONObject;
+    
+}
 
+#pragma mark - Fix response data
+
+- (NSString*) stringUTF8:(NSData*)data clean:(BOOL)clean {
+    data = clean ? [self cleanUTF8:data] : data;
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSData *) cleanUTF8:(NSData *)data {
+    // this function is from
+    // http://stackoverflow.com/questions/3485190/nsstring-initwithdata-returns-null
+    //
+    //
+    iconv_t cd = iconv_open("UTF-8", "UTF-8"); // convert to UTF-8 from UTF-8
+    int one = 1;
+    iconvctl(cd, ICONV_SET_DISCARD_ILSEQ, &one); // discard invalid characters
+    size_t inbytesleft, outbytesleft;
+    inbytesleft = outbytesleft = data.length;
+    char *inbuf  = (char *)data.bytes;
+    char *outbuf = malloc(sizeof(char) * data.length);
+    char *outptr = outbuf;
+    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft)
+        == (size_t)-1) {
+        NSLog(@"this should not happen, seriously");
+        return nil;
+    }
+    NSData *result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
+    iconv_close(cd);
+    free(outbuf);
+    return result;
+}
+
+- (NSString*) unescapeXMLEntities:(NSString*)string {
+    // this need to be done to fix the issue with XML entities inside CDATA
+    string = [string stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
+    string = [string stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+    string = [string stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    string = [string stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+    string = [string stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"&#(x?[a-f0-9]{1,4});?" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSMutableString* mutString = [NSMutableString new];
+    __block NSInteger startPos = 0;
+    [regex enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        [mutString appendString:[string substringWithRange:NSMakeRange(startPos, result.range.location - startPos)]];
+        NSString* value = [string substringWithRange:[result rangeAtIndex:1]];
+        if (![value containsString:@"x"]) {
+            value = [NSString stringWithFormat:@"x%lX",(unsigned long)[value integerValue]];
+        }
+        [mutString appendFormat:@"&#%@;",value];
+        startPos = result.range.location + result.range.length;
+    }];
+    [mutString appendString:[string substringWithRange:NSMakeRange(startPos, string.length-startPos)]];
+    
+    CFStringTransform((__bridge CFMutableStringRef)mutString, NULL, kCFStringTransformToXMLHex, YES);
+    return mutString;
 }
 
 @end
