@@ -3,6 +3,10 @@
 extern NSString  * const SkyScraperErrorDomain;
 
 @interface SkyXSLTransformation : NSObject
+/**
+ *  XSLT stylesheet URL if it was initialized with 'initWithXSLTURL:' method
+ */
+@property (nonatomic,strong,readonly) NSURL* xsltURL;
 
 - (instancetype) init NS_UNAVAILABLE;
 

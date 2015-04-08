@@ -50,6 +50,7 @@ void exslt_org_regular_expressions_init();
 
 - (instancetype) initWithXSLTURL:(NSURL *)URL {
     if (self = [super init]) {
+        _xsltURL = URL;
         xmlDocPtr stylesheetDoc = xmlReadFile([[URL absoluteString] cStringUsingEncoding:NSUTF8StringEncoding], NULL, XSLT_PARSE_OPTIONS | XML_PARSE_XINCLUDE);
         [self setupStyleSheetFromXMLDoc:stylesheetDoc];
     }
