@@ -78,7 +78,7 @@ void exslt_org_regular_expressions_init();
     if (!string) {
         string = [self stringUTF8:data clean:YES];
     }
-    string = [self unescapeXMLEntities:string];
+    string = [self unescapeXMLEntities:string isHTML:isHTML];
     
     xmlChar *cString = (xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding];
     
@@ -195,15 +195,17 @@ void exslt_org_regular_expressions_init();
     return result;
 }
 
-- (NSString*) unescapeXMLEntities:(NSString*)string {
-    // this need to be done to fix the issue with XML entities inside CDATA
-    string = [string stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-    string = [string stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-    string = [string stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-    string = [string stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-    string = [string stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+- (NSString*) unescapeXMLEntities:(NSString*)string isHTML:(BOOL)isHTML {
+    if (!isHTML) {
+        // this need to be done to fix the issue with XML entities inside CDATA
+        string = [string stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
+        string = [string stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+        string = [string stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+        string = [string stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+        string = [string stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    }
     
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"&#(x?[a-f0-9]{1,4});?" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"&#(x?[a-f0-9]{4});?" options:NSRegularExpressionCaseInsensitive error:nil];
     NSMutableString* mutString = [NSMutableString new];
     __block NSInteger startPos = 0;
     [regex enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
