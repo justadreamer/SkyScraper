@@ -18,7 +18,6 @@
     
     <xsl:output method="text"/>
     
-    <!--transform AdsGroup-->
     <xsl:template match="/">
         {
         "title": "<xsl:value-of select="//dc:title"/>"

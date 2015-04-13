@@ -7,9 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SkyXSLTransformation.h"
-#import "SkyMantleModelAdapter.h"
+#import <SkyScraper/SkyScraper.h>
+#import <AFNetworking/AFNetworking.h>
 #import "AdData.h"
+#import "AdDataContainer.h"
 
 @interface SkyScraperTest : XCTestCase
 @end
@@ -196,7 +197,45 @@
     XCTAssertNotNil(s);
     XCTAssertTrue([s length]>0);
     XCTAssertTrue([s containsString:@"craigslist los angeles | housing search"]);
+}
+
+- (void) testJSONTransformation {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *xslURL = [bundle URLForResource:@"search_map" withExtension:@"xsl"];
     
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://sfbay.craigslist.org/jsonsearch/hhh"]];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
+    SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:AdDataContainer.class];
+    operation.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
+    [operation start];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"load"];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
+        XCTAssertNotNil(adDataContainer);
+        XCTAssertTrue(adDataContainer.ads.count>0);
+        NSUInteger adsWithPrice = 0;
+        for (AdData* adData in adDataContainer.ads) {
+            XCTAssertTrue(adData.postingID.length>0);
+            XCTAssertTrue(adData.title.length>0);
+            XCTAssertNotNil(adData.URL);
+            if (adData.price.length>0) {
+                adsWithPrice++;
+            }
+        }
+        XCTAssertTrue(adsWithPrice>0);
+        [expectation fulfill];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        XCTFail(@"%@",error.localizedDescription);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if (error) {
+            XCTFail(@"%@",error.localizedDescription);
+        }
+    }];
 }
 
 @end
