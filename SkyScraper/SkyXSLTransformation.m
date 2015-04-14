@@ -79,7 +79,9 @@ void exslt_org_regular_expressions_init();
     if (!string) {
         string = [self stringUTF8:data clean:YES];
     }
-    string = [self unescapeXMLEntities:string isHTML:isHTML];
+    if (self.replaceXMLEntities) {
+        string = [self replaceEntities:string isHTML:isHTML];
+    }
     
     xmlChar *cString = (xmlChar *)[string cStringUsingEncoding:NSUTF8StringEncoding];
     
@@ -196,32 +198,44 @@ void exslt_org_regular_expressions_init();
     return result;
 }
 
-- (NSString*) unescapeXMLEntities:(NSString*)string isHTML:(BOOL)isHTML {
+- (NSString*) replaceEntities:(NSString*)string isHTML:(BOOL)isHTML {
+    NSMutableString* (^replaceBlock)(id,id,id,id) = ^NSMutableString*(NSString* inString, NSString* regexString, NSString* appendFormat, NSString*(^block)(NSString*value)) {
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString
+                                                                               options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators error:nil];
+        NSMutableString* mutString = [NSMutableString new];
+        __block NSInteger startPos = 0;
+        [regex enumerateMatchesInString:inString options:0 range:(NSRange){0, inString.length} usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+            [mutString appendString:[inString substringWithRange:(NSRange){startPos, result.range.location - startPos}]];
+            NSString* value = [inString substringWithRange:[result rangeAtIndex:1]];
+            [mutString appendFormat:appendFormat,block(value)];
+            startPos = result.range.location + result.range.length;
+        }];
+        [mutString appendString:[inString substringWithRange:NSMakeRange(startPos, inString.length-startPos)]];
+        return mutString;
+    };
+    
     if (!isHTML) {
-        // this need to be done to fix the issue with XML entities inside CDATA
-        string = [string stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-        string = [string stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-        string = [string stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-        string = [string stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-        string = [string stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+        // this need to be done to fix the issue with XML entities inside the CDATA
+        string = replaceBlock(string,@"<!\\[CDATA\\[(.*?)\\]\\]>",@"<![CDATA[%@]]>",^(NSString*value) {
+            value = [value stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
+            value = [value stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+            value = [value stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+            value = [value stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+            value = [value stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+            return value;
+        });
     }
     
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"&#(x?[a-f0-9]{4});?" options:NSRegularExpressionCaseInsensitive error:nil];
-    NSMutableString* mutString = [NSMutableString new];
-    __block NSInteger startPos = 0;
-    [regex enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-        [mutString appendString:[string substringWithRange:NSMakeRange(startPos, result.range.location - startPos)]];
-        NSString* value = [string substringWithRange:[result rangeAtIndex:1]];
+    // fix broken xml enities (f.e x#0024)
+    string = replaceBlock(string,@"&#(x?[a-f0-9]{4});?",@"&#%@;",^(NSString*value) {
         if (![value containsString:@"x"]) {
             value = [NSString stringWithFormat:@"x%lX",(unsigned long)[value integerValue]];
         }
-        [mutString appendFormat:@"&#%@;",value];
-        startPos = result.range.location + result.range.length;
-    }];
-    [mutString appendString:[string substringWithRange:NSMakeRange(startPos, string.length-startPos)]];
+        return value;
+    });
     
-    CFStringTransform((__bridge CFMutableStringRef)mutString, NULL, kCFStringTransformToXMLHex, YES);
-    return mutString;
+    CFStringTransform((__bridge CFMutableStringRef)string, NULL, kCFStringTransformToXMLHex, YES);
+    return string;
 }
 
 @end

@@ -12,6 +12,10 @@
 #import "AdData.h"
 #import "AdDataContainer.h"
 
+@interface SkyXSLTransformation (Private)
+- (NSString*) replaceEntities:(NSString*)string isHTML:(BOOL)isHTML;
+@end
+
 @interface SkyScraperTest : XCTestCase
 @end
 
@@ -190,13 +194,13 @@
     
     XCTAssertNotNil(json);
     XCTAssertTrue([json[@"title"] length]>0);
-    XCTAssertEqualObjects(json[@"title"], @"craigslist los angeles | housing search ");
+    XCTAssertEqualObjects(json[@"title"], @"WHY PAY YOUR LANDLORD'S MORTGAGE!!! BE A FIRST TIME HOME BUYER!!! 3bd 1600ft<sup>2</sup>");
     
     NSString *s  = [transformation stringFromXMLData:xml withParams:nil error:&error];
     
     XCTAssertNotNil(s);
     XCTAssertTrue([s length]>0);
-    XCTAssertTrue([s containsString:@"craigslist los angeles | housing search"]);
+    XCTAssertTrue([s containsString:@"WHY PAY YOUR LANDLORD'S MORTGAGE!!!"]);
 }
 
 - (void) testJSONTransformation {
@@ -236,6 +240,57 @@
             XCTFail(@"%@",error.localizedDescription);
         }
     }];
+}
+
+#pragma mark - check bad UTF-8 encoding & XML entities
+
+- (void) testXMLEntitiesReplcing {
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:nil];
+    NSString* string = @"&#x20B4&amp;&quot;&apos;&lt;&gt;&#1090;&#1077;&#1082;&#1089;&#1090;&#x20B4";
+    NSString* stringWithCDATA = [string stringByAppendingFormat:@"<![CDATA[%@]]> <![CDATA[%@]]>",string,string];
+    XCTAssertEqualObjects([transformation replaceEntities:string isHTML:YES],
+                          @"₴&amp;&quot;&apos;&lt;&gt;текст₴");
+    XCTAssertEqualObjects([transformation replaceEntities:stringWithCDATA isHTML:YES],
+                          @"₴&amp;&quot;&apos;&lt;&gt;текст₴<![CDATA[₴&amp;&quot;&apos;&lt;&gt;текст₴]]> <![CDATA[₴&amp;&quot;&apos;&lt;&gt;текст₴]]>");
+    XCTAssertEqualObjects([transformation replaceEntities:string isHTML:NO],
+                          @"₴&amp;&quot;&apos;&lt;&gt;текст₴");
+    XCTAssertEqualObjects([transformation replaceEntities:stringWithCDATA isHTML:NO],
+                          @"₴&amp;&quot;&apos;&lt;&gt;текст₴<![CDATA[₴&\"'<>текст₴]]> <![CDATA[₴&\"'<>текст₴]]>");
+}
+
+- (void) testBadXMLEncoding {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *xslURL = [bundle URLForResource:@"search_rss" withExtension:@"xsl"];
+    NSURL *xmlURL = [bundle URLForResource:@"bad_utf8" withExtension:@"xml"];
+    NSData *xml = [NSData dataWithContentsOfURL:xmlURL];
+    
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
+    transformation.replaceXMLEntities = YES;
+    
+    NSError *error = nil;
+    id json = [transformation JSONObjectFromXMLData:xml withParams:nil error:&error];
+    
+    XCTAssertNil(error);
+    XCTAssertEqualObjects(json[@"title"], @"WoW! Look At Me! ★ Big Beautiful Studio ★ Paid Utilities! (&\"'<>текст₴) (Highland Park South Pasadena Eagle Rock) $1350"); // inside CDATA
+    XCTAssertEqualObjects(json[@"rights"], @"© 2015 (&\"'<>текст₴)"); // outside CDATA
+}
+
+- (void) testBadHTMLEncoding {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *xslURL = [bundle URLForResource:@"adsearch" withExtension:@"xsl"];
+    NSURL *htmlURL = [bundle URLForResource:@"bad_utf8" withExtension:@"html"];
+    NSData *html = [NSData dataWithContentsOfURL:htmlURL];
+    
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
+    transformation.replaceXMLEntities = YES;
+    
+    NSError *error = nil;
+    id json = [transformation JSONObjectFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
+    
+    XCTAssertNil(error);
+    NSDictionary* adData = [json[@"ads"] firstObject];
+    XCTAssertNotNil(adData);
+    XCTAssertEqualObjects(adData[@"title"], @"© WoW! Look At Me! Big Beautiful Studio Paid Utilities! (&\"'<>текст₴)");
 }
 
 @end

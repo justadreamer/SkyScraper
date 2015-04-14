@@ -7,6 +7,10 @@ extern NSString  * const SkyScraperErrorDomain;
  *  XSLT stylesheet URL if it was initialized with 'initWithXSLTURL:' method
  */
 @property (nonatomic,strong,readonly) NSURL* xsltURL;
+/**
+ *  set to YES to replace named entities with characters and decimal entities with hex equivalents (NO by default)
+ */
+@property (nonatomic,assign) BOOL replaceXMLEntities;
 
 - (instancetype) init NS_UNAVAILABLE;
 
