@@ -4,7 +4,8 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:str="http://exslt.org/strings"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
-                extension-element-prefixes="str">
+                xmlns:regexp="http://exslt.org/regular-expressions"
+                extension-element-prefixes="str regexp">
 
 <xsl:output method="text"/>
 
@@ -25,8 +26,8 @@
       "postingID":"<xsl:value-of select="@data-pid"/>",
       "title":"<xsl:call-template name="tpl_sanitize"><xsl:with-param name="text" select=".//span[@class='pl']/a"/></xsl:call-template>",
       "link":"<xsl:call-template name="tpl_prepend_href_with_base_url"><xsl:with-param name="href" select="a/@href"/></xsl:call-template>",
-"thumbnail":"<xsl:if test="string(a/@data-id)!=''">
-<xsl:value-of select="'http://images.craigslist.org/'"/><xsl:value-of select="str:replace(a/@data-id,':0','')" /><xsl:value-of select="'_300x300.jpg'" />
+"thumbnail":"<xsl:if test="string(a/@data-ids)!=''">
+<xsl:value-of select="'http://images.craigslist.org/'"/><xsl:value-of select="regexp:replace(str:replace(a/@data-ids,':0',''),',.*','g','')" /><xsl:value-of select="'_300x300.jpg'" />
 </xsl:if>",
       "date":"<xsl:value-of select=".//time/@title"/>",
       "price":"<xsl:value-of select=".//span[@class='price']"/>",
