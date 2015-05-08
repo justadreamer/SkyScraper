@@ -26,9 +26,7 @@
                           error:(NSError *__autoreleasing *)error
 {
     if (![self validateResponse:(NSHTTPURLResponse *)response data:data error:error]) {
-        if (!error) {
-            return nil;
-        }
+        return nil;
     }
     
     id JSONObject = [self applyTransformationToData:data withError:error];
