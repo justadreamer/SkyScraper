@@ -32,6 +32,7 @@
 		441D0FD61AC95717005517E7 /* hhh.xml in Resources */ = {isa = PBXBuildFile; fileRef = 441D0FD51AC95717005517E7 /* hhh.xml */; };
 		6359F4111ADBF2ED009B5E1A /* search_map.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 6359F4101ADBF2ED009B5E1A /* search_map.xsl */; };
 		6359F4131ADC0B2D009B5E1A /* tpl_sanitize.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 6359F4121ADC0B2D009B5E1A /* tpl_sanitize.xsl */; };
+		63F489901AFCAEBC00E89B15 /* adjsonsearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 63F4898F1AFCAEBC00E89B15 /* adjsonsearch.json */; };
 		63F7219D1ADCE7F4003DEB32 /* bad_utf8.html in Resources */ = {isa = PBXBuildFile; fileRef = 63F7219B1ADCE7F4003DEB32 /* bad_utf8.html */; };
 		63F7219E1ADCE7F4003DEB32 /* bad_utf8.xml in Resources */ = {isa = PBXBuildFile; fileRef = 63F7219C1ADCE7F4003DEB32 /* bad_utf8.xml */; };
 		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
@@ -70,6 +71,7 @@
 		549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.release.xcconfig"; sourceTree = "<group>"; };
 		6359F4101ADBF2ED009B5E1A /* search_map.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = search_map.xsl; sourceTree = "<group>"; };
 		6359F4121ADC0B2D009B5E1A /* tpl_sanitize.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tpl_sanitize.xsl; sourceTree = "<group>"; };
+		63F4898F1AFCAEBC00E89B15 /* adjsonsearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adjsonsearch.json; sourceTree = "<group>"; };
 		63F7219B1ADCE7F4003DEB32 /* bad_utf8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bad_utf8.html; sourceTree = "<group>"; };
 		63F7219C1ADCE7F4003DEB32 /* bad_utf8.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = bad_utf8.xml; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 		440814711A17AA3500DEE820 /* XSLT */ = {
 			isa = PBXGroup;
 			children = (
+				63F4898F1AFCAEBC00E89B15 /* adjsonsearch.json */,
 				6359F4121ADC0B2D009B5E1A /* tpl_sanitize.xsl */,
 				441D0FD51AC95717005517E7 /* hhh.xml */,
 				441D0FD31AC95707005517E7 /* search_rss.xsl */,
@@ -258,6 +261,7 @@
 				6359F4131ADC0B2D009B5E1A /* tpl_sanitize.xsl in Resources */,
 				440814941A17AA3500DEE820 /* test.out in Resources */,
 				440814901A17AA3500DEE820 /* postform.xsl in Resources */,
+				63F489901AFCAEBC00E89B15 /* adjsonsearch.json in Resources */,
 				441D0FD61AC95717005517E7 /* hhh.xml in Resources */,
 				440814951A17AA3500DEE820 /* test.xml in Resources */,
 			);

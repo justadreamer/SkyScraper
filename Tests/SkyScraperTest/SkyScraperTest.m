@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "AdData.h"
 #import "AdDataContainer.h"
+#import "Nocilla.h"
 
 @interface SkyXSLTransformation (Private)
 - (NSString*) replaceEntities:(NSString*)string isHTML:(BOOL)isHTML;
@@ -19,7 +20,21 @@
 @interface SkyScraperTest : XCTestCase
 @end
 
+#define kAdJsonSearch_URL   @"http://sfbay.craigslist.org/jsonsearch/hhh"
+#define kIPBlock_URL        @"http://sfbay.craigslist.org"
+
 @implementation SkyScraperTest
+
+- (void) setUp {
+    [super setUp];
+    [[LSNocilla sharedInstance] start];
+}
+
+- (void) tearDown {
+    [[LSNocilla sharedInstance] clearStubs];
+    [[LSNocilla sharedInstance] stop];
+    [super tearDown];
+}
 
 - (void)processAdSearchHTMLWithTransformation:(SkyXSLTransformation *)transformation {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
@@ -203,19 +218,44 @@
     XCTAssertTrue([s containsString:@"WHY PAY YOUR LANDLORD'S MORTGAGE!!!"]);
 }
 
+- (void) testErrorHandling {
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:kIPBlock_URL]];
+    stubRequest(@"GET", kIPBlock_URL).andFailWithError([NSError errorWithDomain:@"Forbidden" code:403 userInfo:nil]);
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:[[NSBundle bundleForClass:self.class] URLForResource:@"adsearch" withExtension:@"xsl"]];
+    SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:AdDataContainer.class];
+    operation.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"load_error"];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
+        XCTFail(@"nu success in this case, it should return 403 error");
+        [expectation fulfill];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        XCTAssertEqual(error.code, 403,@"error code should be 403");
+        [expectation fulfill];
+    }];
+    [operation start];
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if (error) XCTFail(@"%@",error.localizedDescription);
+    }];
+
+}
+
 - (void) testJSONTransformation {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     NSURL *xslURL = [bundle URLForResource:@"search_map" withExtension:@"xsl"];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://sfbay.craigslist.org/jsonsearch/hhh"]];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:kAdJsonSearch_URL]];
+    NSString* path = [bundle pathForResource:@"adjsonsearch" ofType:@"json"];
+    stubRequest(@"GET", kAdJsonSearch_URL).andReturnRawResponse([NSData dataWithContentsOfFile:path]).withHeaders(@{@"Content-Type": @"application/json"});
+    
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:AdDataContainer.class];
     operation.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
-    [operation start];
-    
-    XCTestExpectation *expectation = [self expectationWithDescription:@"load"];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"load_json"];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
         XCTAssertNotNil(adDataContainer);
         XCTAssertTrue(adDataContainer.ads.count>0);
@@ -234,11 +274,9 @@
         XCTFail(@"%@",error.localizedDescription);
         [expectation fulfill];
     }];
-    
+    [operation start];
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
-        if (error) {
-            XCTFail(@"%@",error.localizedDescription);
-        }
+        if (error) XCTFail(@"%@",error.localizedDescription);
     }];
 }
 
