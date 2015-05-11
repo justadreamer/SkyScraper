@@ -96,36 +96,44 @@ void exslt_org_regular_expressions_init();
     xmlDocPtr doc = isHTML ? htmlReadDoc(cString, NULL, enc, XSLT_PARSE_OPTIONS | additionalOptions)
     : xmlReadDoc(cString, NULL, enc, XSLT_PARSE_OPTIONS | additionalOptions);
     
+    NSData *result = nil;
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
-    if (ctxt == NULL) {
+    if (ctxt) {
+        xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | additionalOptions);
+        ctxt->xinclude = 1;
+        
+        SkyXSLTParams *xsltParams = [[SkyXSLTParams alloc] initWithParams:params];
+        /* actual applying stylesheet */
+        xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)xsltParams.paramsBuf, NULL, NULL, ctxt);
+        
+        xsltFreeTransformContext(ctxt);
+        
+        if (res) {
+            /* dumping bytes of the result */
+            xmlChar *buf;
+            int size;
+            
+            xsltSaveResultToString(&buf, &size, res, self.stylesheet);
+            
+            xmlFreeDoc(res);
+            
+            /* producing result */
+            if (buf) {
+                result = [NSData dataWithBytesNoCopy:buf length:size freeWhenDone:YES];
+            }
+            
+        } else {
+            *error = [NSError errorWithDomain:SkyScraperErrorDomain code:4 userInfo:
+                      @{NSLocalizedFailureReasonErrorKey : @"Unable to apply stylesheet"}];
+        }
+        
+    } else {
         *error = [NSError errorWithDomain:SkyScraperErrorDomain code:3 userInfo:
                   @{NSLocalizedFailureReasonErrorKey : @"Unable to create transform context"}];
-        return nil;
     }
-    
-    xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | additionalOptions);
-    ctxt->xinclude = 1;
-    
-    SkyXSLTParams *xsltParams = [[SkyXSLTParams alloc]initWithParams:params];
-    /* actual applying stylesheet */
-    xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)xsltParams.paramsBuf, NULL, NULL, ctxt);
-    
-    xsltFreeTransformContext(ctxt);
-    /* dumping bytes of the result */
-    xmlChar *buf;
-    int size;
-    
-    xsltSaveResultToString(&buf, &size, res, self.stylesheet);
     
     /* freeing all other stuff */
     xmlFreeDoc(doc);
-    xmlFreeDoc(res);
-    
-    /* producing result */
-    NSData *result = nil;
-    if (buf) {
-        result = [NSData dataWithBytesNoCopy:buf length:size freeWhenDone:YES];
-    }
     
     return result;
 }
