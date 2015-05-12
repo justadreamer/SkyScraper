@@ -97,25 +97,24 @@ void exslt_org_regular_expressions_init();
     : xmlReadDoc(cString, NULL, enc, XSLT_PARSE_OPTIONS | additionalOptions);
     
     NSData *result = nil;
+    xmlDocPtr res = NULL;
+    
     xsltTransformContextPtr ctxt = xsltNewTransformContext(self.stylesheet, doc);
+    
     if (ctxt) {
         xsltSetCtxtParseOptions(ctxt, XSLT_PARSE_OPTIONS | additionalOptions);
         ctxt->xinclude = 1;
         
         SkyXSLTParams *xsltParams = [[SkyXSLTParams alloc] initWithParams:params];
         /* actual applying stylesheet */
-        xmlDocPtr res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)xsltParams.paramsBuf, NULL, NULL, ctxt);
-        
-        xsltFreeTransformContext(ctxt);
+        res = xsltApplyStylesheetUser(self.stylesheet, doc, (const char **)xsltParams.paramsBuf, NULL, NULL, ctxt);
         
         if (res) {
             /* dumping bytes of the result */
             xmlChar *buf;
             int size;
-            
+
             xsltSaveResultToString(&buf, &size, res, self.stylesheet);
-            
-            xmlFreeDoc(res);
             
             /* producing result */
             if (buf) {
@@ -133,7 +132,15 @@ void exslt_org_regular_expressions_init();
     }
     
     /* freeing all other stuff */
-    xmlFreeDoc(doc);
+    if (res) {
+        xmlFreeDoc(res);
+    }
+    if (ctxt) {
+        xsltFreeTransformContext(ctxt);
+    }
+    if (doc) {
+        xmlFreeDoc(doc);
+    }
     
     return result;
 }
