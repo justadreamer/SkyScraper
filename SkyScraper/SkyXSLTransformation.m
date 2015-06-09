@@ -241,12 +241,9 @@ void exslt_org_regular_expressions_init();
         });
     }
     
-    // fix broken xml enities (f.e x#0024)
-    string = replaceBlock(string,@"&#(x?[a-f0-9]{4});?",@"&#%@;",^(NSString*value) {
-        if (![value containsString:@"x"]) {
-            value = [NSString stringWithFormat:@"x%lX",(unsigned long)[value integerValue]];
-        }
-        return value;
+    // replace decimal entities with hex equivalents
+    string = replaceBlock(string,@"&#([a-f0-9]{4,5});",@"&#%@;",^(NSString*value) {
+        return [NSString stringWithFormat:@"x%lX",(unsigned long)[value integerValue]];
     });
     
     CFStringTransform((__bridge CFMutableStringRef)string, NULL, kCFStringTransformToXMLHex, YES);

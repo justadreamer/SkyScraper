@@ -284,7 +284,7 @@
 
 - (void) testXMLEntitiesReplcing {
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:nil];
-    NSString* string = @"&#x20B4&amp;&quot;&apos;&lt;&gt;&#1090;&#1077;&#1082;&#1089;&#1090;&#x20B4";
+    NSString* string = @"&#x20B4;&amp;&quot;&apos;&lt;&gt;&#1090;&#1077;&#1082;&#1089;&#1090;&#x20B4;";
     NSString* stringWithCDATA = [string stringByAppendingFormat:@"<![CDATA[%@]]> <![CDATA[%@]]>",string,string];
     XCTAssertEqualObjects([transformation replaceEntities:string isHTML:YES],
                           @"₴&amp;&quot;&apos;&lt;&gt;текст₴");
