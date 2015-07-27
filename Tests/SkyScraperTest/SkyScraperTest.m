@@ -331,4 +331,8 @@
     XCTAssertEqualObjects(adData[@"title"], @"© WoW! Look At Me! Big Beautiful Studio Paid Utilities! (&\"'<>текст₴)");
 }
 
+- (void) testRegexpMatchingGroups {
+    [self runRegexpFunctionTest:@"testgroups"];
+}
+
 @end

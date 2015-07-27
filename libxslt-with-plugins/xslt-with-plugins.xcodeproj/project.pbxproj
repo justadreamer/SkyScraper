@@ -44,7 +44,7 @@
 		44B2EDF11A0D7FC8000AFC00 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = I;
 			dstSubfolderSpec = 16;
 			files = (
 			);
@@ -405,6 +405,11 @@
 		44B2EE081A0D7FC8000AFC00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					../pcre,
@@ -418,6 +423,11 @@
 		44B2EE091A0D7FC8000AFC00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					../pcre,
