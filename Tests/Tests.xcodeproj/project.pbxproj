@@ -30,6 +30,9 @@
 		4408163F1A19331000DEE820 /* AdDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4408163D1A19331000DEE820 /* AdDataContainer.m */; };
 		441D0FD41AC95707005517E7 /* search_rss.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 441D0FD31AC95707005517E7 /* search_rss.xsl */; };
 		441D0FD61AC95717005517E7 /* hhh.xml in Resources */ = {isa = PBXBuildFile; fileRef = 441D0FD51AC95717005517E7 /* hhh.xml */; };
+		44551B941B66CA330059795E /* testgroups.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 44551B931B66CA330059795E /* testgroups.xsl */; };
+		44551B961B66CA700059795E /* testgroups.xml in Resources */ = {isa = PBXBuildFile; fileRef = 44551B951B66CA700059795E /* testgroups.xml */; };
+		44551B981B66CB330059795E /* testgroups.out in Resources */ = {isa = PBXBuildFile; fileRef = 44551B971B66CB330059795E /* testgroups.out */; };
 		6359F4111ADBF2ED009B5E1A /* search_map.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 6359F4101ADBF2ED009B5E1A /* search_map.xsl */; };
 		6359F4131ADC0B2D009B5E1A /* tpl_sanitize.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 6359F4121ADC0B2D009B5E1A /* tpl_sanitize.xsl */; };
 		63F489901AFCAEBC00E89B15 /* adjsonsearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 63F4898F1AFCAEBC00E89B15 /* adjsonsearch.json */; };
@@ -67,6 +70,9 @@
 		4408163D1A19331000DEE820 /* AdDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDataContainer.m; sourceTree = "<group>"; };
 		441D0FD31AC95707005517E7 /* search_rss.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = search_rss.xsl; sourceTree = "<group>"; };
 		441D0FD51AC95717005517E7 /* hhh.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hhh.xml; sourceTree = "<group>"; };
+		44551B931B66CA330059795E /* testgroups.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testgroups.xsl; sourceTree = "<group>"; };
+		44551B951B66CA700059795E /* testgroups.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testgroups.xml; sourceTree = "<group>"; };
+		44551B971B66CB330059795E /* testgroups.out */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testgroups.out; sourceTree = "<group>"; };
 		447F79FE19F6E6500089D036 /* SkyScraperTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyScraperTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		549E468DE1BB47FEA37F8D96 /* Pods-XHCLScraping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.release.xcconfig"; sourceTree = "<group>"; };
 		6359F4101ADBF2ED009B5E1A /* search_map.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = search_map.xsl; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 				440814831A17AA3500DEE820 /* testinclude.xsl */,
 				63F7219B1ADCE7F4003DEB32 /* bad_utf8.html */,
 				63F7219C1ADCE7F4003DEB32 /* bad_utf8.xml */,
+				44551B931B66CA330059795E /* testgroups.xsl */,
+				44551B951B66CA700059795E /* testgroups.xml */,
+				44551B971B66CB330059795E /* testgroups.out */,
 			);
 			path = XSLT;
 			sourceTree = "<group>";
@@ -253,12 +262,15 @@
 				4408148E1A17AA3500DEE820 /* match.xsl in Resources */,
 				441D0FD41AC95707005517E7 /* search_rss.xsl in Resources */,
 				6359F4111ADBF2ED009B5E1A /* search_map.xsl in Resources */,
+				44551B961B66CA700059795E /* testgroups.xml in Resources */,
 				440814871A17AA3500DEE820 /* adsearch.html in Resources */,
 				440814911A17AA3500DEE820 /* replace.out in Resources */,
 				63F7219E1ADCE7F4003DEB32 /* bad_utf8.xml in Resources */,
 				4408148F1A17AA3500DEE820 /* postform.html in Resources */,
 				440814971A17AA3500DEE820 /* testinclude.xsl in Resources */,
+				44551B981B66CB330059795E /* testgroups.out in Resources */,
 				6359F4131ADC0B2D009B5E1A /* tpl_sanitize.xsl in Resources */,
+				44551B941B66CA330059795E /* testgroups.xsl in Resources */,
 				440814941A17AA3500DEE820 /* test.out in Resources */,
 				440814901A17AA3500DEE820 /* postform.xsl in Resources */,
 				63F489901AFCAEBC00E89B15 /* adjsonsearch.json in Resources */,

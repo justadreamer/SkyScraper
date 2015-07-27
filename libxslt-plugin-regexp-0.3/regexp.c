@@ -8,6 +8,7 @@
  *
  * Authors:
  *   Joel W. Reed <joelwreed@gmail.com>
+ *   Some modification by Kyle Maxwell
  *
  * TODO:
  * functions:
@@ -15,33 +16,7 @@
  *   regexp:replace
  *   regexp:test
  */
-
-#include <libxml/tree.h>
-#include <libxml/xpath.h>
-#include <libxml/xpathInternals.h>
-
-#include "xsltconfig.h"
-#include "xsltutils.h"
-#include "xsltInternals.h"
-#include "extensions.h"
-#include "exsltexports.h"
-
-#include "pcre.h"
-#include <string.h>
-
-/* make sure init function is exported on win32 */
-#if defined(_WIN32)
-  #define PLUGINPUBFUN __declspec(dllexport)
-#else
-  #define PLUGINPUBFUN
-#endif
-
-/**
- * EXSLT_REGEXP_NAMESPACE:
- *
- * Namespace for EXSLT regexp functions
- */
-#define EXSLT_REGEXP_NAMESPACE ((const xmlChar *) "http://exslt.org/regular-expressions")
+#include "regexp.h"
 
 static void
 exsltRegexpFlagsFromString(const xmlChar* flagstr, 
@@ -122,18 +97,23 @@ exsltRegexpMatchFunction (xmlXPathParserContextPtr ctxt, int nargs)
     xmlDocPtr container;
     xmlXPathObjectPtr ret = NULL;
     xmlChar *haystack, *regexp, *flagstr, *working, *match;
-    int rc, x, flags, global, ovector[3];
+    int rc, x, flags, global, ovector[30];
 
     if ((nargs < 1) || (nargs > 3)) {
         xmlXPathSetArityError(ctxt);
         return;
     }
 
-    flagstr = xmlXPathPopString(ctxt);
-    if (xmlXPathCheckError(ctxt) || (flagstr == NULL)) {
-        return;
-    }
 
+    if (nargs > 2) {
+      flagstr = xmlXPathPopString(ctxt);
+      if (xmlXPathCheckError(ctxt) || (flagstr == NULL)) {
+          return;
+      }
+    } else {
+     flagstr = xmlStrdup("");
+    }
+    
     regexp = xmlXPathPopString(ctxt);
     if (xmlXPathCheckError(ctxt) || (regexp == NULL)) {
         xmlFree(flagstr);
@@ -168,15 +148,16 @@ exsltRegexpMatchFunction (xmlXPathParserContextPtr ctxt, int nargs)
                                 ovector, sizeof(ovector)/sizeof(int));
 
         while (rc > 0) {
-          match = xmlStrsub(working, ovector[0], ovector[1]-ovector[0]);
-          if (NULL == match) goto fail;
+					for(int group = 0; group < rc; group++) {
+          	match = xmlStrsub(working, ovector[group*2], ovector[group*2+1]-ovector[group*2]);
+          	if (NULL == match) goto fail;
 
-          node = xmlNewDocRawNode(container, NULL, "match", match);
-          xmlFree(match);
+	          node = xmlNewDocRawNode(container, NULL, "match", match);
+	          xmlFree(match);
 
-          xmlAddChild((xmlNodePtr) container, node);
-          xmlXPathNodeSetAddUnique(ret->nodesetval, node);
-
+	          xmlAddChild((xmlNodePtr) container, node);
+	          xmlXPathNodeSetAddUnique(ret->nodesetval, node);
+					}
           if (!global) break;
 
           working = working + ovector[1];
@@ -314,9 +295,13 @@ exsltRegexpTestFunction (xmlXPathParserContextPtr ctxt, int nargs)
         return;
     }
 
+    if(nargs > 2) {
     flagstr = xmlXPathPopString(ctxt);
-    if (xmlXPathCheckError(ctxt) || (flagstr == NULL)) {
-        return;
+      if (xmlXPathCheckError(ctxt) || (flagstr == NULL)) {
+          return;
+      }
+    } else {
+      flagstr = xmlStrdup("");
     }
 
     regexp_middle = xmlXPathPopString(ctxt);
