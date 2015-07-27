@@ -1,11 +1,11 @@
 
 Pod::Spec.new do |s|
   s.name             = "SkyScraper"
-  s.version          = "0.21"
-  s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow an easy HTML scraping into JSON with the following deserialization into application models"
+  s.version          = "0.22"
+  s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow easy HTML scraping with data represented in JSON format with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
-  s.source           = { :git => "git@github.com:justadreamer/SkyScraper.git", :commit => "HEAD" }
+  s.source           = { :git => "git@github.com:justadreamer/SkyScraper.git", :tag => s.version }
   s.ios.deployment_target = '7.0'
   s.requires_arc 	 = true
   s.homepage 		 = 'https://github.com/justadreamer/SkyScraper'
