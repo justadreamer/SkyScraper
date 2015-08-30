@@ -64,14 +64,18 @@ void exslt_org_regular_expressions_init();
 
 - (NSData *) transformedDataFromData:(NSData *)data isHTML:(BOOL)isHTML withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
-        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:1 userInfo:
-                  @{NSLocalizedFailureReasonErrorKey : @"Either no stylesheet provided, or failed to parse the one provided"}];
+        if (error) {
+            *error = [NSError errorWithDomain:SkyScraperErrorDomain code:1 userInfo:
+                      @{NSLocalizedFailureReasonErrorKey : @"Either no stylesheet provided, or failed to parse the one provided"}];
+        }
         return nil;
     }
     
     if ([data length]==0) {
-        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:2 userInfo:
-                  @{NSLocalizedFailureReasonErrorKey : @"No input HTML provided, or the input is empty"}];
+        if (error) {
+            *error = [NSError errorWithDomain:SkyScraperErrorDomain code:2 userInfo:
+                      @{NSLocalizedFailureReasonErrorKey : @"No input HTML provided, or the input is empty"}];
+        }
         return nil;
     }
     
@@ -122,13 +126,17 @@ void exslt_org_regular_expressions_init();
             }
             
         } else {
-            *error = [NSError errorWithDomain:SkyScraperErrorDomain code:4 userInfo:
-                      @{NSLocalizedFailureReasonErrorKey : @"Unable to apply stylesheet"}];
+            if (error) {
+                *error = [NSError errorWithDomain:SkyScraperErrorDomain code:4 userInfo:
+                          @{NSLocalizedFailureReasonErrorKey : @"Unable to apply stylesheet"}];
+            }
         }
         
     } else {
-        *error = [NSError errorWithDomain:SkyScraperErrorDomain code:3 userInfo:
-                  @{NSLocalizedFailureReasonErrorKey : @"Unable to create transform context"}];
+        if (error) {
+            *error = [NSError errorWithDomain:SkyScraperErrorDomain code:3 userInfo:
+                      @{NSLocalizedFailureReasonErrorKey : @"Unable to create transform context"}];
+        }
     }
     
     /* freeing all other stuff */
