@@ -9,6 +9,7 @@
  * Authors:
  *   Joel W. Reed <joelwreed@gmail.com>
  *   Some modification by Kyle Maxwell
+ *   Minor fix for UTF8 strings by Eugene Dorfman <eugene.dorfman@gmail.com>
  *
  * TODO:
  * functions:
@@ -149,18 +150,18 @@ exsltRegexpMatchFunction (xmlXPathParserContextPtr ctxt, int nargs)
 
         while (rc > 0) {
 					for(int group = 0; group < rc; group++) {
-          	match = xmlStrsub(working, ovector[group*2], ovector[group*2+1]-ovector[group*2]);
-          	if (NULL == match) goto fail;
+          	match = xmlUTF8Strsub(working, ovector[group*2], ovector[group*2+1]-ovector[group*2]);
+          	if (NULL == match || 0 == xmlUTF8Strlen(match)) goto fail;
 
 	          node = xmlNewDocRawNode(container, NULL, "match", match);
 	          xmlFree(match);
 
 	          xmlAddChild((xmlNodePtr) container, node);
 	          xmlXPathNodeSetAddUnique(ret->nodesetval, node);
-					}
+                    }
           if (!global) break;
 
-          working = working + ovector[1];
+          working = xmlUTF8Strpos(working,ovector[1]);
           rc = exsltRegexpExecute(ctxt, working, regexp, flags, 
                                   ovector, sizeof(ovector)/sizeof(int));
         }
