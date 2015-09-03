@@ -104,18 +104,19 @@
     NSString *postformXSLPath = [bundle pathForResource:@"postform" ofType:@"xsl"];
     NSError *error = nil;
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:[NSURL fileURLWithPath:postformXSLPath]];
+    transformation.enableTextareaExpansion = YES;
     
     NSString *postformHTMLPath = [bundle pathForResource:@"postform" ofType:@"html"];
     NSData *html = [NSData dataWithContentsOfFile:postformHTMLPath];
     NSDictionary *form = [transformation JSONObjectFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
-    NSLog(@"%@",form);
     XCTAssertNotNil(form);
     XCTAssertEqualObjects(form[@"form_action"],@"https://post.craigslist.org/k/5PggyFxH5BGkB8vLjhH61A/h0SwJ");
-    XCTAssertEqual([form[@"fields"] count], 11);
-    NSDictionary *fieldset0 = form[@"fields"][0];
+    NSArray* fields = form[@"fields"];
+    XCTAssertEqual([fields count], 11);
+    NSDictionary *fieldset0 = fields[0];
     XCTAssertEqualObjects(fieldset0[@"display_name"], @"contact info");
     
-    NSDictionary *field1 = fieldset0[@"fields"][1];
+    NSDictionary *emailField = fieldset0[@"fields"][1];
     /*
      {
      "is_error" = 0;
@@ -125,21 +126,24 @@
      value = "Your email address";
      }
      */
-    XCTAssertEqualObjects(field1[@"name"], @"FromEMail");
-    XCTAssertEqualObjects(field1[@"type"], @"text");
-    XCTAssertEqualObjects(field1[@"value"], @"Your email address");
-    XCTAssertEqualObjects(field1[@"is_error"], @0);
-    XCTAssertEqualObjects(field1[@"is_required"], @1);
+    XCTAssertEqualObjects(emailField[@"name"], @"FromEMail");
+    XCTAssertEqualObjects(emailField[@"type"], @"text");
+    XCTAssertEqualObjects(emailField[@"value"], @"Your email address");
+    XCTAssertEqualObjects(emailField[@"is_error"], @0);
+    XCTAssertEqualObjects(emailField[@"is_required"], @1);
+    
+    NSDictionary *textAreaField = fields[5];
+    XCTAssertTrue([textAreaField[@"text"] length]>0, @"should not be empty because of usage of 'enableTextareaExpansion'");
 }
 
 - (void) testArrayOfModels {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    NSString *postformXSLPath = [bundle pathForResource:@"adsarray" ofType:@"xsl"];
+    NSString *adsarrayXSLPath = [bundle pathForResource:@"adsarray" ofType:@"xsl"];
     NSError *error = nil;
-    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:[NSURL fileURLWithPath:postformXSLPath]];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:[NSURL fileURLWithPath:adsarrayXSLPath]];
     
-    NSString *postformHTMLPath = [bundle pathForResource:@"adsearch" ofType:@"html"];
-    NSData *html = [NSData dataWithContentsOfFile:postformHTMLPath];
+    NSString *adsearchHTMLPath = [bundle pathForResource:@"adsearch" ofType:@"html"];
+    NSData *html = [NSData dataWithContentsOfFile:adsearchHTMLPath];
     NSArray *ads = [transformation JSONObjectFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
     
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:[AdData class]];

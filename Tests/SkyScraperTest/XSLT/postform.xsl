@@ -83,7 +83,8 @@
         "name":"<xsl:value-of select="@name"/>",
         "value":"<xsl:value-of select="@value"/>",
         "is_required":<xsl:value-of select="contains(@class,'req')"/>,
-        "is_error":<xsl:value-of select="contains(@class,'err')"/>
+        "is_error":<xsl:value-of select="contains(@class,'err')"/>,
+        "text":"<xsl:value-of select="text()"/>"
 </xsl:template>
 
 </xsl:stylesheet>
