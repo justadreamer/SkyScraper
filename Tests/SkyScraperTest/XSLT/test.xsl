@@ -5,8 +5,8 @@
                 extension-element-prefixes="regexp">
 
 	<xsl:template match="c">
-         regexp: no* (case)   string: <xsl:value-of select="." /> result: <xsl:value-of select="regexp:test(string(.), 'no*', 'g')" />
-         regexp: no* (nocase) string: <xsl:value-of select="." /> result: <xsl:value-of select="regexp:test(string(.), 'no*', 'gi')" />
+         regexp: no+ (case)   string: <xsl:value-of select="." /> result: <xsl:value-of select="regexp:test(string(.), 'no+', 'g')" />
+         regexp: no+ (nocase) string: <xsl:value-of select="." /> result: <xsl:value-of select="regexp:test(string(.), 'no+', 'gi')" />
 	</xsl:template>
 
 </xsl:stylesheet>

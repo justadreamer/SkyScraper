@@ -41,4 +41,6 @@
   regexp: no+ (case,global)   string: none result: 1 = no, 
   regexp: no+ (nocase,global) string: none result: 1 = no, 
 
+regexp: 🌵🌷 (case)          string: 🌷🌷🌵🌷🌷 result: 1 = 🌵🌷, 
+
 

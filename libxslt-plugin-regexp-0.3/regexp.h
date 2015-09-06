@@ -11,7 +11,6 @@
 #include <libxslt/extensions.h>
 #include <libexslt/exsltexports.h>
 
-#include <pcre.h>
 #include <string.h>
 
 /* make sure init function is exported on win32 */

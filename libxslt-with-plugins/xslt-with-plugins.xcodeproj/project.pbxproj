@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A9CD011B9C20D10059BC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A9CD001B9C20D10059BC07 /* Foundation.framework */; };
 		44B2EE4A1A0D7FE5000AFC00 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE0E1A0D7FE5000AFC00 /* common.c */; };
 		44B2EE4B1A0D7FE5000AFC00 /* crypto.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE0F1A0D7FE5000AFC00 /* crypto.c */; };
 		44B2EE4C1A0D7FE5000AFC00 /* date.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE101A0D7FE5000AFC00 /* date.c */; };
@@ -36,8 +37,7 @@
 		44B2EE641A0D7FE5000AFC00 /* xslt.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE3F1A0D7FE5000AFC00 /* xslt.c */; };
 		44B2EE651A0D7FE5000AFC00 /* xsltlocale.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE441A0D7FE5000AFC00 /* xsltlocale.c */; };
 		44B2EE661A0D7FE5000AFC00 /* xsltutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE461A0D7FE5000AFC00 /* xsltutils.c */; };
-		44B2EE671A0D7FE5000AFC00 /* regexp.c in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE491A0D7FE5000AFC00 /* regexp.c */; };
-		44B2EE6C1A0D8078000AFC00 /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B2EE6A1A0D8078000AFC00 /* libpcre.a */; };
+		44B2EE671A0D7FE5000AFC00 /* regexp.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B2EE491A0D7FE5000AFC00 /* regexp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44A9CD001B9C20D10059BC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44B2EDF31A0D7FC8000AFC00 /* libxslt-with-plugins.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libxslt-with-plugins.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B2EE0E1A0D7FE5000AFC00 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
 		44B2EE0F1A0D7FE5000AFC00 /* crypto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypto.c; sourceTree = "<group>"; };
@@ -111,10 +112,8 @@
 		44B2EE451A0D7FE5000AFC00 /* xsltlocale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltlocale.h; sourceTree = "<group>"; };
 		44B2EE461A0D7FE5000AFC00 /* xsltutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xsltutils.c; sourceTree = "<group>"; };
 		44B2EE471A0D7FE5000AFC00 /* xsltutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsltutils.h; sourceTree = "<group>"; };
-		44B2EE491A0D7FE5000AFC00 /* regexp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = regexp.c; sourceTree = "<group>"; };
+		44B2EE491A0D7FE5000AFC00 /* regexp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = regexp.m; sourceTree = "<group>"; };
 		44B2EE681A0D7FF9000AFC00 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		44B2EE6A1A0D8078000AFC00 /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcre.a; path = ../pcre/libpcre.a; sourceTree = "<group>"; };
-		44B2EE6B1A0D8078000AFC00 /* pcre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pcre.h; path = "../pcre-8.36/pcre.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44B2EE6C1A0D8078000AFC00 /* libpcre.a in Frameworks */,
+				44A9CD011B9C20D10059BC07 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +131,7 @@
 		44B2EDEA1A0D7FC8000AFC00 = {
 			isa = PBXGroup;
 			children = (
-				44B2EE6A1A0D8078000AFC00 /* libpcre.a */,
-				44B2EE6B1A0D8078000AFC00 /* pcre.h */,
+				44A9CD001B9C20D10059BC07 /* Foundation.framework */,
 				44B2EE681A0D7FF9000AFC00 /* libxml2.dylib */,
 				44B2EE0D1A0D7FE5000AFC00 /* libexslt */,
 				44B2EE1C1A0D7FE5000AFC00 /* libxslt */,
@@ -226,7 +224,7 @@
 		44B2EE481A0D7FE5000AFC00 /* libxslt-plugin-regexp-0.3 */ = {
 			isa = PBXGroup;
 			children = (
-				44B2EE491A0D7FE5000AFC00 /* regexp.c */,
+				44B2EE491A0D7FE5000AFC00 /* regexp.m */,
 			);
 			name = "libxslt-plugin-regexp-0.3";
 			path = "../libxslt-plugin-regexp-0.3";
@@ -304,7 +302,7 @@
 				44B2EE4F1A0D7FE5000AFC00 /* functions.c in Sources */,
 				44B2EE5F1A0D7FE5000AFC00 /* preproc.c in Sources */,
 				44B2EE601A0D7FE5000AFC00 /* security.c in Sources */,
-				44B2EE671A0D7FE5000AFC00 /* regexp.c in Sources */,
+				44B2EE671A0D7FE5000AFC00 /* regexp.m in Sources */,
 				44B2EE4C1A0D7FE5000AFC00 /* date.c in Sources */,
 				44B2EE5D1A0D7FE5000AFC00 /* numbers.c in Sources */,
 				44B2EE5E1A0D7FE5000AFC00 /* pattern.c in Sources */,
