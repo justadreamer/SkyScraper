@@ -253,7 +253,11 @@ exsltRegexpReplaceFunction (xmlXPathParserContextPtr ctxt, int nargs)
         return;
     }
     NSString *resultString = exsltRegexpReplace(ctxt,haystack,regexp,flagstr,replace);
-    result = xmlUTF8Strndup((xmlChar *)[resultString cStringUsingEncoding:NSUTF8StringEncoding],(int)resultString.length);
+    if (resultString) {
+        result = xmlUTF8Strndup((xmlChar *)[resultString cStringUsingEncoding:NSUTF8StringEncoding],(int)resultString.length);
+    } else {
+        result = xmlUTF8Strndup((xmlChar *)haystack, xmlUTF8Strlen(haystack));
+    }
 fail:
     if (replace != NULL)
             xmlFree(replace);
