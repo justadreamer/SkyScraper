@@ -25,10 +25,10 @@
     <xsl:template match="/">
         {
         "title": "<xsl:call-template name="tpl_sanitize">
-            <xsl:with-param name="text" select="//dc:title[2]"/>
+            <xsl:with-param name="text" select="//*[local-name()='item'][1]/dc:title"/>
         </xsl:call-template>",
         "rights": "<xsl:call-template name="tpl_sanitize">
-            <xsl:with-param name="text" select="//dc:rights[2]/text()"/>
+            <xsl:with-param name="text" select="//*[local-name()='item'][1]/dc:rights/text()"/>
         </xsl:call-template>"
         }
     </xsl:template>
