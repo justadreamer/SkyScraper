@@ -411,18 +411,24 @@
 		44B2EE081A0D7FC8000AFC00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "xslt-with-plugins";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7k armv7 armv7s arm64 x86_64 i386";
 			};
 			name = Debug;
 		};
 		44B2EE091A0D7FC8000AFC00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "xslt-with-plugins";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7k armv7 armv7s arm64 x86_64 i386";
 			};
 			name = Release;
 		};
