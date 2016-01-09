@@ -41,6 +41,7 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         [SVProgressHUD dismiss];
         weakSelf.locationsTree = responseObject;
+        NSLog(@"locationstree=%@",responseObject);
         [weakSelf redisplayData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [SVProgressHUD dismiss];
