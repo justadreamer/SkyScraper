@@ -22,16 +22,13 @@ Pod::Spec.new do |s|
         'SkyScraper/SkyXSLTransformation.{h,m}',
         'SkyScraper/SkyXSLTParams.{h,m}',
         'SkyScraper/SkyModelAdapter.h',        
+        'libxslt/*.h',
+        'libexslt/*.h'
         ]
     ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2 ' }
     ss.libraries = 'xml2', 'iconv'
-    ss.dependency 'SkyScraper/libxslt-with-plugins'
-  end
-
-  s.subspec 'libxslt-with-plugins' do |ss|
     ss.vendored_library = 'libxslt-with-plugins/libxslt-with-plugins.a'
-    ss.public_header_files = ['libxslt/*.h','libexslt/*.h']
-    ss.preserve_paths = ['libxslt/*.h','libexslt/*.h']
+    ss.private_header_files = ['libxslt/*.h','libexslt/*.h']
   end
 
   s.subspec 'AFNetworking2' do |ss|
