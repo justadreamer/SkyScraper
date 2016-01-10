@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3109CFDDAE9675898B2CA6AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C928DA2A2755C80E56C63CE /* libPods.a */; };
 		440814851A17AA3500DEE820 /* SkyScraperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814701A17AA3500DEE820 /* SkyScraperTest.m */; };
 		440814861A17AA3500DEE820 /* adsarray.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440814721A17AA3500DEE820 /* adsarray.xsl */; };
 		440814871A17AA3500DEE820 /* adsearch.html in Resources */ = {isa = PBXBuildFile; fileRef = 440814731A17AA3500DEE820 /* adsearch.html */; };
@@ -38,11 +39,9 @@
 		63F489901AFCAEBC00E89B15 /* adjsonsearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 63F4898F1AFCAEBC00E89B15 /* adjsonsearch.json */; };
 		63F7219D1ADCE7F4003DEB32 /* bad_utf8.html in Resources */ = {isa = PBXBuildFile; fileRef = 63F7219B1ADCE7F4003DEB32 /* bad_utf8.html */; };
 		63F7219E1ADCE7F4003DEB32 /* bad_utf8.xml in Resources */ = {isa = PBXBuildFile; fileRef = 63F7219C1ADCE7F4003DEB32 /* bad_utf8.xml */; };
-		CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9D2E0D60E5A6093853BB9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		25F9D2E0D60E5A6093853BB9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6F7503C45E2C7234F4219B /* Pods-XHCLScraping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHCLScraping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XHCLScraping/Pods-XHCLScraping.debug.xcconfig"; sourceTree = "<group>"; };
 		4408146F1A17AA3500DEE820 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		440814701A17AA3500DEE820 /* SkyScraperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyScraperTest.m; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		63F7219C1ADCE7F4003DEB32 /* bad_utf8.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = bad_utf8.xml; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF807E82B0AEDFC20765EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9C928DA2A2755C80E56C63CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE3FC0B9215CA291F37F6A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C643A812DC6DE31B08DFEF00 /* Pods-CLSkyScraper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLSkyScraper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper.release.xcconfig"; sourceTree = "<group>"; };
 		E351210A3510602BA80A1359 /* Pods-CLSkyScraper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLSkyScraper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC035FC6FD373B9837A5645 /* libPods.a in Frameworks */,
+				3109CFDDAE9675898B2CA6AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +183,9 @@
 		87F28A58DDBEBDAE1CCED19E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				25F9D2E0D60E5A6093853BB9 /* libPods.a */,
 				936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */,
 				E56B11C9EE0F1808E03539CB /* libPods-CLSkyScraper.a */,
+				9C928DA2A2755C80E56C63CE /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,6 +202,7 @@
 				447F79FB19F6E6500089D036 /* Frameworks */,
 				447F79FC19F6E6500089D036 /* Resources */,
 				778082DE2A4D0182E024B338 /* Copy Pods Resources */,
+				98D2B303693E3C74ABF2DDA8 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +311,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98D2B303693E3C74ABF2DDA8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
