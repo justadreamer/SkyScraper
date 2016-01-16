@@ -11,6 +11,8 @@
 #import "UIKit+AFNetworking.h"
 
 #import <SkyScraper/SkyScraper.h>
+#import <SkyScraper/SkyScraper+AFNetworking.h>
+#import <SkyScraper/SkyScraper+Mantle.h>
 #import "AFHTTPRequestOperation.h"
 
 @interface AdCell ()

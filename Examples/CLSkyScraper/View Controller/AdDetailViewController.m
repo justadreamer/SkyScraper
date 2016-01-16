@@ -9,6 +9,9 @@
 #import "AdDetailViewController.h"
 #import "Macros.h"
 #import <SkyScraper/SkyScraper.h>
+#import <SkyScraper/SkyScraper+AFNetworking.h>
+#import <SkyScraper/SkyScraper+Mantle.h>
+
 #import <AFNetworking/AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
 #import "AdData.h"
