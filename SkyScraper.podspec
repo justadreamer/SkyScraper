@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SkyScraper"
-  s.version          = "0.34"
+  s.version          = "0.35"
   s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow easy HTML scraping with data represented in JSON format with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
     ss.dependency 'SkyScraper/Base'
     ss.dependency 'AFNetworking', '~> 2.6.3'
     ss.source_files = [
+      'SkyScraper/SkyScraper+AFNetworking.h',
       'SkyScraper/SkyResponseSerializer+Protected.h',
       'SkyScraper/SkyHTMLResponseSerializer.{h,m}',
       'SkyScraper/SkyXMLResponseSerializer.{h,m}',
@@ -46,6 +47,9 @@ Pod::Spec.new do |s|
   s.subspec 'Mantle' do |ss|
     ss.dependency 'SkyScraper/Base'
     ss.dependency 'Mantle'
-    ss.source_files = 'SkyScraper/SkyMantleModelAdapter.{h,m}'
+    ss.source_files = [
+      'SkyScraper/SkyMantleModelAdapter.{h,m}',
+      'SkyScraper/SkyScraper+Mantle.h'
+    ]
   end
 end
