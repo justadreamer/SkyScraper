@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3109CFDDAE9675898B2CA6AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C928DA2A2755C80E56C63CE /* libPods.a */; };
+		24CBD3631848B01F97C40FFE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F31A2211B35F2793ADD8C7 /* Pods.framework */; };
 		440814851A17AA3500DEE820 /* SkyScraperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 440814701A17AA3500DEE820 /* SkyScraperTest.m */; };
 		440814861A17AA3500DEE820 /* adsarray.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 440814721A17AA3500DEE820 /* adsarray.xsl */; };
 		440814871A17AA3500DEE820 /* adsearch.html in Resources */ = {isa = PBXBuildFile; fileRef = 440814731A17AA3500DEE820 /* adsearch.html */; };
@@ -81,7 +81,7 @@
 		63F7219C1ADCE7F4003DEB32 /* bad_utf8.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = bad_utf8.xml; sourceTree = "<group>"; };
 		936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHCLScraping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF807E82B0AEDFC20765EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		9C928DA2A2755C80E56C63CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F31A2211B35F2793ADD8C7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE3FC0B9215CA291F37F6A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C643A812DC6DE31B08DFEF00 /* Pods-CLSkyScraper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLSkyScraper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper.release.xcconfig"; sourceTree = "<group>"; };
 		E351210A3510602BA80A1359 /* Pods-CLSkyScraper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLSkyScraper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLSkyScraper/Pods-CLSkyScraper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3109CFDDAE9675898B2CA6AE /* libPods.a in Frameworks */,
+				24CBD3631848B01F97C40FFE /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +185,7 @@
 			children = (
 				936B1FCFEDD63335EFB0F0B4 /* libPods-XHCLScraping.a */,
 				E56B11C9EE0F1808E03539CB /* libPods-CLSkyScraper.a */,
-				9C928DA2A2755C80E56C63CE /* libPods.a */,
+				A1F31A2211B35F2793ADD8C7 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

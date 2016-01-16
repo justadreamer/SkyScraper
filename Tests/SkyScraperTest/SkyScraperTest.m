@@ -8,6 +8,9 @@
 
 #import <XCTest/XCTest.h>
 #import <SkyScraper/SkyScraper.h>
+#import <SkyScraper/SkyScraper+Mantle.h>
+#import <SkyScraper/SkyScraper+AFNetworking.h>
+
 #import <AFNetworking/AFNetworking.h>
 #import "AdData.h"
 #import "AdDataContainer.h"
