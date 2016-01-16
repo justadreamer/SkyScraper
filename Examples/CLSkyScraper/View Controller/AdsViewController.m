@@ -9,6 +9,9 @@
 
 #import "AdsViewController.h"
 #import <SkyScraper/SkyScraper.h>
+#import <SkyScraper/SkyScraper+AFNetworking.h>
+#import <SkyScraper/SkyScraper+Mantle.h>
+
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <AFNetworking/AFNetworking.h>
 
