@@ -83,7 +83,7 @@ void exslt_org_regular_expressions_init();
     
     NSString *string = [self stringUTF8:data clean:NO];
     if (!string) {
-        string = [self stringUTF8:data clean:YES];
+        string = [self stringUTF8:data clean:YES]?:@"";
     }
     if (self.replaceXMLEntities) {
         string = [self replaceEntities:string isHTML:isHTML];
