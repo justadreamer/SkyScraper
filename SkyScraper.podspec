@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
   s.source           = { :git => "git@github.com:justadreamer/SkyScraper.git", :tag => s.version }
 
+  s.ios.deployment_target = '8.0'
   s.requires_arc 	 = true
   s.homepage 		 = 'https://github.com/justadreamer/SkyScraper'
   s.default_subspec  = 'All'
