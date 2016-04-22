@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow easy HTML scraping with data represented in JSON format with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
   s.author           = { "Eugene Dorfman" => "eugene.dorfman@postindustria.com" }  
-  s.source           = { :git => "git@git.postindustria.com:SkyScraper.git", :tag => s.version }
+  s.source           = { :git => "git@gitlab.postindustria.com:ios/skyscraper.git", :tag => s.version }
   s.ios.deployment_target = '8.0'
   s.requires_arc 	 = true
   s.homepage 		 = 'https://github.com/justadreamer/SkyScraper'
