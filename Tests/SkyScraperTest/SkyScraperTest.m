@@ -342,4 +342,18 @@
     [self runRegexpFunctionTest:@"testgroups"];
 }
 
+- (void)testBadUTF8_2 {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *xslURL = [bundle URLForResource:@"listing_unhiddencontactinfo" withExtension:@"xsl"];
+    NSURL *htmlURL = [bundle URLForResource:@"bad_utf8_2" withExtension:@"html"];
+    NSData *html = [NSData dataWithContentsOfURL:htmlURL];
+
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
+
+    NSError *error = nil;
+    id json = [transformation JSONObjectFromHTMLData:html withParams:nil error:&error];
+    XCTAssertNotNil(json);
+    XCTAssertNil(error);
+}
+
 @end
