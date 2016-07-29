@@ -4,5 +4,7 @@ platform :ios, '8.0'
 
 use_frameworks!
 
-pod 'SkyScraper', :path => '../'
-pod 'Nocilla'
+target 'SkyScraperTest' do
+    pod 'SkyScraper', :path => '../'
+	pod 'Nocilla'
+end
