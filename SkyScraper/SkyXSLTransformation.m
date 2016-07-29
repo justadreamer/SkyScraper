@@ -82,7 +82,7 @@ void exslt_org_regular_expressions_init();
     }
     
     NSString *string = [self stringUTF8:data clean:NO];
-    if (!string) {
+    if (string.length==0) {
         string = [self stringUTF8:data clean:YES];
     }
     if (string.length==0) {
