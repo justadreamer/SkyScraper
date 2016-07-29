@@ -1,0 +1,93 @@
+{
+  "name": "SkyScraper",
+  "version": "0.40",
+  "summary": "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow easy HTML scraping with data represented in JSON format with the following deserialization into application models",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE.txt"
+  },
+  "authors": {
+    "Eugene Dorfman": "eugene.dorfman@postindustria.com"
+  },
+  "source": {
+    "git": "git@gitlab.postindustria.com:ios/skyscraper.git",
+    "tag": "0.40"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.10"
+  },
+  "requires_arc": true,
+  "homepage": "https://github.com/justadreamer/SkyScraper",
+  "default_subspecs": "All",
+  "subspecs": [
+    {
+      "name": "All",
+      "dependencies": {
+        "SkyScraper/AFNetworking2": [
+
+        ],
+        "SkyScraper/Mantle": [
+
+        ]
+      }
+    },
+    {
+      "name": "Base",
+      "source_files": [
+        "SkyScraper/SkyScraper.h",
+        "SkyScraper/SkyXSLTransformation.{h,m}",
+        "SkyScraper/SkyXSLTParams.{h,m}",
+        "SkyScraper/SkyModelAdapter.h",
+        "libxslt/*.h",
+        "libexslt/*.h"
+      ],
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "/usr/include/libxml2 "
+      },
+      "libraries": [
+        "xml2",
+        "iconv"
+      ],
+      "vendored_libraries": "libxslt-with-plugins/libxslt-with-plugins.a",
+      "private_header_files": [
+        "libxslt/*.h",
+        "libexslt/*.h"
+      ]
+    },
+    {
+      "name": "AFNetworking2",
+      "dependencies": {
+        "SkyScraper/Base": [
+
+        ],
+        "AFNetworking": [
+          "~> 2.6.3"
+        ]
+      },
+      "source_files": [
+        "SkyScraper/SkyScraper+AFNetworking.h",
+        "SkyScraper/SkyResponseSerializer+Protected.h",
+        "SkyScraper/SkyHTMLResponseSerializer.{h,m}",
+        "SkyScraper/SkyXMLResponseSerializer.{h,m}",
+        "SkyScraper/SkyJSONResponseSerializer.{h,m}",
+        "SkyScraper/SkyResponseSerializer.{h,m}"
+      ]
+    },
+    {
+      "name": "Mantle",
+      "dependencies": {
+        "SkyScraper/Base": [
+
+        ],
+        "Mantle": [
+
+        ]
+      },
+      "source_files": [
+        "SkyScraper/SkyMantleModelAdapter.{h,m}",
+        "SkyScraper/SkyScraper+Mantle.h"
+      ]
+    }
+  ]
+}
