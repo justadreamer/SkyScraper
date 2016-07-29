@@ -1,0 +1,6 @@
+framework module Pods_SkyScraperTest {
+  umbrella header "Pods-SkyScraperTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

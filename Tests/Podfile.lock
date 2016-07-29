@@ -1,0 +1,56 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - Nocilla (0.10.0)
+  - SkyScraper (0.40):
+    - SkyScraper/All (= 0.40)
+  - SkyScraper/AFNetworking2 (0.40):
+    - AFNetworking (~> 2.6.3)
+    - SkyScraper/Base
+  - SkyScraper/All (0.40):
+    - SkyScraper/AFNetworking2
+    - SkyScraper/Mantle
+  - SkyScraper/Base (0.40)
+  - SkyScraper/Mantle (0.40):
+    - Mantle
+    - SkyScraper/Base
+
+DEPENDENCIES:
+  - Nocilla
+  - SkyScraper (from `../`)
+
+EXTERNAL SOURCES:
+  SkyScraper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Nocilla: ae0a2b05f3087b473624ac2b25903695df51246a
+  SkyScraper: 2c110cbadfc8d90f8bec205189be7e5ea7a3f644
+
+PODFILE CHECKSUM: 235493af523398f3c05081f82d9782f2ca4b6fd9
+
+COCOAPODS: 1.0.1
