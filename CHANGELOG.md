@@ -1,5 +1,26 @@
 CHANGELOG
 =========
+## 0.42
+update [SkyJSONResponseSerializer.applyTransformationToData:withError:] so it can work with JSON input as well
+
+## 0.41
+make SkyXSLTransformation properties atomic, so that we synchronize access to them by default
+
+## 0.40
+convert NSData to NSString - fixed
+
+## 0.39
+check result string on zero length on the first pass
+
+## 0.38
+added Mac OS X 10.10 as a deployment target
+
+## 0.37
+move to gitlab repos
+
+## 0.36
+avoid possible crashes if we can’t recognize a content string
+
 ## 0.35
 fixed imports of other headers in the SkyScraper.h, it now includes only headers needed for the Base subspec.  
 other subspecs (+AFNetworking, +Mantle) have their own designated headers.  

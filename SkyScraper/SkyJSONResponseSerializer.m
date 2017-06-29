@@ -22,7 +22,7 @@
 }
 
 - (id) applyTransformationToData:(NSData *)data withError:(NSError *__autoreleasing *)error {
-    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary* jsonDict = [data isKindOfClass:NSData.class] ? [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil] : data;
     data = [NSPropertyListSerialization dataWithPropertyList:jsonDict format:NSPropertyListXMLFormat_v1_0 options:0 error:nil];
     return [self.transformation JSONObjectFromXMLData:data withParams:self.params error:error];
 }
