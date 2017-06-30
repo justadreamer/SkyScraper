@@ -19,7 +19,7 @@
 }
 
 + (NSValueTransformer *)adsJSONTransformer {
-    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:AdData.class];
+    return [MTLJSONAdapter arrayTransformerWithModelClass:AdData.class];
 }
 
 + (NSValueTransformer *)URLNextJSONTransformer {

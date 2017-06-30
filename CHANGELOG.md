@@ -1,5 +1,8 @@
 CHANGELOG
 =========
+## 0.43
+SkyJSONResponseSerializer extended with [applyTransformationToDictionary:error:] method to avoid a weakly-typed manner
+
 ## 0.42
 update [SkyJSONResponseSerializer.applyTransformationToData:withError:] so it can work with JSON input as well
 
