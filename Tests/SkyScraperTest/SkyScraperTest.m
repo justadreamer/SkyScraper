@@ -251,19 +251,16 @@
 - (void) testJSONTransformation {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     NSURL *xslURL = [bundle URLForResource:@"search_map" withExtension:@"xsl"];
-    
-    
     NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:kAdJsonSearch_URL]];
-    NSString* path = [bundle pathForResource:@"adjsonsearch" ofType:@"json"];
-    stubRequest(@"GET", kAdJsonSearch_URL).andReturnRawResponse([NSData dataWithContentsOfFile:path]).withHeaders(@{@"Content-Type": @"application/json"});
-    
+    NSData *data = [NSData dataWithContentsOfFile:[bundle pathForResource:@"adjsonsearch" ofType:@"json"]];
+    stubRequest(@"GET", kAdJsonSearch_URL).andReturnRawResponse(data).withHeaders(@{@"Content-Type": @"application/json"});
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:AdDataContainer.class];
     operation.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
-    XCTestExpectation *expectation = [self expectationWithDescription:@"load_json"];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
+    
+    void(^testAdDataContainer)(AdDataContainer *) = ^(AdDataContainer *adDataContainer) {
         XCTAssertNotNil(adDataContainer);
         XCTAssertTrue(adDataContainer.ads.count>0);
         NSUInteger adsWithPrice = 0;
@@ -276,6 +273,16 @@
             }
         }
         XCTAssertTrue(adsWithPrice>0);
+    };
+    
+    // check [SkyJSONResponseSerializer applyTransformationToJSONObject:error:]
+    id JSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    testAdDataContainer([operation.responseSerializer responseObjectForResponse:nil data:JSONObject error:nil]);
+    
+    // check [SkyJSONResponseSerializer applyTransformationToData:error:]
+    XCTestExpectation *expectation = [self expectationWithDescription:@"load_json"];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
+        testAdDataContainer(adDataContainer);
         [expectation fulfill];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         XCTFail(@"%@",error.localizedDescription);
