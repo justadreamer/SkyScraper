@@ -214,12 +214,10 @@ void exslt_org_regular_expressions_init();
     char *inbuf  = (char *)data.bytes;
     char *outbuf = malloc(sizeof(char) * data.length);
     char *outptr = outbuf;
-    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft)
-        == (size_t)-1) {
-        NSLog(@"this should not happen, seriously");
-        return nil;
+    NSData *result = nil;
+    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft) != (size_t)-1) {
+        result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
     }
-    NSData *result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
     iconv_close(cd);
     free(outbuf);
     return result;
