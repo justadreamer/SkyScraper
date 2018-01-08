@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+
+## 0.44
+Fix memory leak in [SkyXSLTransformation cleanUTF8:] method
+
 ## 0.43
 SkyJSONResponseSerializer extended with [applyTransformationToDictionary:error:] method to avoid a weakly-typed manner
 
