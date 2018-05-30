@@ -1,19 +1,19 @@
 Pod::Spec.new do |s|
   s.name             = "SkyScraper"
-  s.version          = "0.44"
+  s.version          = "1.0"
   s.summary          = "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow easy HTML scraping with data represented in JSON format with the following deserialization into application models"
   s.license          = { :type => "MIT", :file => "LICENSE.txt" }
-  s.author           = { "Eugene Dorfman" => "eugene.dorfman@gmail.com" }  
+  s.authors          = { "Eugene Dorfman" => "eugene.dorfman@postindustria.com",
+                         "Oleg Kovtun" => "oleg.kovtun@postindustria.com" }
   s.source           = { :git => "git@github.com:justadreamer/SkyScraper.git", :tag => s.version }
-
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'
   s.requires_arc 	 = true
   s.homepage 		 = 'https://github.com/justadreamer/SkyScraper'
   s.default_subspec  = 'All'
   
   s.subspec 'All' do |ss|
-    ss.dependency 'SkyScraper/AFNetworking2'
+    ss.dependency 'SkyScraper/AFNetworking3'
     ss.dependency 'SkyScraper/Mantle'
   end
 
@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
     ss.private_header_files = ['libxslt/*.h','libexslt/*.h']
   end
 
-  s.subspec 'AFNetworking2' do |ss|
+  s.subspec 'AFNetworking3' do |ss|
     ss.dependency 'SkyScraper/Base'
-    ss.dependency 'AFNetworking', '~> 2.6.3'
+    ss.dependency 'AFNetworking', '~> 3.0'
     ss.source_files = [
       'SkyScraper/SkyScraper+AFNetworking.h',
       'SkyScraper/SkyResponseSerializer+Protected.h',

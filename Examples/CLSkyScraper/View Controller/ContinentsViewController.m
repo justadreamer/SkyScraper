@@ -15,7 +15,7 @@
 
 #import "ContinentsViewController.h"
 #import "StatesViewController.h"
-
+#import "Macros.h"
 
 NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
 
@@ -33,26 +33,26 @@ NSString * const CLURLAboutSites = @"http://www.craigslist.org/about/sites";
 
 - (void) loadData {
     NSURL *URLlocationsXSL = [[NSBundle mainBundle] URLForResource:@"locations" withExtension:@"xsl"];
+    NSURL *URL = [NSURL URLWithString:CLURLAboutSites];
+    NSString *baseURL = [[URL.scheme stringByAppendingString:@"://"] stringByAppendingString:URL.host];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:URLlocationsXSL];
-    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:nil];
+    SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:@{@"URL":QUOTED(RSLASH(URL.absoluteString)),@"baseURL":QUOTED(baseURL)} modelAdapter:nil];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:CLURLAboutSites]];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = serializer;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
+    manager.responseSerializer = serializer;
     
     __typeof(self) __weak weakSelf = self;
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         weakSelf.locationsTree = responseObject;
         NSLog(@"locationstree=%@",responseObject);
         [weakSelf redisplayData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         NSLog(@"%@",error);
     }];
     
     [SVProgressHUD showWithStatus:@"Loading locations..."];
-    [operation start];
 }
 
 - (void) redisplayData {

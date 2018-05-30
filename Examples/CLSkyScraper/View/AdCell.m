@@ -8,12 +8,12 @@
 
 #import "AdCell.h"
 #import "AdData.h"
+#import <AFNetworking/AFNetworking.h>
 #import "UIKit+AFNetworking.h"
 
 #import <SkyScraper/SkyScraper.h>
 #import <SkyScraper/SkyScraper+AFNetworking.h>
 #import <SkyScraper/SkyScraper+Mantle.h>
-#import "AFHTTPRequestOperation.h"
 
 @interface AdCell ()
 @property (nonatomic,strong) IBOutlet UILabel *title;
@@ -21,28 +21,19 @@
 @property (nonatomic,strong) IBOutlet UIImageView *thumbnail;
 @property (nonatomic,strong) IBOutlet NSLayoutConstraint *imageWidthConstraint;
 
-@property (nonatomic,strong) AFHTTPRequestOperation *operation;
+@property (nonatomic,strong) NSURLSessionDataTask *task;
 @end
 
 @implementation AdCell
+
 - (void) dealloc {
-    [self.operation cancel];
-}
-
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self.task cancel];
 }
 
 - (void) setAdData:(AdData *)adData {
     _adData = adData;
     
-//this is called here just for testing multithreading - i.e. simulatenous usage of the same XSLTransformation
+    // this is called here just for testing multithreading - i.e. simulatenous usage of the same XSLTransformation
     [self loadDetailsForAdData];
 }
 
@@ -73,27 +64,24 @@
 }
 
 - (void) loadDetailsForAdData {
-    [self.operation cancel];
+    [self.task cancel];
 
     SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:[self.class detailTransformation] params:nil modelAdapter:nil];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.adData.URL];
-    self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    self.operation.responseSerializer = serializer;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
+    manager.responseSerializer = serializer;
+    
+    __typeof(self) __weak weakSelf = self;
+    self.task = [manager GET:self.adData.URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"responseObject=%@",responseObject);
+        [weakSelf showData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
 
     self.title.text = nil;
     self.subtitle.text = nil;
     self.thumbnail.image = nil;
-
-    __typeof(self) __weak weakSelf = self;
-    [self.operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"responseObject=%@",responseObject);
-        [weakSelf showData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@",error);
-    }];
-
-    [self.operation start];
 
 }
 

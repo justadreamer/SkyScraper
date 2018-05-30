@@ -14,11 +14,10 @@ extension-element-prefixes="str">
 
 {"categories":
 [
-  <xsl:for-each select="//div[@class='col']">
-    <xsl:if test="string(./h4)!='discussion forums'">
+  <xsl:for-each select="//div[@class='col' and @id!='forums']">
       {
-        "name":"<xsl:value-of select="./h4"/>",
-        "link":"<xsl:value-of select="$URL"/><xsl:value-of select="./h4/a/@data-cat"/>",
+        "name":"<xsl:value-of select=".//h4[text()]"/><xsl:value-of select=".//h4//span[@class='txt']"/>",
+        "link":"<xsl:value-of select="$URL"/><xsl:value-of select="@id"/>",
         "subcategories":
         [
           <xsl:for-each select=".//li/a">
@@ -31,7 +30,6 @@ extension-element-prefixes="str">
         ]
       }
       <xsl:if test="position()!=last()">,</xsl:if>
-    </xsl:if>
   </xsl:for-each>
 ]
 }

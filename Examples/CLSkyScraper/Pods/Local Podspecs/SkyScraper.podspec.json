@@ -1,17 +1,21 @@
 {
   "name": "SkyScraper",
-  "version": "0.35",
+  "version": "1.0",
   "summary": "An Objective-C wrapper over libxslt with a couple of useful additions, created to allow easy HTML scraping with data represented in JSON format with the following deserialization into application models",
   "license": {
     "type": "MIT",
     "file": "LICENSE.txt"
   },
   "authors": {
-    "Eugene Dorfman": "eugene.dorfman@gmail.com"
+    "Eugene Dorfman": "eugene.dorfman@postindustria.com"
   },
   "source": {
-    "git": "git@github.com:justadreamer/SkyScraper.git",
-    "tag": "0.35"
+    "git": "git@gitlab.postindustria.com:ios/skyscraper.git",
+    "tag": "1.0"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.10"
   },
   "requires_arc": true,
   "homepage": "https://github.com/justadreamer/SkyScraper",
@@ -20,7 +24,7 @@
     {
       "name": "All",
       "dependencies": {
-        "SkyScraper/AFNetworking2": [
+        "SkyScraper/AFNetworking3": [
 
         ],
         "SkyScraper/Mantle": [
@@ -52,13 +56,13 @@
       ]
     },
     {
-      "name": "AFNetworking2",
+      "name": "AFNetworking3",
       "dependencies": {
         "SkyScraper/Base": [
 
         ],
         "AFNetworking": [
-          "~> 2.6.3"
+          "~> 3.0"
         ]
       },
       "source_files": [

@@ -226,22 +226,20 @@
 }
 
 - (void) testErrorHandling {
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:kIPBlock_URL]];
     stubRequest(@"GET", kIPBlock_URL).andFailWithError([NSError errorWithDomain:@"Forbidden" code:403 userInfo:nil]);
     
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:[[NSBundle bundleForClass:self.class] URLForResource:@"adsearch" withExtension:@"xsl"]];
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:AdDataContainer.class];
-    operation.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
+    manager.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
     XCTestExpectation *expectation = [self expectationWithDescription:@"load_error"];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
+    [manager GET:kIPBlock_URL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         XCTFail(@"nu success in this case, it should return 403 error");
         [expectation fulfill];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XCTAssertEqual(error.code, 403,@"error code should be 403");
         [expectation fulfill];
     }];
-    [operation start];
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if (error) XCTFail(@"%@",error.localizedDescription);
     }];
@@ -251,14 +249,13 @@
 - (void) testJSONTransformation {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     NSURL *xslURL = [bundle URLForResource:@"search_map" withExtension:@"xsl"];
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:kAdJsonSearch_URL]];
     NSData *data = [NSData dataWithContentsOfFile:[bundle pathForResource:@"adjsonsearch" ofType:@"json"]];
     stubRequest(@"GET", kAdJsonSearch_URL).andReturnRawResponse(data).withHeaders(@{@"Content-Type": @"application/json"});
     
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:xslURL];
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:AdDataContainer.class];
-    operation.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
+    manager.responseSerializer = [SkyJSONResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
     
     void(^testAdDataContainer)(AdDataContainer *) = ^(AdDataContainer *adDataContainer) {
         XCTAssertNotNil(adDataContainer);
@@ -277,18 +274,17 @@
     
     // check [SkyJSONResponseSerializer applyTransformationToJSONObject:error:]
     id JSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    testAdDataContainer([operation.responseSerializer responseObjectForResponse:nil data:JSONObject error:nil]);
+    testAdDataContainer([manager.responseSerializer responseObjectForResponse:nil data:JSONObject error:nil]);
     
     // check [SkyJSONResponseSerializer applyTransformationToData:error:]
     XCTestExpectation *expectation = [self expectationWithDescription:@"load_json"];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, AdDataContainer* adDataContainer) {
-        testAdDataContainer(adDataContainer);
+    [manager GET:kAdJsonSearch_URL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        testAdDataContainer(responseObject);
         [expectation fulfill];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XCTFail(@"%@",error.localizedDescription);
         [expectation fulfill];
     }];
-    [operation start];
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if (error) XCTFail(@"%@",error.localizedDescription);
     }];
