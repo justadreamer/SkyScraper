@@ -66,16 +66,14 @@ NSLog(@"%@",result);
 ```
 
 
-## Example usage with AFNetworking '~> 2'
+##Example usage with AFNetworking '~> 3'
 
-Below is an example boilerplate code you need to download the HTML document and acquire the JSON representation of your application data models.  It is assumed that you have defined an ```NSURL *URL``` object pointing at target HTML document on the web.  It is also assumed that somewhere in the application resource bundle you have ```scraping.xsl``` file with the XSLT transformation to convert HTML into JSON.
+Below is an example boilerplate code you need to download the HTML document and acquire the JSON representation of your application data models.  It is assumed that you have defined an ```NSString *URLString``` object pointing at target HTML document on the web.  It is also assumed that somewhere in the application resource bundle you have ```scraping.xsl``` file with the XSLT transformation to convert HTML into JSON.
 
 ```objc
 
 	#import <SkyScraper/SkyScraper.h>
 	//...
-	
-	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
 	
 	NSURL *localXSLURL = [[NSBundle mainBundle] URLForResource:@"scraping" withExtension:@"xsl"];
 	
@@ -83,23 +81,21 @@ Below is an example boilerplate code you need to download the HTML document and 
 	
 	SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:nil];
 	
-	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-	operation.responseSerializer = serializer;
+	AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
+    manager.responseSerializer = serializer;
 	
-	[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+	[manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 	    NSLog(@"%@",responseObject);
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 	    NSLog(@"%@",error);
 	}];
-	
-	[operation start];
 
 ```    	
     	
 Here the transformation object has been utilized within the response serializer object, used by AFHTTPRequestOperation to deserialize the response.
 
 
-## Example usage with AFNetworking '~> 2' and Mantle
+##Example usage with AFNetworking '~> 3' and Mantle
 
 The basic setup is all the same as in the previous example, the difference is only in that we instantiate and initialize a Mantle model adapter and pass it to the response serializer factory method.  The response serializer the will use the model adapter to deserialize the parsed JSON object into the application data object - an instance of Model.class.
 
