@@ -27,7 +27,7 @@ extern int xmlLoadExtDtdDefaultValue;
 @property (nonatomic, copy) ReplaceStringBlockType replaceStringBlock;
 @end
 
-void exslt_org_regular_expressions_init();
+void exslt_org_regular_expressions_init(void);
 
 @implementation SkyXSLTransformation
 - (void) dealloc {

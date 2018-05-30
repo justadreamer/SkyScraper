@@ -36,9 +36,9 @@
 }
 
 + (NSValueTransformer *) imageURLsJSONTransformer {
-    return [MTLValueTransformer transformerWithBlock:^NSArray *(NSArray *imageURLStrings) {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         NSMutableArray *imageURLs = [NSMutableArray array];
-        for (NSString *s in imageURLStrings) {
+        for (NSString *s in value) {
             [imageURLs addObject:[NSURL URLWithString:s]];
         }
         return imageURLs;

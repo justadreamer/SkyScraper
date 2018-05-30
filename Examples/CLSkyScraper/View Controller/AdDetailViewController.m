@@ -13,7 +13,7 @@
 #import <SkyScraper/SkyScraper+Mantle.h>
 
 #import <AFNetworking/AFNetworking.h>
-#import <UIImageView+AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "AdData.h"
 #import "SVProgressHUD.h"
 
@@ -36,29 +36,27 @@
     
     self.imagesScrollViewHeight.constant = 0;
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.adURL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"addetail" withExtension:@"xsl"];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
     SkyMantleModelAdapter *modelAdapter = [[SkyMantleModelAdapter alloc] initWithModelClass:[AdData class]];
     SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:nil modelAdapter:modelAdapter];
     
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = serializer;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
+    manager.responseSerializer = serializer;
     
     __typeof(self) __weak weakSelf = self;
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:self.adURL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         weakSelf.adData = responseObject;
         weakSelf.adData.URL = weakSelf.adURL;
         NSLog(@"%@",weakSelf.adData);
         [weakSelf redisplayData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         NSLog(@"%@",error);
     }];
     
     [SVProgressHUD showWithStatus:@"Loading..."];
-    [operation start];
 }
 
 - (void) redisplayData {

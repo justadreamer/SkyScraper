@@ -13,7 +13,7 @@
 #import <SkyScraper/SkyScraper+Mantle.h>
 
 #import <AFNetworking/AFNetworking.h>
-#import <SVProgressHUD.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 #import "SubcategoriesViewController.h"
 
 @interface CategoriesViewController ()
@@ -32,27 +32,25 @@
 - (void) loadData {
     NSURL *siteURL = [NSURL URLWithString:self.site[@"link"]];
     NSString *baseURL = [[siteURL.scheme stringByAppendingString:@"://"] stringByAppendingString:siteURL.host];
-    NSURLRequest *request = [NSURLRequest requestWithURL:siteURL];
     NSURL *adsearchXSLURL = [[NSBundle mainBundle] URLForResource:@"categories" withExtension:@"xsl"];
     SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
     SkyHTMLResponseSerializer *serializer = [SkyHTMLResponseSerializer serializerWithXSLTransformation:transformation params:@{@"URL":QUOTED(RSLASH(self.site[@"link"])),@"baseURL":QUOTED(baseURL)} modelAdapter:nil];
     
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = serializer;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager new];
+    manager.responseSerializer = serializer;
     
     __typeof(self) __weak weakSelf = self;
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:siteURL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         weakSelf.categoriesTree = responseObject;
         [weakSelf redisplayData];
         NSLog(@"%@",responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         NSLog(@"%@",error);
     }];
     
     [SVProgressHUD showWithStatus:@"Loading categories..."];
-    [operation start];
 }
 
 - (void) redisplayData {

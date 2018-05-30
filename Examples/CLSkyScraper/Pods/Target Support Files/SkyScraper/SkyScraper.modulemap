@@ -1,0 +1,6 @@
+framework module SkyScraper {
+  umbrella header "SkyScraper-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 1.0
+AFNetworking: migrate to v3.
+
 ## 0.44
 Fix memory leak in [SkyXSLTransformation cleanUTF8:] method
 
