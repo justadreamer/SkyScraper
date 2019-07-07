@@ -64,6 +64,10 @@ void exslt_org_regular_expressions_init(void);
     self.stylesheet = xsltParseStylesheetDoc(styleSheetDoc);
 }
 
+- (NSData *)transformedDataFromHTMLData:(NSData *)html withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
+    return [self transformedDataFromData:html isHTML:YES withParams:params error: error];
+}
+
 - (NSData *) transformedDataFromData:(NSData *)data isHTML:(BOOL)isHTML withParams:(NSDictionary *)params error:(NSError * __autoreleasing *)error {
     if (!self.stylesheet) {
         if (error) {

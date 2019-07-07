@@ -359,4 +359,19 @@
     XCTAssertNil(error);
 }
 
+- (void)testTransformedDataFromHTML {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSURL *adsearchXSLURL = [bundle URLForResource:@"adsearch" withExtension:@"xsl"];
+    SkyXSLTransformation *transformation = [[SkyXSLTransformation alloc] initWithXSLTURL:adsearchXSLURL];
+
+    NSString *adsearchHTMLPath = [bundle pathForResource:@"adsearch" ofType:@"html"];
+    NSError *error = nil;
+    NSData *html = [NSData dataWithContentsOfFile:adsearchHTMLPath];
+    NSData *transformed = [transformation transformedDataFromHTMLData:html withParams:@{@"CLURL":@"'http://losangeles.craigslist.org'"} error:&error];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:transformed options:NSJSONReadingAllowFragments error:&error];
+    XCTAssertNotNil(dict);
+    NSArray *ads = dict[@"ads"];
+    XCTAssertEqual(ads.count, 100);
+}
+
 @end
